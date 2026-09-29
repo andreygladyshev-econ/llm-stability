@@ -35,8 +35,8 @@ OUT = texts.SUBMIT
 PREFIX = "qwen3.8-27b-mlx-4bit__v7_extract__t0-shuf-ex2-tx2"
 PDF = json.loads((ROOT / "notes" / "pdf_mapping.json").read_text())
 SBER_PDF = set(PDF)  # сканы заказчика: assignment/SBER/{файл}
-# отчёты других банков — текстовые PDF с сайтов банков, лежат в рабочем проекте
-PDF.update({r: f"workspace/pdf_other/{r}.pdf" for r in ("vtb_2026_q1", "tbank_2024_q4", "tbank_2026_q1", "tbank_2026_q2")})
+# отчёты других банков — текстовые PDF с сайтов банков (code/pdf_other/)
+PDF.update({r: f"{r}.pdf" for r in ("vtb_2026_q1", "tbank_2024_q4", "tbank_2026_q1", "tbank_2026_q2")})
 TEMPLATE = list(csv.DictReader(open(sg.GOLD / "2026_q2_CLAUDE.csv")))
 ORDER = [r["id"] for r in TEMPLATE]
 NAME = {r["id"]: (r["блок"], r["показатель"]) for r in TEMPLATE}
@@ -81,7 +81,7 @@ def source_link(r):
     """Ссылка на исходный PDF из папки сдачи."""
     if r["id"] in SBER_PDF:
         return f"[{r['файл']}](../assignment/SBER/{r['файл']})"
-    return f"[{Path(r['файл']).name}](../{r['файл']}), текстовый PDF с сайта банка"
+    return f"[{r['файл']}](code/pdf_other/{r['файл']}), текстовый PDF с сайта банка"
 
 
 def sgn(x):

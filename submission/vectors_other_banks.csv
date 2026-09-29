@@ -1,5 +1,5 @@
 report,period,source_pdf,net_profit,eps,roe,guidance,nii,fee_income,nim,opex,cir,cor,provisions,portfolio_quality,corporate_loans,retail_loans,customer_funds,market_share,capital_adequacy,dividends,book_value_per_share,active_clients,digital_metrics,tech_development,external_conditions,ceo_tone,sum,verdict,stable_indicators_of_24
-vtb_2026_q1,"ВТБ, 1 кв. 2026",workspace/pdf_other/vtb_2026_q1.pdf,-1,0,-2,1,2,1,2,-2,-2,0,0,1,1,0,0,0,1,0,0,0,0,0,-1,1,2,mixed,21
-tbank_2024_q4,"Т-Технологии, 4 кв. 2024",workspace/pdf_other/tbank_2024_q4.pdf,2,0,0,1,2,2,-2,0,0,-2,0,2,0,0,2,0,-2,1,0,2,1,1,0,2,12,mixed,22
-tbank_2026_q1,"Т-Технологии, 1 кв. 2026",workspace/pdf_other/tbank_2026_q1.pdf,1,0,2,1,2,2,1,0,1,-1,0,-1,0,0,1,0,1,1,0,1,1,1,0,1,15,strong,20
-tbank_2026_q2,"Т-Технологии, 2 кв. 2026",workspace/pdf_other/tbank_2026_q2.pdf,-1,0,-1,1,2,1,1,0,-1,2,0,-1,0,0,1,1,-1,1,0,0,0,0,0,1,6,mixed,19
+vtb_2026_q1,"ВТБ, 1 кв. 2026",vtb_2026_q1.pdf,-1,0,-2,1,2,1,2,-2,-2,0,0,1,1,0,0,0,1,0,0,0,0,0,-1,1,2,mixed,21
+tbank_2024_q4,"Т-Технологии, 4 кв. 2024",tbank_2024_q4.pdf,2,0,0,1,2,2,-2,0,0,-2,0,2,0,0,2,0,-2,1,0,2,1,1,0,2,12,mixed,22
+tbank_2026_q1,"Т-Технологии, 1 кв. 2026",tbank_2026_q1.pdf,1,0,2,1,2,2,1,0,1,-1,0,-1,0,0,1,0,1,1,0,1,1,1,0,1,15,strong,20
+tbank_2026_q2,"Т-Технологии, 2 кв. 2026",tbank_2026_q2.pdf,-1,0,-1,1,2,1,1,0,-1,2,0,-1,0,0,1,1,-1,1,0,0,0,0,0,1,6,mixed,19

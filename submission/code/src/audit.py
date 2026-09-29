@@ -143,7 +143,7 @@ def a7():
                 if hashlib.sha256((ROOT / "text_pdf" / f"{r}.txt").read_text().encode()).hexdigest() != h["sha256"]]
     say(not bad_hash, f"текстовый слой PDF совпадает с зафиксированным ({len(hs)} отчётов)"
         + (f"; изменены: {bad_hash}" if bad_hash else ""))
-    sub = next(p for p in (ROOT.parent / "vectors.json", ROOT.parent / "submission" / "vectors.json") if p.exists())
+    sub = ROOT.parent / "vectors.json"
     reps = json.loads(sub.read_text())["отчёты"]
     n = miss = weak = 0
     for r in reps:

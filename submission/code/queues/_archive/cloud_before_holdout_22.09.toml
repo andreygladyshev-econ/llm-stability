@@ -1,13 +1,3 @@
-# ОБЛАКО — список утверждён Андреем 22.09.2026. Порядок заданий = порядок запуска.
-# Запуск ТОЛЬКО по команде Андрея и ПО ОДНОЙ МОДЕЛИ:  .venv/bin/python src/cloud.py run queues/cloud.toml --only <модель>
-# После каждой модели — разбор (src/cloud_report.py): деньги против прогноза, разбор ответов, провайдер, детерминизм.
-# Спека v7 (заморожена; v10 не проверена — дневной замер остановлен).
-# Защита: лимит ключа $20 · общий стоп $18 · бюджет модели · худший запрос проверяется до отправки · logs/cloud.STOP.
-# Полный протокол (55): детерминизм 5 одинаковых запросов (seed=1) · боевой режим 6 отчётов × 5 перестановок, T=0 ·
-#   сэмплирование 4 отчёта × 5 при T=0,7.  Урезанный (9): детерминизм 3 · 2 эталонных отчёта × 3 перестановки.
-
-
-# ── 1. проверка всей цепочки на самой дешёвой модели; ступень 64 ГБ
 [[job]]
 model = "nvidia/nemotron-3-nano-30b-a3b"
 spec = "v7_extract"
@@ -46,8 +36,6 @@ text = "v2"
 ctx = 32768
 budget = 0.4
 
-
-# ── 2. НАША модель без сжатия — чистая цена 4 бит, главный замер для вывода о железе
 [[job]]
 model = "qwen/qwen3.8-27b"
 spec = "v7_extract"
@@ -86,8 +74,6 @@ text = "v2"
 ctx = 32768
 budget = 2.5
 
-
-# ── 3. ступень 32–64 ГБ, второе семейство нашего класса
 [[job]]
 model = "google/gemma-4-31b-it"
 spec = "v7_extract"
@@ -126,8 +112,6 @@ text = "v2"
 ctx = 32768
 budget = 0.6
 
-
-# ── 4. ступень 64 ГБ
 [[job]]
 model = "qwen/qwen3.6-35b-a3b"
 spec = "v7_extract"
@@ -166,8 +150,6 @@ text = "v2"
 ctx = 32768
 budget = 1.0
 
-
-# ── 5. ступень 128 ГБ
 [[job]]
 model = "openai/gpt-oss-120b"
 spec = "v7_extract"
@@ -206,8 +188,6 @@ text = "v2"
 ctx = 32768
 budget = 1.0
 
-
-# ── 6. ступень 128 ГБ
 [[job]]
 model = "nvidia/nemotron-3-super-120b-a12b"
 spec = "v7_extract"
@@ -246,8 +226,6 @@ text = "v2"
 ctx = 32768
 budget = 0.6
 
-
-# ── 7. ступень 256 ГБ, без размышления
 [[job]]
 model = "qwen/qwen3-235b-a22b-2507"
 spec = "v7_extract"
@@ -286,8 +264,6 @@ text = "v2"
 ctx = 32768
 budget = 0.6
 
-
-# ── 8. ступень 256 ГБ (321 млрд)
 [[job]]
 model = "z-ai/glm-5.3-flash"
 spec = "v7_extract"
@@ -326,8 +302,6 @@ text = "v2"
 ctx = 32768
 budget = 1.0
 
-
-# ── 9. ступень 512 ГБ+ (763 млрд)
 [[job]]
 model = "deepseek/deepseek-v4.1-flash"
 spec = "v7_extract"
@@ -366,8 +340,6 @@ text = "v2"
 ctx = 32768
 budget = 1.5
 
-
-# ── 10. ступень 512 ГБ+, лучшая открытая
 [[job]]
 model = "z-ai/glm-5.3"
 spec = "v7_extract"
@@ -406,8 +378,6 @@ text = "v2"
 ctx = 32768
 budget = 3.0
 
-
-# ── 11. новинка 21.09, заявлена открытой (309 млрд)
 [[job]]
 model = "xiaomi/mimo-v2.6-flash"
 spec = "v7_extract"
@@ -446,8 +416,6 @@ text = "v2"
 ctx = 32768
 budget = 0.6
 
-
-# ── 12. закрытая, Google — дешёвая третья закрытая семья
 [[job]]
 model = "google/gemini-3.8-flash"
 spec = "v7_extract"
@@ -486,8 +454,6 @@ text = "v2"
 ctx = 32768
 budget = 3.0
 
-
-# ── 13. закрытая, флагман GPT-5.6 со скидкой — полный профиль топового класса
 [[job]]
 model = "openai/gpt-5.6-sol"
 spec = "v7_extract"
@@ -526,8 +492,6 @@ text = "v2"
 ctx = 32768
 budget = 6.0
 
-
-# ── 14. закрытая, Anthropic. ВНИМАНИЕ: эталон размечал Claude — совпадение с эталоном завышено
 [[job]]
 model = "anthropic/claude-opus-5"
 spec = "v7_extract"
@@ -554,8 +518,6 @@ ctx = 32768
 budget = 2.5
 ids_order = "shuffled"
 
-
-# ── 15а. ПО ОСТАТКУ: запускать, только если после 1–14 осталось ≥ $4
 [[job]]
 model = "x-ai/grok-4.7"
 spec = "v7_extract"
@@ -582,8 +544,6 @@ ctx = 32768
 budget = 3.5
 ids_order = "shuffled"
 
-
-# ── 15б. ПО ОСТАТКУ: альтернатива 15а
 [[job]]
 model = "openai/gpt-6-astra"
 spec = "v7_extract"

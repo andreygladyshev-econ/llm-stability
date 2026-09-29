@@ -26,9 +26,6 @@ import texts  # noqa: E402
 from indicators import IDS, INDICATORS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-# журнал результатов и копия отчёта — в рабочую папку автора (_АНДРЕЙ рядом с проектом, в репозиторий не входит);
-# без неё — в reports/
-ANDREY = ROOT.parent / "_АНДРЕЙ" if (ROOT.parent / "_АНДРЕЙ").is_dir() else ROOT / "reports"
 RAW, TEXT, METRICS, REPORTS, LOGS = (ROOT / d for d in ("raw", "text", "metrics", "reports", "logs"))
 NAMES = {i[0]: i[2] for i in INDICATORS}
 
@@ -446,7 +443,7 @@ def build_html(runs, items, by_report, by_ind, final, summary, checks, spec_cmp=
 
 
 def results_journal(runs, items):
-    """Накопительный журнал: строка на конфигурацию, все ночи сразу. → ЖУРНАЛ_РЕЗУЛЬТАТОВ.md (папка ANDREY)"""
+    """Накопительный журнал: строка на конфигурацию, все ночи сразу. → reports/ЖУРНАЛ_РЕЗУЛЬТАТОВ.md"""
     rows = []
     for cfg, g in items.groupby("config"):
         r = runs[runs.config == cfg]
@@ -500,7 +497,7 @@ def results_journal(runs, items):
             "Криппендорфа: соседние баллы — меньшая ошибка, чем смена знака), сравнима при разном числе прогонов; «знак» — перевороты знака; «цитата найдена» — доля ненулевых оценок с дословной цитатой.\n",
             md(j), "\n\n## Боевой режим T=0: суммы 24 оценок (>12 strong, <−12 weak)\n",
             md(t0, index=True) if len(t0) else "нет прогонов при T=0", "\n"]
-    (ANDREY / "ЖУРНАЛ_РЕЗУЛЬТАТОВ.md").write_text("\n".join(text))
+    (REPORTS / "ЖУРНАЛ_РЕЗУЛЬТАТОВ.md").write_text("\n".join(text))
     return j
 
 
@@ -510,7 +507,6 @@ def main():
         sys.exit("raw/ пуст")
     METRICS.mkdir(exist_ok=True)
     REPORTS.mkdir(exist_ok=True)
-    ANDREY.mkdir(exist_ok=True)
     ok_runs = runs[runs.parse_ok]
     if items.empty:
         by_report = by_ind = final = summary = checks = spec_cmp = spec_cmp_ind = pd.DataFrame()
@@ -528,8 +524,6 @@ def main():
         results_journal(runs, items)  # накопительный журнал всех конфигураций → ЖУРНАЛ_РЕЗУЛЬТАТОВ.md
     page = build_html(runs, items, by_report, by_ind, final, summary, checks, spec_cmp, spec_cmp_ind)
     (REPORTS / "latest.html").write_text(page)
-    if ANDREY != REPORTS:
-        (ANDREY / "ОТЧЁТ.html").write_text(page)
     (REPORTS / f"report_{dt.datetime.now():%Y-%m-%d_%H%M}.html").write_text(page)
     print(f"прогонов {len(runs)}, разобрано {len(ok_runs)} → reports/latest.html, metrics/*.csv")
 
