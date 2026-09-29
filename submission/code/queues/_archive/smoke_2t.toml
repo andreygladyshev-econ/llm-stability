@@ -1,4 +1,3 @@
-# smoke 17.09: режим «два хода» + обычный, короткий текст
 [[job]]
 model = "qwen3.8-27b-mlx@4bit"
 spec = "v2_inplace"

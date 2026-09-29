@@ -15,9 +15,7 @@ import pymupdf
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "text_pdf"
 MAPPING = json.loads((ROOT / "notes" / "pdf_mapping.json").read_text())
-# PDF заказчика лежат в папке assignment/ в корне репозитория: рядом с рабочим проектом или на уровень выше папки кода
-PDF_DIR = next(p for p in (ROOT.parent / "assignment" / "SBER", ROOT.parent.parent / "assignment" / "SBER")
-               if p.is_dir())
+PDF_DIR = ROOT.parent.parent / "assignment" / "SBER"   # PDF заказчика в корне репозитория
 
 
 def main():

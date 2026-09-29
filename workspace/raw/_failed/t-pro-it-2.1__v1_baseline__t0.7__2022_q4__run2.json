@@ -1,1 +1,0 @@
-{"name": "t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run2", "attempt": 3, "error": "HTTPStatusError: Client error '400 Bad Request' for url 'http://localhost:50255/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400", "at": "2026-09-15T05:21:08"}

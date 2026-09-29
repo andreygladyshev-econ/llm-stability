@@ -1,4 +1,3 @@
-# Smoke новых моделей и режимов для ночи 3 (2 страницы 2026_q2) → raw/_archive
 [[job]]
 model = "t-pro-it-2.1"
 spec = "v2_inplace"

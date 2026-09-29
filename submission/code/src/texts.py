@@ -9,9 +9,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 DIRS = {"v1": ROOT / "text", "v2": ROOT / "text_v2"}
-# Куда пишутся файлы сдачи. В рабочем проекте (workspace/) — соседняя папка submission/. Если код запущен из папки
-# сдачи (submission/code/), результат пишется в code/rebuild/, чтобы не затирать сданные файлы и их можно было сравнить.
-SUBMIT = ROOT.parent / "submission" if (ROOT.parent / "submission").is_dir() else ROOT / "rebuild"
+# Пересобранные файлы сдачи пишутся в code/rebuild/, чтобы не затирать сданные и их можно было сравнить побайтно.
+SUBMIT = ROOT / "rebuild"
 
 
 def text_dir(version="v1"):

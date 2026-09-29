@@ -1,7 +1,0 @@
-[[job]]
-model = "qwen3.8-27b-mlx@4bit"
-spec = "v2_inplace"
-reports = ["cf_profit_down"]
-runs = 1
-temperature = 0
-ctx = 32768

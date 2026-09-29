@@ -1,4 +1,3 @@
-# Smoke новых режимов ночи 2 на 2 страницах 2026_q2 (результаты → raw/_archive)
 [[job]]
 model = "qwen3.8-27b-mlx@4bit"
 spec = "v2_all"
