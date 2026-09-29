@@ -2,4 +2,9 @@
 __pycache__/
 .DS_Store
 *.pyc
-рабочий_проект/metrics/
+workspace/metrics/
+
+# пересборка сдачи из папки кода (build_submission.py, figures.py) и рабочие файлы report.py, final_table.py
+submission/code/rebuild/
+submission/code/metrics/
+submission/code/reports/

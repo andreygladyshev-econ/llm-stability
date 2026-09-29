@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "…/sber_stability/src/think_compare.py", line 34, in <module>
+    model = sys.argv[1]
+            ~~~~~~~~^^^
+IndexError: list index out of range

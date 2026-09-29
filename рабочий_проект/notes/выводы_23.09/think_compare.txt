@@ -1,5 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/andreygladyshev/Desktop/финансы/Задание от Евгения Надоршина/sber_stability/src/think_compare.py", line 34, in <module>
-    model = sys.argv[1]
-            ~~~~~~~~^^^
-IndexError: list index out of range
