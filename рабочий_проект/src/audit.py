@@ -107,7 +107,7 @@ def a5():
     for model, vs in sorted(rows.items()):
         for var, s in sorted(vs.items()):
             flag = "" if len(s) == 1 else "  ← несколько провайдеров/настроек в одной серии"
-            prov = "; ".join(f"{a} {b}, отброшено {list(c) or '—'}, размышл. {d}" for a, b, c, d in s)
+            prov = "; ".join(f"{a} {b}, отброшено {list(c) or '—'}, размышл. {d}" for a, b, c, d in sorted(s, key=str))
             print(f"   {model:34} {var:26} {prov}{flag}")
     notemp = sorted({m for m, vs in rows.items() for s in vs.values() for x in s if "temperature" in x[2]})
     print(f"  ! без температуры (провайдер ставит свою по умолчанию, это НЕ T=0): {notemp}")

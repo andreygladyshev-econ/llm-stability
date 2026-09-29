@@ -280,8 +280,8 @@ def f1_waterfall(items):
     save(fig, "f1_прирост_устойчивости")
 
 
-def f2_leaks(items):
-    """Рисунок 2: где оценки расходятся между прогонами и насколько чаще там ошибки."""
+def f3_leaks(items):
+    """Рисунок 3: где оценки расходятся между прогонами и насколько чаще там ошибки."""
     ords = order()
     v = fc.votes(items, fc.cfg(M, "t0-shuf-ex2-tx2"), ft.SBER, range(1, 6))
     cnt = {i: sum(len(set(v[(r, i)])) > 1 for r in ft.SBER) for i in ords}
@@ -332,7 +332,7 @@ def f2_leaks(items):
     a2.text(0, 1.55, "итоговый режим, 5 прогонов", fontsize=8.6, color=INK2, fontweight="bold", va="center")
     a2.set_xticks([0, 20, 40, 60])
     a2.set_title("Доля оценок, не совпавших с эталоном, %", loc="left", color=INK2, fontsize=9.5, pad=8)
-    save(fig, "f2_где_расходятся_оценки")
+    save(fig, "f3_где_расходятся_оценки")
 
 
 def f5_cells(items):
@@ -615,8 +615,8 @@ def f4_table(items):
     save(fig, "f4_итоговая_таблица")
 
 
-def f3_dynamics(items):
-    """Рисунок 3: сумма оценок по отчётам Сбера и проверки здравого смысла из задания."""
+def f2_dynamics(items):
+    """Рисунок 2: сумма оценок по отчётам Сбера и проверки здравого смысла из задания."""
     v = fc.votes(items, fc.cfg(M, "t0-shuf-ex2-tx2"), ft.SBER, range(1, 6))
     g = items[(items.config == fc.cfg(M, "t0-shuf-ex2-tx2")) & items.report.isin(ft.SBER) & items.run.isin(range(1, 6))]
     per = g.groupby(["report", "run"]).score.sum()
@@ -663,7 +663,7 @@ def f3_dynamics(items):
     ax.set_xticks(xs); ax.set_xticklabels([QLAB[r[5:]] + "\n" + r[:4] for r in ft.SBER], fontsize=8)
     ax.set_xlim(-0.5, len(xs) - 0.3)
     ax.set_ylabel("Сумма 24 оценок", fontsize=8.8); ax.set_ylim(-10, 35)
-    save(fig, "f3_динамика_сбера")
+    save(fig, "f2_динамика_сбера")
 
 
 def f9_hardware(items):
@@ -724,7 +724,7 @@ def f9_hardware(items):
 
 if __name__ == "__main__":
     _, items = report.load()
-    fns = {"1": f1_waterfall, "2": f2_leaks, "3": f3_dynamics, "4": f4_table, "5": f5_cells, "6": f6_models,
+    fns = {"1": f1_waterfall, "2": f2_dynamics, "3": f3_leaks, "4": f4_table, "5": f5_cells, "6": f6_models,
            "7": f7_repeat, "8": f8_reasoning, "9": f9_hardware, "10": f10_certificate}
     for w in sys.argv[1:] or list(fns):
         fns[w](items)

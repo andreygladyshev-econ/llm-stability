@@ -25,8 +25,8 @@ A4. Эталон не менялся после фиксации; холдаут
   ✓ до финальной ночи холдаут прогонялся 6 раз(а): ["(['v2_inplace', 't0-tx2'], '2026-09-20')", "(['v7_extract', 't0-ex2-tx2'], '2026-09-20')"] — один проверочный прогон всех 15 отчётов 20.09; клетки холдаута при настройке не разбирались
 
 A5. Облако: провайдер и параметры — что именно сравниваем
-   anthropic/claude-opus-5            t0-ex2-det-tx2             Claude Platform on AWS unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено; Azure unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено  ← несколько провайдеров/настроек в одной серии
-   anthropic/claude-opus-5            t0-shuf-ex2-or-tx2         Claude Platform on AWS unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено; Azure unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено  ← несколько провайдеров/настроек в одной серии
+   anthropic/claude-opus-5            t0-ex2-det-tx2             Azure unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено; Claude Platform on AWS unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено  ← несколько провайдеров/настроек в одной серии
+   anthropic/claude-opus-5            t0-shuf-ex2-or-tx2         Azure unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено; Claude Platform on AWS unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено  ← несколько провайдеров/настроек в одной серии
    anthropic/claude-opus-5.5          t0-ex2-det-tx2             Azure unknown, отброшено ['top_p', 'json_schema'], размышл. встроено, low
    anthropic/claude-opus-5.5          t0-shuf-ex2-or-tx2         Azure unknown, отброшено ['top_p', 'json_schema'], размышл. встроено, low
    deepseek/deepseek-v4.1-flash       t0-ex2-det-think-high-tx2  CoreWeave fp8, отброшено —, размышл. включено, high
@@ -51,8 +51,8 @@ A5. Облако: провайдер и параметры — что именн
    openai/gpt-6-sol                   t0-ex2-det-tx2             OpenAI unknown, отброшено ['temperature', 'top_p'], размышл. выключено
    openai/gpt-6-sol                   t0-shuf-ex2-or-tx2         OpenAI unknown, отброшено ['temperature', 'top_p'], размышл. выключено
    openai/gpt-oss-120b                t0-ex2-det-tx2             Groq unknown, отброшено —, размышл. встроено, low
-   openai/gpt-oss-120b                t0-shuf-ex2-or-tx2         Groq unknown, отброшено —, размышл. встроено, low; Cerebras fp16, отброшено —, размышл. встроено, low  ← несколько провайдеров/настроек в одной серии
-   openai/gpt-oss-120b                t0.7-ex2-or-tx2            Groq unknown, отброшено —, размышл. встроено, low; Cerebras fp16, отброшено —, размышл. встроено, low  ← несколько провайдеров/настроек в одной серии
+   openai/gpt-oss-120b                t0-shuf-ex2-or-tx2         Cerebras fp16, отброшено —, размышл. встроено, low; Groq unknown, отброшено —, размышл. встроено, low  ← несколько провайдеров/настроек в одной серии
+   openai/gpt-oss-120b                t0.7-ex2-or-tx2            Cerebras fp16, отброшено —, размышл. встроено, low; Groq unknown, отброшено —, размышл. встроено, low  ← несколько провайдеров/настроек в одной серии
    qwen/qwen3-235b-a22b-2507          t0-ex2-det-tx2             Novita fp8, отброшено —, размышл. нет
    qwen/qwen3-235b-a22b-2507          t0-shuf-ex2-or-tx2         Novita fp8, отброшено —, размышл. нет
    qwen/qwen3-235b-a22b-2507          t0.7-ex2-or-tx2            Novita fp8, отброшено —, размышл. нет

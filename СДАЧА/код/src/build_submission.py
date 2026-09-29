@@ -243,6 +243,9 @@ def justify(ind, x, final, phrase, raw_nums=None):
     if not stated and b and not in_text(b):
         print(f"  ВНИМАНИЕ: оценка {ind} посчитана по базе, которой нет в тексте отчёта: {b}")
     head = f"{period_word(ind, slot)}: {v}" + (f" против {b}" if show_base else "")
+    rate_only = not stated and not b and kind == "money" and "%" in str(v)   # темп прироста из отчёта в поле значения
+    if rate_only:
+        stated = True
     g = lambda x: f"{x:g}".replace(".", ",")
     rule = f"пороги {g(lo)} и {g(hi)}{'%' if unit == '%' else ' п.п.'}" + ("; рост — минус для акционера" if inv else "")
     how = "посчитано кодом"
@@ -253,6 +256,8 @@ def justify(ind, x, final, phrase, raw_nums=None):
         elif b and in_text(b) and not show_base:
             how += (", без учёта валютной переоценки" if kind == "money" and ind in sr.BALANCE
                     else "; база в ответе модели относится к другому периоду и в расчёт не вошла")
+    if rate_only:
+        return f"{period_word(ind, slot)}: изменение {ru(ch, unit)} ({how}; {rule})", "код"
     return f"{head}, изменение {ru(ch, unit)} ({how}; {rule})", "код"
 
 
