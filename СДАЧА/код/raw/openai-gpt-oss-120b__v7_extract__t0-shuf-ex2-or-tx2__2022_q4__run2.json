@@ -1,0 +1,86 @@
+{
+ "meta": {
+  "name": "openai-gpt-oss-120b__v7_extract__t0-shuf-ex2-or-tx2__2022_q4__run2",
+  "model": "openai/gpt-oss-120b",
+  "cloud": true,
+  "provider": "Groq",
+  "model_quant": "unknown",
+  "spec_version": "v7_extract",
+  "spec_hash": "46954bb5e58e630022ba2cccb0e43f55db5c5c6512a52996612c0f962bbb25dc",
+  "request_hash": "a98d29e6df5f18ee9ec5ec24cf038d93dc0ce97346c5db6ec7a1594abfc5397b",
+  "report": "2022_q4",
+  "text_version": "v2",
+  "text_hash": "db76aa9182d16fee53b2b06b1524760da5c2c4bf63521f398f8f99c4c84bf6fc",
+  "run": 2,
+  "variant": "t0-shuf-ex2-or-tx2",
+  "temperature": 0,
+  "top_p": 1,
+  "seed": null,
+  "min_p_dropped": false,
+  "schema": true,
+  "dropped_params": [],
+  "max_tokens": 16000,
+  "reasoning_mode": "встроено, low",
+  "or_cache": null,
+  "ids_order": "shuffled",
+  "mode": "extract2",
+  "started": "2026-09-22T23:16:28",
+  "finished": "2026-09-22T23:16:34",
+  "sec": 5.9,
+  "cost_usd": 0.0035097,
+  "prompt_tokens": 15106,
+  "completion_tokens": 2073,
+  "reasoning_tokens": 17,
+  "finish_reason": "stop",
+  "truncated": false,
+  "parse_ok": true,
+  "generation_id": "gen-1790108188-uKDAH1YgnHCDvbviphzD",
+  "cache_contaminated": false
+ },
+ "content": "{\n  \"provisions\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"eps\": {\n    \"q_quote\": \"Прибыль на обыкновенную акцию¹ составила 12,39 руб. (-78,3% г/г).\",\n    \"q_value\": \"12,39 руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"-78,3% г/г\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"fee_income\": {\n    \"q_quote\": \"Чистые комиссионные доходы выросли на 15,4% г/г до 697 млрд руб.\",\n    \"q_value\": \"697,1 млрд руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"15,4% г/г\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 2\n  },\n  \"corporate_loans\": {\n    \"q_quote\": \"Корпоративный кредитный портфель составил 18,6 трлн руб., прибавив 13,2% с начала года без учета валютной переоценки.\",\n    \"q_value\": \"18,6 трлн руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"13,2% с начала года\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"digital_metrics\": {\n    \"q_quote\": \"Количество активных ежемесячных пользователей (MAU) СберБанк Онлайн (app+web) превысило 78,6 млн человек (+2,5 млн за год).\",\n    \"q_value\": \"78,6 млн\",\n    \"q_base\": \"\",\n    \"q_change\": \"+2,5 млн за год\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"cir\": {\n    \"q_quote\": \"Отношение операционных расходов к доходам составило 41,6%.\",\n    \"q_value\": \"41,6%\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -1\n  },\n  \"portfolio_quality\": {\n    \"quote\": \"Обесцененные кредиты, вкл. изначально обесцененные кредиты/ кредитный портфель (гросс) составили 3,9% (меньше на 100 бп по сравнению с началом года).\",\n    \"score\": 1\n  },\n  \"market_share\": {\n    \"quote\": \"Доля Сбера на рынке потребительского кредитования достигла 37,7% на 1 января 2023 года, увеличившись на 0,6 пп за год.\",\n    \"score\": 1\n  },\n  \"ceo_tone\": {\n    \"quote\": \"2022 год стал сложнейшим годом для нашей страны и банковского сектора.\",\n    \"score\": -2\n  },\n  \"tech_development\": {\n    \"quote\": \"По итогам 2022 года Сбер достиг цели Стратегии 2023 по миграции на собственную технологическую платформу – Platform V – 80% критического ИТ-ландшафта переведено в целевое состояние.\",\n    \"score\": 1\n  },\n  \"retail_loans\": {\n    \"q_quote\": \"Розничный кредитный портфель составил 12,4 трлн руб., показал рост на 12,2% с начала года.\",\n    \"q_value\": \"12,4 трлн руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"12,2% с начала года\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 2\n  },\n  \"roe\": {\n    \"q_quote\": \"Рентабельность капитала⁴ составила 5,2% (-19,0 пп).\",\n    \"q_value\": \"5,2%\",\n    \"q_base\": \"\",\n    \"q_change\": \"-19,0 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"active_clients\": {\n    \"q_quote\": \"Количество активных клиентов-физических лиц составило 106,7 млн человек на конец года, а количество активных корпоративных клиентов превысило 3,0 млн.\",\n    \"q_value\": \"106,7 млн\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"net_profit\": {\n    \"q_quote\": \"Чистая прибыль Сбера за 2022 год составила 270,5 млрд руб. (-78,3% г/г).\",\n    \"q_value\": \"270,5 млрд руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"-78,3% г/г\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"nim\": {\n    \"q_quote\": \"Чистая процентная маржа составила 5,31% (-0,07 пп).\",\n    \"q_value\": \"5,31%\",\n    \"q_base\": \"\",\n    \"q_change\": \"-0,07 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -1\n  },\n  \"opex\": {\n    \"q_quote\": \"Операционные расходы Группы сократились на 1,5% г/г и составили 822 млрд руб.\",\n    \"q_value\": \"-1,5% г/г\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"dividends\": {\n    \"quote\": \"Достигнутый запас прочности позволят нам вернуться к рассмотрению вопроса о выплате дивидендов по итогам 2022 года.\",\n    \"score\": 1\n  },\n  \"nii\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"customer_funds\": {\n    \"q_quote\": \"Средства клиентов составили 29,876 млрд руб., рост 9,1% за год.\",\n    \"q_value\": \"29,876 млрд руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"9,1% за год\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"book_value_per_share\": {\n    \"q_quote\": \"Балансовая стоимость на акцию составила 257,4 руб. (+3,1%).\",\n    \"q_value\": \"257,4 руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"+3,1%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"capital_adequacy\": {\n    \"q_quote\": \"Коэффициент достаточности базового капитала 1-го уровня составил 14,8% (+0,9 пп).\",\n    \"q_value\": \"14,8%\",\n    \"q_base\": \"\",\n    \"q_change\": \"+0,9 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"external_conditions\": {\n    \"quote\": \"В первой половине года маржинальность банковского бизнеса оказалась под давлением в связи с оттоком средств клиентов из банковского сектора и последовавшим повышением ключевой ставки Банка России.\",\n    \"score\": -1\n  },\n  \"cor\": {\n    \"q_quote\": \"Стоимость риска в 2022 году составила 1,9%, увеличившись на 1,3 пп к прошлому году.\",\n    \"q_value\": \"1,9%\",\n    \"q_base\": \"\",\n    \"q_change\": \"+1,3 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"guidance\": {\n    \"quote\": \"\",\n    \"score\": 0\n  }\n}",
+ "response": {
+  "id": "gen-1790108188-uKDAH1YgnHCDvbviphzD",
+  "object": "chat.completion",
+  "created": 1790108188,
+  "model": "openai/gpt-oss-120b",
+  "provider": "Groq",
+  "system_fingerprint": "fp_854fa9be4c",
+  "service_tier": null,
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "stop",
+    "message": {
+     "role": "assistant",
+     "content": "{\n  \"provisions\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"eps\": {\n    \"q_quote\": \"Прибыль на обыкновенную акцию¹ составила 12,39 руб. (-78,3% г/г).\",\n    \"q_value\": \"12,39 руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"-78,3% г/г\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"fee_income\": {\n    \"q_quote\": \"Чистые комиссионные доходы выросли на 15,4% г/г до 697 млрд руб.\",\n    \"q_value\": \"697,1 млрд руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"15,4% г/г\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 2\n  },\n  \"corporate_loans\": {\n    \"q_quote\": \"Корпоративный кредитный портфель составил 18,6 трлн руб., прибавив 13,2% с начала года без учета валютной переоценки.\",\n    \"q_value\": \"18,6 трлн руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"13,2% с начала года\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"digital_metrics\": {\n    \"q_quote\": \"Количество активных ежемесячных пользователей (MAU) СберБанк Онлайн (app+web) превысило 78,6 млн человек (+2,5 млн за год).\",\n    \"q_value\": \"78,6 млн\",\n    \"q_base\": \"\",\n    \"q_change\": \"+2,5 млн за год\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"cir\": {\n    \"q_quote\": \"Отношение операционных расходов к доходам составило 41,6%.\",\n    \"q_value\": \"41,6%\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -1\n  },\n  \"portfolio_quality\": {\n    \"quote\": \"Обесцененные кредиты, вкл. изначально обесцененные кредиты/ кредитный портфель (гросс) составили 3,9% (меньше на 100 бп по сравнению с началом года).\",\n    \"score\": 1\n  },\n  \"market_share\": {\n    \"quote\": \"Доля Сбера на рынке потребительского кредитования достигла 37,7% на 1 января 2023 года, увеличившись на 0,6 пп за год.\",\n    \"score\": 1\n  },\n  \"ceo_tone\": {\n    \"quote\": \"2022 год стал сложнейшим годом для нашей страны и банковского сектора.\",\n    \"score\": -2\n  },\n  \"tech_development\": {\n    \"quote\": \"По итогам 2022 года Сбер достиг цели Стратегии 2023 по миграции на собственную технологическую платформу – Platform V – 80% критического ИТ-ландшафта переведено в целевое состояние.\",\n    \"score\": 1\n  },\n  \"retail_loans\": {\n    \"q_quote\": \"Розничный кредитный портфель составил 12,4 трлн руб., показал рост на 12,2% с начала года.\",\n    \"q_value\": \"12,4 трлн руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"12,2% с начала года\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 2\n  },\n  \"roe\": {\n    \"q_quote\": \"Рентабельность капитала⁴ составила 5,2% (-19,0 пп).\",\n    \"q_value\": \"5,2%\",\n    \"q_base\": \"\",\n    \"q_change\": \"-19,0 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"active_clients\": {\n    \"q_quote\": \"Количество активных клиентов-физических лиц составило 106,7 млн человек на конец года, а количество активных корпоративных клиентов превысило 3,0 млн.\",\n    \"q_value\": \"106,7 млн\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"net_profit\": {\n    \"q_quote\": \"Чистая прибыль Сбера за 2022 год составила 270,5 млрд руб. (-78,3% г/г).\",\n    \"q_value\": \"270,5 млрд руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"-78,3% г/г\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"nim\": {\n    \"q_quote\": \"Чистая процентная маржа составила 5,31% (-0,07 пп).\",\n    \"q_value\": \"5,31%\",\n    \"q_base\": \"\",\n    \"q_change\": \"-0,07 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -1\n  },\n  \"opex\": {\n    \"q_quote\": \"Операционные расходы Группы сократились на 1,5% г/г и составили 822 млрд руб.\",\n    \"q_value\": \"-1,5% г/г\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"dividends\": {\n    \"quote\": \"Достигнутый запас прочности позволят нам вернуться к рассмотрению вопроса о выплате дивидендов по итогам 2022 года.\",\n    \"score\": 1\n  },\n  \"nii\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"customer_funds\": {\n    \"q_quote\": \"Средства клиентов составили 29,876 млрд руб., рост 9,1% за год.\",\n    \"q_value\": \"29,876 млрд руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"9,1% за год\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"book_value_per_share\": {\n    \"q_quote\": \"Балансовая стоимость на акцию составила 257,4 руб. (+3,1%).\",\n    \"q_value\": \"257,4 руб.\",\n    \"q_base\": \"\",\n    \"q_change\": \"+3,1%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"capital_adequacy\": {\n    \"q_quote\": \"Коэффициент достаточности базового капитала 1-го уровня составил 14,8% (+0,9 пп).\",\n    \"q_value\": \"14,8%\",\n    \"q_base\": \"\",\n    \"q_change\": \"+0,9 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"external_conditions\": {\n    \"quote\": \"В первой половине года маржинальность банковского бизнеса оказалась под давлением в связи с оттоком средств клиентов из банковского сектора и последовавшим повышением ключевой ставки Банка России.\",\n    \"score\": -1\n  },\n  \"cor\": {\n    \"q_quote\": \"Стоимость риска в 2022 году составила 1,9%, увеличившись на 1,3 пп к прошлому году.\",\n    \"q_value\": \"1,9%\",\n    \"q_base\": \"\",\n    \"q_change\": \"+1,3 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"guidance\": {\n    \"quote\": \"\",\n    \"score\": 0\n  }\n}",
+     "refusal": null
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 15106,
+   "completion_tokens": 2073,
+   "total_tokens": 17179,
+   "cost": 0.0035097,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0035097,
+    "upstream_inference_prompt_cost": 0.0022659,
+    "upstream_inference_completions_cost": 0.0012438
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 17,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

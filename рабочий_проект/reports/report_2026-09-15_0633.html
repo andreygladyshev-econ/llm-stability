@@ -1,0 +1,3611 @@
+<meta charset='utf-8'><title>Утренний отчёт</title><style>body{font:14px/1.45 -apple-system,system-ui,sans-serif;margin:24px;color:#1b1b1b;background:#fafaf8}h1{font-size:22px}h2{font-size:17px;margin-top:32px;border-top:1px solid #ddd;padding-top:16px}.x{color:#555;max-width:900px}.t{border-collapse:collapse;font-size:12px;margin:8px 0}.t td,.t th{padding:4px 8px;border-bottom:1px solid #e5e5e5;text-align:left;vertical-align:top;max-width:420px}.t th{background:#f0f0ec;position:sticky;top:0}pre{background:#f0f0ec;padding:10px;overflow-x:auto}</style><h1>Утренний отчёт · 15.09.2026 06:33</h1><h2>1. Как прошла ночь</h2><p class='x'>Сколько заданий сделано, что сломалось, какие модели пропущены и почему.</p><pre>{
+ &quot;started&quot;: &quot;2026-09-14T23:31:49&quot;,
+ &quot;finished&quot;: &quot;2026-09-15T06:33:12&quot;,
+ &quot;total&quot;: 86,
+ &quot;already_done&quot;: 0,
+ &quot;done&quot;: 74,
+ &quot;failed&quot;: 3,
+ &quot;truncated&quot;: 1,
+ &quot;parse_failed&quot;: 1,
+ &quot;skipped_models&quot;: {
+  &quot;t-pro-it-2.1&quot;: &quot;несколько провалов подряд&quot;
+ },
+ &quot;last_error&quot;: &quot;t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run3 попытка 3: HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400&quot;
+}</pre><details><summary>События ночи</summary><ul><li>2026-09-15T03:51:29 google-gemma-4-31b-qat__v1_baseline__t0.7__2024_q3__run1: ответ непригоден (json=False, обрезан=True), подряд 1</li><li>2026-09-15T05:17:25 t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run1 попытка 1: HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400</li><li>2026-09-15T05:18:04 t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run1 попытка 2: HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400</li><li>2026-09-15T05:19:13 t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run1 попытка 3: HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400</li><li>2026-09-15T05:19:20 t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run2 попытка 1: HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400</li><li>2026-09-15T05:19:59 t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run2 попытка 2: HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400</li><li>2026-09-15T05:21:08 t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run2 попытка 3: HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400</li><li>2026-09-15T05:21:14 t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run3 попытка 1: HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400</li><li>2026-09-15T05:21:53 t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run3 попытка 2: HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400</li><li>2026-09-15T05:23:02 t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run3 попытка 3: HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400</li><li>2026-09-15T05:23:02 t-pro-it-2.1: пропускаю оставшиеся задания модели</li><li>2026-09-15T06:33:12 ночь завершена: сделано 74, провалов 3, с кэшем 6</li></ul></details><details><summary>Незавершённые задания (3)</summary><ul><li>{&quot;name&quot;: &quot;t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run1&quot;, &quot;attempt&quot;: 3, &quot;error&quot;: &quot;HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400&quot;, &quot;at&quot;: &quot;2026-09-15T05:19:13&quot;}</li><li>{&quot;name&quot;: &quot;t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run2&quot;, &quot;attempt&quot;: 3, &quot;error&quot;: &quot;HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400&quot;, &quot;at&quot;: &quot;2026-09-15T05:21:08&quot;}</li><li>{&quot;name&quot;: &quot;t-pro-it-2.1__v1_baseline__t0.7__2022_q4__run3&quot;, &quot;attempt&quot;: 3, &quot;error&quot;: &quot;HTTPStatusError: Client error &#x27;400 Bad Request&#x27; for url &#x27;http://localhost:50255/v1/chat/completions&#x27;\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400&quot;, &quot;at&quot;: &quot;2026-09-15T05:23:02&quot;}</li></ul></details><h2>2. Сводка по конфигурациям</h2><p class='x'>Конфигурация = модель | версия спеки | режим. unanimous_share — доля показателей, одинаковых во всех прогонах (главная метрика задания). alpha — согласие прогонов с поправкой на случайность, ≥0,8 надёжно, пусто = все прогоны одинаковы. sign — переворот знака (плохо), zero — ноль против ±1, amplitude — сила при том же знаке. verified/fabricated — цитата найдена в тексте / не найдена. sec_median — минут×60 на прогон.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>config</th>
+      <th>reports</th>
+      <th>runs</th>
+      <th>unanimous_share</th>
+      <th>alpha_pooled</th>
+      <th>sign_flips</th>
+      <th>zero_flips</th>
+      <th>amplitude_flips</th>
+      <th>verdict_stable_share</th>
+      <th>verified_share</th>
+      <th>fabricated_share</th>
+      <th>number_mismatch_share</th>
+      <th>parse_fail</th>
+      <th>truncated</th>
+      <th>cache_contaminated</th>
+      <th>sec_median</th>
+      <th>load_sec_median</th>
+      <th>battery_min</th>
+      <th>thermal_warnings</th>
+      <th>engine</th>
+      <th>prompt_tokens</th>
+      <th>completion_tokens</th>
+      <th>tok_per_sec</th>
+      <th>hidden_instability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>4</td>
+      <td>20</td>
+      <td>0.729</td>
+      <td>0.907</td>
+      <td>3</td>
+      <td>7</td>
+      <td>16</td>
+      <td>1.0</td>
+      <td>0.548</td>
+      <td>0.397</td>
+      <td>0.002</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>544.65</td>
+      <td>7.70</td>
+      <td>75</td>
+      <td>0</td>
+      <td>{'gguf': 'llama.cpp-mac-arm64-apple-metal-advsimd 2.37.0', 'safetensors': 'mlx-llm-mac-arm64-apple-metal-advsimd 1.11.0', 'pte': 'executorch-asr-mac-arm64-apple-metal-advsimd 0.0.8'}</td>
+      <td>14070.5</td>
+      <td>4924.5</td>
+      <td>9.00</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>4</td>
+      <td>20</td>
+      <td>0.312</td>
+      <td>0.598</td>
+      <td>10</td>
+      <td>39</td>
+      <td>17</td>
+      <td>0.5</td>
+      <td>0.452</td>
+      <td>0.540</td>
+      <td>0.008</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>196.50</td>
+      <td>7.35</td>
+      <td>80</td>
+      <td>0</td>
+      <td>{'gguf': 'llama.cpp-mac-arm64-apple-metal-advsimd 2.37.0', 'safetensors': 'mlx-llm-mac-arm64-apple-metal-advsimd 1.11.0', 'pte': 'executorch-asr-mac-arm64-apple-metal-advsimd 0.0.8'}</td>
+      <td>13923.0</td>
+      <td>2416.5</td>
+      <td>12.55</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>4</td>
+      <td>8</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.896</td>
+      <td>0.052</td>
+      <td>0.000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>294.65</td>
+      <td>10.75</td>
+      <td>80</td>
+      <td>0</td>
+      <td>{'gguf': 'llama.cpp-mac-arm64-apple-metal-advsimd 2.37.0', 'safetensors': 'mlx-llm-mac-arm64-apple-metal-advsimd 1.11.0', 'pte': 'executorch-asr-mac-arm64-apple-metal-advsimd 0.0.8'}</td>
+      <td>13961.0</td>
+      <td>2327.5</td>
+      <td>7.85</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>2</td>
+      <td>6</td>
+      <td>0.979</td>
+      <td>0.990</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1.0</td>
+      <td>0.854</td>
+      <td>0.104</td>
+      <td>0.000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6</td>
+      <td>135.55</td>
+      <td>0.40</td>
+      <td>80</td>
+      <td>0</td>
+      <td>{'gguf': 'llama.cpp-mac-arm64-apple-metal-advsimd 2.37.0', 'safetensors': 'mlx-llm-mac-arm64-apple-metal-advsimd 1.11.0', 'pte': 'executorch-asr-mac-arm64-apple-metal-advsimd 0.0.8'}</td>
+      <td>13393.5</td>
+      <td>2179.5</td>
+      <td>16.95</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>4</td>
+      <td>20</td>
+      <td>0.614</td>
+      <td>0.862</td>
+      <td>6</td>
+      <td>11</td>
+      <td>20</td>
+      <td>1.0</td>
+      <td>0.890</td>
+      <td>0.054</td>
+      <td>0.004</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>293.05</td>
+      <td>10.90</td>
+      <td>73</td>
+      <td>0</td>
+      <td>{'gguf': 'llama.cpp-mac-arm64-apple-metal-advsimd 2.37.0', 'safetensors': 'mlx-llm-mac-arm64-apple-metal-advsimd 1.11.0', 'pte': 'executorch-asr-mac-arm64-apple-metal-advsimd 0.0.8'}</td>
+      <td>13961.0</td>
+      <td>2235.5</td>
+      <td>7.60</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table><h2>3. Проверки здравого смысла</h2><p class='x'>Соотношения, которые обязана дать любая осмысленная система (из задания).</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>config</th>
+      <th>check</th>
+      <th>ok</th>
+      <th>detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>T=0 прогоны 2022_q4 совпали побайтово</td>
+      <td>True</td>
+      <td>разных ответов: 1 из 2; из кэша токенов: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>T=0 прогоны 2023_q4 совпали побайтово</td>
+      <td>True</td>
+      <td>разных ответов: 1 из 2; из кэша токенов: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>T=0 прогоны 2024_q3 совпали побайтово</td>
+      <td>True</td>
+      <td>разных ответов: 1 из 2; из кэша токенов: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>T=0 прогоны 2026_q2 совпали побайтово</td>
+      <td>True</td>
+      <td>разных ответов: 1 из 2; из кэша токенов: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>T=0 прогоны 2022_q4 совпали побайтово</td>
+      <td>False</td>
+      <td>разных ответов: 2 из 3; из кэша токенов: 29696</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>T=0 прогоны 2026_q2 совпали побайтово</td>
+      <td>False</td>
+      <td>разных ответов: 2 из 3; из кэша токенов: 31744</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4 — самая низкая сумма</td>
+      <td>True</td>
+      <td>2022_q4=2, min=2</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2026_q2 — в верхней трети</td>
+      <td>True</td>
+      <td>место 2 из 4</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>резервы выросли → не плюс</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>CIR снизился → не минус</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>2022_q4 — самая низкая сумма</td>
+      <td>True</td>
+      <td>2022_q4=2, min=2</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>2026_q2 — в верхней трети</td>
+      <td>True</td>
+      <td>место 2 из 4</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>резервы выросли → не плюс</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>CIR снизился → не минус</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2022_q4 — самая низкая сумма</td>
+      <td>True</td>
+      <td>2022_q4=-1, min=-1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2 — в верхней трети</td>
+      <td>True</td>
+      <td>место 2 из 4</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>резервы выросли → не плюс</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>CIR снизился → не минус</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>2022_q4 — самая низкая сумма</td>
+      <td>True</td>
+      <td>2022_q4=-1, min=-1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>резервы выросли → не плюс</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>CIR снизился → не минус</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>2022_q4 — самая низкая сумма</td>
+      <td>True</td>
+      <td>2022_q4=0, min=0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>2026_q2 — в верхней трети</td>
+      <td>True</td>
+      <td>место 2 из 4</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>резервы выросли → не плюс</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>CIR снизился → не минус</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+  </tbody>
+</table><h2>4. Устойчивость по отчётам</h2><p class='x'>margin_to_threshold — насколько сумма далека от порога strong/mixed/weak: чем меньше, тем легче вывод перевернуть. unstable — какие показатели разошлись.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>config</th>
+      <th>report</th>
+      <th>runs</th>
+      <th>unanimous_share</th>
+      <th>alpha</th>
+      <th>sign_flips</th>
+      <th>zero_flips</th>
+      <th>amplitude_flips</th>
+      <th>sum_min</th>
+      <th>sum_max</th>
+      <th>modal_sum</th>
+      <th>verdict_modal</th>
+      <th>verdict_stable</th>
+      <th>margin_to_threshold</th>
+      <th>fabricated_share</th>
+      <th>number_mismatch_share</th>
+      <th>not_mentioned_share</th>
+      <th>unstable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>5</td>
+      <td>0.708</td>
+      <td>0.936</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>mixed</td>
+      <td>True</td>
+      <td>10.0</td>
+      <td>0.142</td>
+      <td>0.008</td>
+      <td>0.042</td>
+      <td>fee_income, opex, cir, cor, market_share, digital_metrics, tech_development</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>5</td>
+      <td>0.792</td>
+      <td>0.867</td>
+      <td>0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>29.0</td>
+      <td>33.0</td>
+      <td>30</td>
+      <td>strong</td>
+      <td>True</td>
+      <td>18.0</td>
+      <td>0.667</td>
+      <td>0.000</td>
+      <td>0.083</td>
+      <td>cor, market_share, digital_metrics, tech_development, ceo_tone</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2024_q3</td>
+      <td>4</td>
+      <td>0.583</td>
+      <td>0.791</td>
+      <td>1</td>
+      <td>6</td>
+      <td>3</td>
+      <td>5.0</td>
+      <td>11.0</td>
+      <td>9</td>
+      <td>mixed</td>
+      <td>True</td>
+      <td>3.0</td>
+      <td>0.562</td>
+      <td>0.000</td>
+      <td>0.042</td>
+      <td>roe, cor, provisions, portfolio_quality, customer_funds, market_share, capital_adequacy, book_value_per_share, digital_metrics, ceo_tone</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2026_q2</td>
+      <td>5</td>
+      <td>0.833</td>
+      <td>0.907</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>16.0</td>
+      <td>21.0</td>
+      <td>18</td>
+      <td>strong</td>
+      <td>True</td>
+      <td>6.0</td>
+      <td>0.250</td>
+      <td>0.000</td>
+      <td>0.042</td>
+      <td>cir, customer_funds, digital_metrics, ceo_tone</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>5</td>
+      <td>0.625</td>
+      <td>0.908</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+      <td>0.0</td>
+      <td>3.0</td>
+      <td>2</td>
+      <td>mixed</td>
+      <td>True</td>
+      <td>10.0</td>
+      <td>0.200</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>fee_income, cir, cor, provisions, corporate_loans, dividends, tech_development, external_conditions, ceo_tone</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>5</td>
+      <td>0.292</td>
+      <td>0.335</td>
+      <td>2</td>
+      <td>7</td>
+      <td>8</td>
+      <td>21.0</td>
+      <td>31.0</td>
+      <td>28</td>
+      <td>strong</td>
+      <td>True</td>
+      <td>16.0</td>
+      <td>0.625</td>
+      <td>0.033</td>
+      <td>0.000</td>
+      <td>net_profit, eps, roe, nii, opex, cir, provisions, corporate_loans, retail_loans, customer_funds, market_share, capital_adequacy, dividends, book_value_per_share, active_clients, digital_metrics, external_conditions</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>2024_q3</td>
+      <td>5</td>
+      <td>0.208</td>
+      <td>0.509</td>
+      <td>6</td>
+      <td>9</td>
+      <td>4</td>
+      <td>8.0</td>
+      <td>13.0</td>
+      <td>9</td>
+      <td>mixed</td>
+      <td>False</td>
+      <td>3.0</td>
+      <td>0.750</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>net_profit, eps, roe, guidance, nii, opex, cir, cor, provisions, portfolio_quality, retail_loans, customer_funds, market_share, dividends, book_value_per_share, active_clients, digital_metrics, external_conditions, ceo_tone</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>2026_q2</td>
+      <td>5</td>
+      <td>0.125</td>
+      <td>0.392</td>
+      <td>1</td>
+      <td>19</td>
+      <td>1</td>
+      <td>7.0</td>
+      <td>25.0</td>
+      <td>24</td>
+      <td>strong</td>
+      <td>False</td>
+      <td>12.0</td>
+      <td>0.583</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>net_profit, eps, roe, guidance, nii, fee_income, nim, opex, cir, cor, provisions, portfolio_quality, corporate_loans, retail_loans, customer_funds, capital_adequacy, book_value_per_share, active_clients, digital_metrics, external_conditions, ceo_tone</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2022_q4</td>
+      <td>2</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-1.0</td>
+      <td>-1.0</td>
+      <td>-1</td>
+      <td>mixed</td>
+      <td>True</td>
+      <td>11.0</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.042</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>31.0</td>
+      <td>31.0</td>
+      <td>31</td>
+      <td>strong</td>
+      <td>True</td>
+      <td>19.0</td>
+      <td>0.042</td>
+      <td>0.000</td>
+      <td>0.083</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2024_q3</td>
+      <td>2</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>6.0</td>
+      <td>6.0</td>
+      <td>6</td>
+      <td>mixed</td>
+      <td>True</td>
+      <td>6.0</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.042</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>2</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>24.0</td>
+      <td>24.0</td>
+      <td>24</td>
+      <td>strong</td>
+      <td>True</td>
+      <td>12.0</td>
+      <td>0.167</td>
+      <td>0.000</td>
+      <td>0.042</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>2022_q4</td>
+      <td>3</td>
+      <td>1.000</td>
+      <td>1.000</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>-1.0</td>
+      <td>-1.0</td>
+      <td>-1</td>
+      <td>mixed</td>
+      <td>True</td>
+      <td>11.0</td>
+      <td>0.000</td>
+      <td>0.000</td>
+      <td>0.042</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>2026_q2</td>
+      <td>3</td>
+      <td>0.958</td>
+      <td>0.972</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>22.0</td>
+      <td>23.0</td>
+      <td>22</td>
+      <td>strong</td>
+      <td>True</td>
+      <td>10.0</td>
+      <td>0.208</td>
+      <td>0.000</td>
+      <td>0.042</td>
+      <td>ceo_tone</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>5</td>
+      <td>0.708</td>
+      <td>0.928</td>
+      <td>0</td>
+      <td>1</td>
+      <td>6</td>
+      <td>-2.0</td>
+      <td>2.0</td>
+      <td>0</td>
+      <td>mixed</td>
+      <td>True</td>
+      <td>12.0</td>
+      <td>0.008</td>
+      <td>0.000</td>
+      <td>0.042</td>
+      <td>fee_income, opex, cor, portfolio_quality, market_share, active_clients, external_conditions</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>5</td>
+      <td>0.458</td>
+      <td>0.754</td>
+      <td>1</td>
+      <td>2</td>
+      <td>10</td>
+      <td>29.0</td>
+      <td>31.0</td>
+      <td>30</td>
+      <td>strong</td>
+      <td>True</td>
+      <td>18.0</td>
+      <td>0.058</td>
+      <td>0.000</td>
+      <td>0.092</td>
+      <td>nii, fee_income, opex, cor, corporate_loans, retail_loans, customer_funds, market_share, capital_adequacy, active_clients, digital_metrics, external_conditions, ceo_tone</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>2024_q3</td>
+      <td>5</td>
+      <td>0.625</td>
+      <td>0.827</td>
+      <td>2</td>
+      <td>5</td>
+      <td>2</td>
+      <td>3.0</td>
+      <td>7.0</td>
+      <td>4</td>
+      <td>mixed</td>
+      <td>True</td>
+      <td>8.0</td>
+      <td>0.017</td>
+      <td>0.017</td>
+      <td>0.042</td>
+      <td>eps, roe, opex, cir, cor, capital_adequacy, book_value_per_share, active_clients, digital_metrics</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>2026_q2</td>
+      <td>5</td>
+      <td>0.667</td>
+      <td>0.786</td>
+      <td>3</td>
+      <td>3</td>
+      <td>2</td>
+      <td>14.0</td>
+      <td>22.0</td>
+      <td>17</td>
+      <td>strong</td>
+      <td>True</td>
+      <td>5.0</td>
+      <td>0.133</td>
+      <td>0.000</td>
+      <td>0.033</td>
+      <td>guidance, opex, cir, provisions, market_share, digital_metrics, tech_development, ceo_tone</td>
+    </tr>
+  </tbody>
+</table><h2>5. Капризные показатели</h2><p class='x'>В скольких отчётах показатель разошёлся между прогонами и как. hidden — оценка одна и та же, но цитаты из разных мест текста: скрытая нестабильность.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>config</th>
+      <th>indicator</th>
+      <th>unstable_reports</th>
+      <th>reports</th>
+      <th>sign</th>
+      <th>zero</th>
+      <th>amplitude</th>
+      <th>hidden</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>4</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>market_share · Доля рынка</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>2</td>
+      <td>4</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>customer_funds · Средства клиентов</td>
+      <td>2</td>
+      <td>4</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>tech_development · Технологическое развитие</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>opex · Операционные расходы</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>provisions · Расходы на резервы</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>active_clients · Активные клиенты</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>dividends · Дивиденды</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>external_conditions · Внешние условия</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>net_profit · Чистая прибыль</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>nii · Чистые процентные доходы</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>retail_loans · Розничный портфель</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>4</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>external_conditions · Внешние условия</td>
+      <td>4</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>provisions · Расходы на резервы</td>
+      <td>4</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>active_clients · Активные клиенты</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>3</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>3</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>customer_funds · Средства клиентов</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>dividends · Дивиденды</td>
+      <td>3</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>net_profit · Чистая прибыль</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>nii · Чистые процентные доходы</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>opex · Операционные расходы</td>
+      <td>3</td>
+      <td>4</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>retail_loans · Розничный портфель</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>3</td>
+      <td>4</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>2</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>market_share · Доля рынка</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>prism-ml/bonsai-27b | v1_baseline | t0.7</td>
+      <td>tech_development · Технологическое развитие</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>active_clients · Активные клиенты</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>customer_funds · Средства клиентов</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>dividends · Дивиденды</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>external_conditions · Внешние условия</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>market_share · Доля рынка</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>net_profit · Чистая прибыль</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>nii · Чистые процентные доходы</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>opex · Операционные расходы</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>provisions · Расходы на резервы</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>retail_loans · Розничный портфель</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>tech_development · Технологическое развитие</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>active_clients · Активные клиенты</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>customer_funds · Средства клиентов</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>dividends · Дивиденды</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>external_conditions · Внешние условия</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>market_share · Доля рынка</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>net_profit · Чистая прибыль</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>nii · Чистые процентные доходы</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>opex · Операционные расходы</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>provisions · Расходы на резервы</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>retail_loans · Розничный портфель</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</td>
+      <td>tech_development · Технологическое развитие</td>
+      <td>0</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>opex · Операционные расходы</td>
+      <td>4</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>active_clients · Активные клиенты</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>3</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>market_share · Доля рынка</td>
+      <td>3</td>
+      <td>4</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>2</td>
+      <td>4</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>2</td>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>external_conditions · Внешние условия</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>2</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>customer_funds · Средства клиентов</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>nii · Чистые процентные доходы</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>provisions · Расходы на резервы</td>
+      <td>1</td>
+      <td>4</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>retail_loans · Розничный портфель</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>tech_development · Технологическое развитие</td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>dividends · Дивиденды</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>net_profit · Чистая прибыль</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</td>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>0</td>
+      <td>4</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table><h2>6. Подозрительные цитаты</h2><p class='x'>fabricated — фразы нет в тексте отчёта; number_mismatch — фраза есть, но число в ней другое; empty_nonzero — оценка не ноль, а цитаты нет. Первые 60, полный список в metrics/items.csv.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>config</th>
+      <th>report</th>
+      <th>run</th>
+      <th>indicator</th>
+      <th>score</th>
+      <th>quote_status</th>
+      <th>quote</th>
+      <th>reasoning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>1</td>
+      <td>cir</td>
+      <td>-2</td>
+      <td>fabricated</td>
+      <td>Отношение операционных расходов к доходам составило 41,6% (34,0% в 2021 г., +7,6 пп г/г)</td>
+      <td>Рост CIR на 7,6 п.п. свидетельствует о снижении эффективности, что является существенным ухудшением для показателя состояния.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>1</td>
+      <td>provisions</td>
+      <td>-2</td>
+      <td>fabricated</td>
+      <td>Чистые расходы вслездствие изменения кредитного качества -555,4 -141,5 x4</td>
+      <td>Расходы на резервы выросли почти в 4 раза (с 141,5 до 555,4 млрд руб.), что крайне негативно для акционера.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>1</td>
+      <td>corporate_loans</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Корпоративный кредитный портфель прибавив 13,2% с начала года без учета валютной ПЕ[ЭЭОЦЕНКИ8</td>
+      <td>Рост корпоративного портфеля на 13,2% (в диапазоне 3-15%), умеренное улучшение.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>1</td>
+      <td>market_share</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Доля рынка за год выросла на 5,2 п.п. до 46,4% (по МСБ)</td>
+      <td>Значительный рост доли рынка в сегменте МСБ (+5,2 п.п.) и удержание лидерства в других сегментах.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>1</td>
+      <td>digital_metrics</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Число клиентов, использующих единый логин Сбер ID... составило 55 млн клиентов против 32,5 млн годом ранее.</td>
+      <td>Колоссальный рост числа пользователей Сбер ID (более 69% год к году), сильное улучшение цифровых метрик.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>1</td>
+      <td>tech_development</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>80% критического ИТ-ландшафта Сбера переведено в целевое состояние. ... миграция ~90% сервисов на технологический стек собственной разработки</td>
+      <td>Приведены конкретные измеримые факты по миграции на собственное ПО и достижению целей стратегии.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>2</td>
+      <td>cir</td>
+      <td>-1</td>
+      <td>fabricated</td>
+      <td>Отношение операционных расходов к доходам составило 41,6% (34,0% в 2021)</td>
+      <td>Рост CIR с 34,0% до 41,6% (+7,6 п.п.) означает снижение эффективности. Тип: состояние, ухудшение.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>2</td>
+      <td>provisions</td>
+      <td>-2</td>
+      <td>fabricated</td>
+      <td>За 2022 год чистые расходы на создание резервов на кредитный риск... составили 555 млрд руб. (против -141,5 млрд в 2021)</td>
+      <td>Резкий рост расходов на резервы (в 4 раза). Тип: поток, сильное ухудшение.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>2</td>
+      <td>corporate_loans</td>
+      <td>1</td>
+      <td>number_mismatch</td>
+      <td>Кредиты юридическим лицам 18 608 16 711 11,7%</td>
+      <td>Рост корпоративного портфеля на 11,7% год к году. Тип: поток, умеренное улучшение.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>2</td>
+      <td>ceo_tone</td>
+      <td>-2</td>
+      <td>fabricated</td>
+      <td>«2022 год стал сложнейшим годом для нашей страны и банковского сектора... Мы реализовали антикризисный план: радикально пересмотрели приоритеты, ввели меры строжайшей экономии»</td>
+      <td>Использование антикризисной риторики, признание экстремальных сложностей. Соответствует примеру на -2 в спецификации.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>3</td>
+      <td>cir</td>
+      <td>-2</td>
+      <td>fabricated</td>
+      <td>Отношение операционных расходов к операционным доходам 41,6% 34,0% 7,6 пп</td>
+      <td>Рост отношения расходов к доходам на 7,6 п.п. является сильным ухудшением эффективности.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>4</td>
+      <td>cir</td>
+      <td>-2</td>
+      <td>fabricated</td>
+      <td>Отношение операционных расходов к операционным доходам 41,6% 34,0% 7,6 пп</td>
+      <td>Рост CIR на 7,6 п.п. является сильным ухудшением эффективности.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>4</td>
+      <td>provisions</td>
+      <td>-2</td>
+      <td>fabricated</td>
+      <td>За 2022 год чистые расходы на создание резервов на кредитный риск... составили 555 млрд руб. (в 2021 году 141,5 млрд руб.)</td>
+      <td>Резкий рост расходов на резервы (почти в 4 раза) является сильным ухудшением.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>4</td>
+      <td>digital_metrics</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Число клиентов, использующих единый логин Сбер ID... составило 55 млн клиентов против 32,5 млн годом ранее.</td>
+      <td>Значительный рост числа пользователей Сбер ID (&gt;60%) и MAU/DAU является сильным улучшением.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>5</td>
+      <td>cir</td>
+      <td>-2</td>
+      <td>fabricated</td>
+      <td>Отношение операционных расходов к доходам составило 41,6%... 34,0% 7,6 пп</td>
+      <td>Рост CIR на 7,6 п.п. свидетельствует об ухудшении эффективности.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>5</td>
+      <td>provisions</td>
+      <td>-2</td>
+      <td>fabricated</td>
+      <td>За 2022 год чистые расходы на создание резервов на кредитный риск... составили 555 млрд руб.</td>
+      <td>Сравнение с прошлым годом (141,5 млрд руб. в таблице) показывает резкий рост расходов на резервы.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>5</td>
+      <td>digital_metrics</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Число клиентов, использующих единый логин Сбер ID... составило 55 млн клиентов против 32,5 млн годом ранее.</td>
+      <td>Резкий рост пользователей Сбер ID (+69%) и MAU/DAU СберБанк Онлайн.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2022_q4</td>
+      <td>5</td>
+      <td>external_conditions</td>
+      <td>-2</td>
+      <td>fabricated</td>
+      <td>2022 год стал сложнейшим годом для нашей страны и банковского сектора. В отношении российской экономики и крупнейших компаний... были введены блокирующие санкции.</td>
+      <td>Описано резкое ухудшение внешней среды: санкции, отток средств, рост ставок.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>eps</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Прибыль/ (убыток) на обыкновенную акцию, руб. 69,10 [2023] ... 13,20 [2022] ... х5,2</td>
+      <td>Рост прибыли на акцию в 5,2 раза значительно превышает порог в 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>roe</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Рентабельность капитала (ROE) 25,3% [2023] ... 5,2% [2022] ... 20,1 пп</td>
+      <td>Рост ROE на 20,1 п.п. значительно выше порога в 1,5 п.п.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>nim</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Чистая процентная маржа 5,98% [2023] ... 5,32% [2022] ... 0,66 пп</td>
+      <td>Рост маржи на 0,66 п.п. находится в диапазоне от 0,3 до 1,5 п.п.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>opex</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Операционный доход Группы до резервов ... увеличившись на 66,3% г/г ... Рост операционных расходов за 2023 год составил 27,2%</td>
+      <td>Расходы растут медленнее доходов (разрыв 39,1 п.п.), что значительно больше 10 п.п.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>cir</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Отношение операционных расходов к операционным доходам 29,2% [2023] ... 38,2% [2022] ... -9,0 пп</td>
+      <td>Снижение CIR на 9,0 п.п. является сильным улучшением эффективности.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>cor</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Стоимость риска (кредиты по амортизированной и справедливой стоимости) 0,8% [2023] ... 1,9% [2022] ... -1,1 пп</td>
+      <td>Снижение стоимости риска на 1,1 п.п. находится в диапазоне от 0,3 до 1,5 п.п.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>provisions</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Совокупные расходы на резервы ... составили ... 265,0 млрд руб. за 12M 2023 года и снизились на 52,3% г/г</td>
+      <td>Снижение расходов на резервы более чем на 15% является сильным позитивным фактором.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>corporate_loans</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Корпоративный кредитный портфель вырос ... на 25,2% с начала года</td>
+      <td>Рост портфеля на 25,2% выше порога в 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>retail_loans</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Розничный кредитный портфель вырос ... на 29,3% с начала года</td>
+      <td>Рост портфеля на 29,3% выше порога в 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>customer_funds</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Средства клиентов: 36 694 [2023] ... 29 876 [2022] ... 22,8% [изменение]</td>
+      <td>Рост средств клиентов на 22,8% выше порога в 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>capital_adequacy</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Коэффициент достаточности капитала банковской группы H20.02 составил 13,7% на конец 2023 года [изменение с начала года] 0,5 пп</td>
+      <td>Рост достаточности капитала на 0,5 п.п. находится в диапазоне от 0,3 до 1,5 п.п.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>book_value_per_share</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Балансовая стоимость на акцию, руб. 291,5 [2023] ... 255,8 [2022] ... 14,0% [изменение]</td>
+      <td>Рост балансовой стоимости акции на 14,0% находится в диапазоне от 3% до 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>active_clients</td>
+      <td>0</td>
+      <td>fabricated</td>
+      <td>количество активных клиентов-физических лиц ... увеличилось за год, на 2,1 млн человек AO 108,5 млн</td>
+      <td>Прирост физлиц ~2%, что ниже порога значимости 3%. Рост корп. клиентов с 3.0 до 3.2 млн (~6.7%) не компенсирует общую динамику базы.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>digital_metrics</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Количество активных ежемесячных пользователей (MAU) СберБанк Онлайн (appt+web) составило 81,9 млн человек [против] 78,6 [в 2022]</td>
+      <td>Рост MAU составил около 4,2%, что находится в диапазоне от 3% до 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>tech_development</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Количество уникальных пользователей GigaChat уже достигло 2,6 млн человек. ... GigaCode помогает разработчикам Сбера писать более 20% кода в день.</td>
+      <td>Приведены конкретные измеримые факты внедрения ИИ и количество пользователей.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>1</td>
+      <td>external_conditions</td>
+      <td>-1</td>
+      <td>fabricated</td>
+      <td>Портфель потребительских кредитов снизился на 1,4% в 4 квартале ... что связано с ужесточением регулирования.</td>
+      <td>Упоминается негативное влияние регуляторных условий на бизнес.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>eps</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Прибыль на обыкновенную акцию, руб. 12 месяцев 2023г. 69,10 12 месяцев 2022г. 13,20 х5,2</td>
+      <td>Рост прибыли на акцию в 5,2 раза значительно превышает порог в 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>roe</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Рентабельность капитала* 12 месяцев 2023г. 25,3% 12 месяцев 2022г. 5,2% 20,1 пп</td>
+      <td>Рост ROE на 20,1 п.п. значительно выше порога в 1,5 п.п.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>nim</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Чистая процентная маржа 12 месяцев 2023г. 5,98% 12 месяцев 2022г. 5,32% 0,66 nn</td>
+      <td>Рост NIM на 0,66 п.п. находится в диапазоне от 0,3 до 1,5 п.п.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>opex</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Операционный доход Группы... 12 месяцев 2023г. 3 165,0... 12 месяцев 2022г. 1 902,9 66,3% Операционные расходы... 12 месяцев 2023г. -924,4 12 месяцев 2022г. -726,5 27,2%</td>
+      <td>Операционные расходы выросли на 27,2%, что значительно медленнее роста доходов (66,3%), разрыв более 10 п.п.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>cir</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Отношение операционных расходов к операционным доходам 12 месяцев 2023г. 29,2% 12 месяцев 2022г. 38,2% "9,0 пп</td>
+      <td>Снижение CIR на 9,0 п.п. является сильным улучшением эффективности.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>cor</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Стоимость риска... 12 месяцев 2023г. 0,8% 12 месяцев 2022г. 1,9% -1,1 пп</td>
+      <td>Снижение стоимости риска на 1,1 п.п. является значительным улучшением качества активов.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>provisions</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Совокупные расходы на резервы... составили... 265,0 млрд руб. за 12M 2023 года и снизились на 52,3% г/г</td>
+      <td>Снижение расходов на резервы на 52,3% — сильный положительный сигнал для акционера.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>corporate_loans</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Кредиты юридическим лицам 31.12.2023 23 306 31.12.2022 18 608... с начала года 25,2%</td>
+      <td>Рост корпоративного портфеля на 25,2% выше порога в 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>retail_loans</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Кредиты физическим лицам 31.12.2023 16 075 31.12.2022 12 430... с начала года 29,3%</td>
+      <td>Рост розничного портфеля на 29,3% выше порога в 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>customer_funds</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Средства клиентов: 31.12.2023 36 694 31.12.2022 29 876... с начала года 22,8%</td>
+      <td>Рост средств клиентов на 22,8% выше порога в 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>capital_adequacy</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Коэффициент достаточности капитала банковской группы H20.02 составил 13,7% на конец 2023 года. ...изменение с начала года 0,5 пп</td>
+      <td>Рост достаточности капитала на 0,5 п.п. находится в диапазоне от 0,3 до 1,5 п.п.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>book_value_per_share</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Балансовая стоимость й й на акцию, руб. 31.12.2023 291,5 31.12.2022 255,8... изменение с начала года 14,0%</td>
+      <td>Рост балансовой стоимости акции на 14% находится в диапазоне от 3% до 15%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>active_clients</td>
+      <td>0</td>
+      <td>fabricated</td>
+      <td>Количество активных клиентов-физических лиц 108,5 106,4 2,1 Количество активных корпоративных клиентов 3,2 3,0 0,2</td>
+      <td>Суммарный рост активных клиентов (физ+юр) составил около 2,1%, что ниже порога значимости в 3%.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>tech_development</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Число пользователей GigaChat уже достигло 2,6 млн человек. ...экономический эффект от его использования достиг 350 млрд рублей.</td>
+      <td>Приведены измеримые факты внедрения ИИ и конкретные цифры по пользователям и экономическому эффекту.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>external_conditions</td>
+      <td>-1</td>
+      <td>fabricated</td>
+      <td>Повышенный спрос на ипотечные продукты прежде всего связан с ужесточением условий NO программам льготной ипотеки с государственной поддержкой. ...связано с ужесточением регулирования.</td>
+      <td>Упоминается ужесточение условий льготной ипотеки и регуляторных требований, что является ухудшением внешних условий.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>2</td>
+      <td>ceo_tone</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Сбер заработал рекордную за всю историю Группы чистую прибыль в 1 508,6 млрд руб... Именно эти приоритеты позволят нам обеспечить долгосрочную устойчивость бизнеса Сбера и создавать ценность OA наших акционеров</td>
+      <td>Тональность уверенная, акцент на рекордных результатах и создании ценности для акционеров.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>3</td>
+      <td>eps</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Прибыль/ (убыток) на обыкновенную акцию, руб. ... 69,10 ... 13,20 ... х5,2</td>
+      <td>Рост прибыли на акцию в 5,2 раза (&gt;15% год к году).</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>3</td>
+      <td>roe</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Рентабельность капитала (ROE) ... 25,3% ... 5,2% ... 20,1 пп</td>
+      <td>Рост ROE на 20,1 п.п. (&gt;1,5 п.п.).</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>3</td>
+      <td>nim</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Чистая процентная маржа ... 5,98% ... 5,32% ... 0,66 пп</td>
+      <td>Рост маржи на 0,66 п.п. (в диапазоне 0,3-1,5 п.п.).</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>3</td>
+      <td>opex</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Операционный доход Группы до резервов ... увеличившись на 66,3% г/г ... Рост операционных расходов за 2023 год составил 27,2%</td>
+      <td>Расходы растут значительно медленнее доходов (разрыв 39,1 п.п. &gt; 10 п.п.).</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>3</td>
+      <td>cir</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Мы впервые достигли уровня CIR (отношение расходов к доходам) ниже 30% по Группе ... 29,2% ... 38,2% ... -9,0 пп</td>
+      <td>Снижение CIR на 9,0 п.п. (&gt;1,5 п.п.).</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>3</td>
+      <td>cor</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Стоимость риска составила ... 0,8% за 12М 2023 года ... 1,9% ... -1,1 пп</td>
+      <td>Снижение стоимости риска на 1,1 п.п. (в диапазоне 0,3-1,5 п.п.).</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>3</td>
+      <td>provisions</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Совокупные расходы на резервы ... составили ... 265,0 млрд руб. за 12M 2023 года и снизились на 52,3% г/г</td>
+      <td>Снижение расходов на резервы на 52,3% (&gt;15%), что положительно для акционера.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>3</td>
+      <td>portfolio_quality</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Качество кредитного портфеля в 4 квартале 2023 года улучшилось. Jona кредитов 3 стадии, включая изначально обесцененные, снизилась до 3,4% в 4 квартале 2023 года (-0,4 пп за квартал).</td>
+      <td>Снижение доли проблемных кредитов 3 стадии свидетельствует об улучшении качества портфеля.</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>3</td>
+      <td>corporate_loans</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Корпоративный кредитный портфель вырос ... на 25,2% с начала года</td>
+      <td>Рост корпоративного портфеля на 25,2% (&gt;15%).</td>
+    </tr>
+    <tr>
+      <td>google/gemma-4-31b-qat | v1_baseline | t0.7</td>
+      <td>2023_q4</td>
+      <td>3</td>
+      <td>retail_loans</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Розничный кредитный портфель вырос ... на 29,3% с начала года go 16,1 трлн руб.</td>
+      <td>Рост розничного портфеля на 29,3% (&gt;15%).</td>
+    </tr>
+  </tbody>
+</table><h2>7. Итоговая таблица: google/gemma-4-31b-qat | v1_baseline | t0.7</h2><p class='x'>Мода по прогонам. Сумму и вывод считает Python, не модель.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>report</th>
+      <th>показатель</th>
+      <th>2022_q4</th>
+      <th>2023_q4</th>
+      <th>2024_q3</th>
+      <th>2026_q2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>net_profit · Чистая прибыль</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>-2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nii · Чистые процентные доходы</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>opex · Операционные расходы</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>-1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>provisions · Расходы на резервы</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>-2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>retail_loans · Розничный портфель</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>customer_funds · Средства клиентов</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>market_share · Доля рынка</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>1</td>
+      <td>1</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>dividends · Дивиденды</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>active_clients · Активные клиенты</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>tech_development · Технологическое развитие</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>external_conditions · Внешние условия</td>
+      <td>-2</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>СУММА</td>
+      <td>2</td>
+      <td>30</td>
+      <td>9</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ВЫВОД</td>
+      <td>mixed</td>
+      <td>strong</td>
+      <td>mixed</td>
+      <td>strong</td>
+    </tr>
+  </tbody>
+</table><h2>7. Итоговая таблица: prism-ml/bonsai-27b | v1_baseline | t0.7</h2><p class='x'>Мода по прогонам. Сумму и вывод считает Python, не модель.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>report</th>
+      <th>показатель</th>
+      <th>2022_q4</th>
+      <th>2023_q4</th>
+      <th>2024_q3</th>
+      <th>2026_q2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>net_profit · Чистая прибыль</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nii · Чистые процентные доходы</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>opex · Операционные расходы</td>
+      <td>1</td>
+      <td>1</td>
+      <td>-1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>-1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>-1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>provisions · Расходы на резервы</td>
+      <td>-1</td>
+      <td>1</td>
+      <td>-2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>retail_loans · Розничный портфель</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>customer_funds · Средства клиентов</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>market_share · Доля рынка</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>1</td>
+      <td>1</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>dividends · Дивиденды</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>active_clients · Активные клиенты</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>tech_development · Технологическое развитие</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>external_conditions · Внешние условия</td>
+      <td>-1</td>
+      <td>0</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>СУММА</td>
+      <td>2</td>
+      <td>28</td>
+      <td>9</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ВЫВОД</td>
+      <td>mixed</td>
+      <td>strong</td>
+      <td>mixed</td>
+      <td>strong</td>
+    </tr>
+  </tbody>
+</table><h2>7. Итоговая таблица: qwen3.8-27b-mlx@4bit | v1_baseline | t0</h2><p class='x'>Мода по прогонам. Сумму и вывод считает Python, не модель.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>report</th>
+      <th>показатель</th>
+      <th>2022_q4</th>
+      <th>2023_q4</th>
+      <th>2024_q3</th>
+      <th>2026_q2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>net_profit · Чистая прибыль</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nii · Чистые процентные доходы</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>opex · Операционные расходы</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>-1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>provisions · Расходы на резервы</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>-2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>retail_loans · Розничный портфель</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>customer_funds · Средства клиентов</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>market_share · Доля рынка</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>1</td>
+      <td>1</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>dividends · Дивиденды</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>active_clients · Активные клиенты</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>tech_development · Технологическое развитие</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>external_conditions · Внешние условия</td>
+      <td>-2</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>-1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>СУММА</td>
+      <td>-1</td>
+      <td>31</td>
+      <td>6</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ВЫВОД</td>
+      <td>mixed</td>
+      <td>strong</td>
+      <td>mixed</td>
+      <td>strong</td>
+    </tr>
+  </tbody>
+</table><h2>7. Итоговая таблица: qwen3.8-27b-mlx@4bit | v1_baseline | t0-warm</h2><p class='x'>Мода по прогонам. Сумму и вывод считает Python, не модель.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>report</th>
+      <th>показатель</th>
+      <th>2022_q4</th>
+      <th>2026_q2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>net_profit · Чистая прибыль</td>
+      <td>-2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>-2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>-2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nii · Чистые процентные доходы</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>opex · Операционные расходы</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>-2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>provisions · Расходы на резервы</td>
+      <td>-2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>retail_loans · Розничный портфель</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>customer_funds · Средства клиентов</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>market_share · Доля рынка</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>dividends · Дивиденды</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>active_clients · Активные клиенты</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>tech_development · Технологическое развитие</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>external_conditions · Внешние условия</td>
+      <td>-2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>-2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>СУММА</td>
+      <td>-1</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ВЫВОД</td>
+      <td>mixed</td>
+      <td>strong</td>
+    </tr>
+  </tbody>
+</table><h2>7. Итоговая таблица: qwen3.8-27b-mlx@4bit | v1_baseline | t0.7</h2><p class='x'>Мода по прогонам. Сумму и вывод считает Python, не модель.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>report</th>
+      <th>показатель</th>
+      <th>2022_q4</th>
+      <th>2023_q4</th>
+      <th>2024_q3</th>
+      <th>2026_q2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>net_profit · Чистая прибыль</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>0</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>-2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nii · Чистые процентные доходы</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>opex · Операционные расходы</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>-1</td>
+      <td>1</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>provisions · Расходы на резервы</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>-2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>retail_loans · Розничный портфель</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>customer_funds · Средства клиентов</td>
+      <td>1</td>
+      <td>2</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>market_share · Доля рынка</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>1</td>
+      <td>1</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>dividends · Дивиденды</td>
+      <td>1</td>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>active_clients · Активные клиенты</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>tech_development · Технологическое развитие</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>external_conditions · Внешние условия</td>
+      <td>-2</td>
+      <td>-1</td>
+      <td>-1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>-2</td>
+      <td>2</td>
+      <td>-1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>СУММА</td>
+      <td>0</td>
+      <td>30</td>
+      <td>4</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ВЫВОД</td>
+      <td>mixed</td>
+      <td>strong</td>
+      <td>mixed</td>
+      <td>strong</td>
+    </tr>
+  </tbody>
+</table>

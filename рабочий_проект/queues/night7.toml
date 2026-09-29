@@ -1,0 +1,357 @@
+# Ночь 19→20.09 — собрана src/make_queue7.py.
+#
+# ГЛАВНОЕ: v7_extract (две ячейки периода, выбор кодом) против v5_extract на том же новом тексте, по 10 прогонов.
+# ПРЕДСКАЗАНИЕ (записано 19.09 21:10 до прогона):
+#   1. у v7 плавающих числовых клеток меньше, чем у v5 на новом тексте, минимум вдвое (v5: 9 из 68 на 3 прогонах);
+#   2. плавание из-за выбора периода (eps, net_profit, roe, cor, cir) у v7 исчезает;
+#   3. доля подтверждённых цитат не ниже, чем у v5 (0,913).
+#   Если 1 не выполнено — модель путает и раскладку по ячейкам; тогда выбор периода надо делать до модели
+#   (подать ей только одну колонку), и это вывод для записки.
+# ДОБОР E-OCR: база старый/новый текст и извлечение на старом — до 6 прогонов на отчёт (было предрегистрировано 10;
+#   сокращено, потому что главный вопрос сместился к выбору периода; отклонение записано в ночь_6.md).
+# Затем T=0 (боевой режим) на всех 15 отчётах: v7 и база на новом тексте. Запас: нетронутые кварталы v7, Gemma.
+
+# ══════ v7 против v5 (извлечение, новый текст) + добор E-OCR — вперемешку ══════
+
+# круг 1
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 1
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 4
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 9
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 4
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 4
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+ctx = 32768
+
+# круг 2
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 2
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 10
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+ctx = 32768
+
+# круг 3
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 6
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 11
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 6
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 6
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+ctx = 32768
+
+# круг 4
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 4
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 7
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 5
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 8
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 6
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 6
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 9
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 7
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 7
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 10
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 8
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 8
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+# круг 9
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 9
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+# круг 10
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 10
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+
+# ══════ Боевой режим T=0, все 15 отчётов на новом тексте ══════
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2023_q1", "2023_q2", "2023_q3", "2023_q4", "2024_q1", "2024_q2", "2024_q3", "2024_q4", "2025_q1", "2025_q2", "2025_q3", "2025_q4", "2026_q1", "2026_q2"]
+runs = 1
+temperature = 0
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2023_q1", "2023_q2", "2023_q3", "2023_q4", "2024_q1", "2024_q2", "2024_q3", "2024_q4", "2025_q1", "2025_q2", "2025_q3", "2025_q4", "2026_q1", "2026_q2"]
+runs = 1
+temperature = 0
+text = "v2"
+ctx = 32768
+
+
+# ══════ Запас: H28 — нетронутые кварталы, v7 по 3 прогона ══════
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2023_q1", "2023_q3", "2024_q1", "2024_q2", "2025_q1", "2025_q2", "2025_q4", "2026_q1"]
+runs = 3
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+
+# ══════ Глубокий запас: Gemma на новом тексте (правильность без эталона, L12) ══════
+
+[[job]]
+model = "google/gemma-4-31b-qat"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 20480

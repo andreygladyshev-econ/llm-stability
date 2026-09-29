@@ -1,0 +1,31 @@
+# Smoke-тест всех режимов первой ночи на короткой выдержке (2 страницы 2026_q2).
+# Результаты переносятся в raw/_archive/, в статистику не идут.
+
+# Qwen, боевой режим: 2 прогона с перезагрузкой → должны совпасть побайтово, кэш = 0
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v1_baseline"
+reports = ["smoke_mini"]
+runs = 2
+temperature = 0
+ctx = 32768
+
+# Qwen с размышлением: JSON в обычном тексте после черновика, сколько длится
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v1_baseline"
+reports = ["smoke_mini"]
+runs = 1
+temperature = 0.7
+think = true
+ctx = 32768
+max_tokens = 16000
+
+# Gemma: строгий JSON без подстановки <think>, скорость, память
+[[job]]
+model = "google/gemma-4-31b-qat"
+spec = "v1_baseline"
+reports = ["smoke_mini"]
+runs = 1
+temperature = 0.7
+ctx = 20480

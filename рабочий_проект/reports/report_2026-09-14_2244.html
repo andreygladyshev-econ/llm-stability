@@ -1,0 +1,667 @@
+<meta charset='utf-8'><title>Утренний отчёт</title><style>body{font:14px/1.45 -apple-system,system-ui,sans-serif;margin:24px;color:#1b1b1b;background:#fafaf8}h1{font-size:22px}h2{font-size:17px;margin-top:32px;border-top:1px solid #ddd;padding-top:16px}.x{color:#555;max-width:900px}.t{border-collapse:collapse;font-size:12px;margin:8px 0}.t td,.t th{padding:4px 8px;border-bottom:1px solid #e5e5e5;text-align:left;vertical-align:top;max-width:420px}.t th{background:#f0f0ec;position:sticky;top:0}pre{background:#f0f0ec;padding:10px;overflow-x:auto}</style><h1>Утренний отчёт · 14.09.2026 22:44</h1><h2>1. Как прошла ночь</h2><p class='x'>Сколько заданий сделано, что сломалось, какие модели пропущены и почему.</p><pre>{
+ &quot;started&quot;: &quot;2026-09-14T22:37:22&quot;,
+ &quot;finished&quot;: &quot;2026-09-14T22:44:52&quot;,
+ &quot;total&quot;: 2,
+ &quot;already_done&quot;: 0,
+ &quot;done&quot;: 2,
+ &quot;failed&quot;: 0,
+ &quot;truncated&quot;: 0,
+ &quot;parse_failed&quot;: 0,
+ &quot;skipped_models&quot;: {},
+ &quot;last_error&quot;: null
+}</pre><details><summary>События ночи</summary><ul><li>2026-09-14T22:44:52 ночь завершена: сделано 2, провалов 0</li><li>2026-09-14T22:44:52 утренний отчёт собран</li></ul></details><details><summary>Незавершённые задания (0)</summary><ul></ul></details><h2>2. Сводка по конфигурациям</h2><p class='x'>Конфигурация = модель | версия спеки | режим. unanimous_share — доля показателей, одинаковых во всех прогонах (главная метрика задания). alpha — согласие прогонов с поправкой на случайность, ≥0,8 надёжно, пусто = все прогоны одинаковы. sign — переворот знака (плохо), zero — ноль против ±1, amplitude — сила при том же знаке. verified/fabricated — цитата найдена в тексте / не найдена. sec_median — минут×60 на прогон.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>config</th>
+      <th>reports</th>
+      <th>runs</th>
+      <th>unanimous_share</th>
+      <th>alpha_pooled</th>
+      <th>sign_flips</th>
+      <th>zero_flips</th>
+      <th>amplitude_flips</th>
+      <th>verdict_stable_share</th>
+      <th>verified_share</th>
+      <th>fabricated_share</th>
+      <th>number_mismatch_share</th>
+      <th>parse_fail</th>
+      <th>truncated</th>
+      <th>sec_median</th>
+      <th>prompt_tokens</th>
+      <th>completion_tokens</th>
+      <th>tok_per_sec</th>
+      <th>hidden_instability</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>0.958</td>
+      <td>0.937</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0.688</td>
+      <td>0.271</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>216.5</td>
+      <td>13886.0</td>
+      <td>2296.5</td>
+      <td>12.1</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table><h2>3. Проверки здравого смысла</h2><p class='x'>Соотношения, которые обязана дать любая осмысленная система (из задания).</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>config</th>
+      <th>check</th>
+      <th>ok</th>
+      <th>detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>резервы выросли → не плюс</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>CIR снизился → не минус</td>
+      <td>True</td>
+      <td>подозрительных оценок: 0</td>
+    </tr>
+  </tbody>
+</table><h2>4. Устойчивость по отчётам</h2><p class='x'>margin_to_threshold — насколько сумма далека от порога strong/mixed/weak: чем меньше, тем легче вывод перевернуть. unstable — какие показатели разошлись.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>config</th>
+      <th>report</th>
+      <th>runs</th>
+      <th>unanimous_share</th>
+      <th>alpha</th>
+      <th>sign_flips</th>
+      <th>zero_flips</th>
+      <th>amplitude_flips</th>
+      <th>sum_min</th>
+      <th>sum_max</th>
+      <th>modal_sum</th>
+      <th>verdict_modal</th>
+      <th>verdict_stable</th>
+      <th>margin_to_threshold</th>
+      <th>fabricated_share</th>
+      <th>number_mismatch_share</th>
+      <th>not_mentioned_share</th>
+      <th>unstable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>2</td>
+      <td>0.958</td>
+      <td>0.937</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>19</td>
+      <td>21</td>
+      <td>19</td>
+      <td>strong</td>
+      <td>True</td>
+      <td>7.0</td>
+      <td>0.271</td>
+      <td>0.0</td>
+      <td>0.042</td>
+      <td>opex</td>
+    </tr>
+  </tbody>
+</table><h2>5. Капризные показатели</h2><p class='x'>В скольких отчётах показатель разошёлся между прогонами и как. hidden — оценка одна и та же, но цитаты из разных мест текста: скрытая нестабильность.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>config</th>
+      <th>indicator</th>
+      <th>unstable_reports</th>
+      <th>reports</th>
+      <th>sign</th>
+      <th>zero</th>
+      <th>amplitude</th>
+      <th>hidden</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>opex · Операционные расходы</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>active_clients · Активные клиенты</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>customer_funds · Средства клиентов</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>dividends · Дивиденды</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>external_conditions · Внешние условия</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>market_share · Доля рынка</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>net_profit · Чистая прибыль</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>nii · Чистые процентные доходы</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>provisions · Расходы на резервы</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>retail_loans · Розничный портфель</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>tech_development · Технологическое развитие</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table><h2>6. Подозрительные цитаты</h2><p class='x'>fabricated — фразы нет в тексте отчёта; number_mismatch — фраза есть, но число в ней другое; empty_nonzero — оценка не ноль, а цитаты нет. Первые 60, полный список в metrics/items.csv.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>config</th>
+      <th>report</th>
+      <th>run</th>
+      <th>indicator</th>
+      <th>score</th>
+      <th>quote_status</th>
+      <th>quote</th>
+      <th>reasoning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>1</td>
+      <td>roe</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Рентабельность капитала составила 24,0% за 2 квартал 2026 г. или 23,0% за аналогичный период прошлого года</td>
+      <td>ROE за 2Q выросла на 1,0 п.п. (с 23,0% до 24,0%), что попадает в диапазон умеренного улучшения (от 0,3 до 1,5 п.п.).</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>1</td>
+      <td>cir</td>
+      <td>-1</td>
+      <td>fabricated</td>
+      <td>Отношение операционных расходов к доходам составило 29,1% за 2 квартал 2026 г. и 27,9% за 6M 2026 г.</td>
+      <td>CIR за 2Q вырос на 0,7 п.п. (с 28,4% до 29,1%), что является умеренным ухудшением эффективности (рост больше 0.3 п.п.).</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>1</td>
+      <td>provisions</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Совокупные расходы на резервы и переоценка кредитов, оцениваемых по справедливой стоимости, BO 2 квартале 2026 г. снизились на 30,6% r/r no 135,5 млрд руб.</td>
+      <td>Расходы на резервы за 2Q снизились на 30,6% г/г, что является сильным улучшением (снижение больше 15%).</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>1</td>
+      <td>portfolio_quality</td>
+      <td>-1</td>
+      <td>fabricated</td>
+      <td>Качество совокупного кредитного портфеля во 2 квартале 2026 г. несколько ухудшилось.</td>
+      <td>Доля обесцененных кредитов выросла на 0,7 п.п., а покрытие резервами снизилось на 10,3 п.п., что свидетельствует об умеренном ухудшении качества портфеля.</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>1</td>
+      <td>book_value_per_share</td>
+      <td>0</td>
+      <td>fabricated</td>
+      <td>Балансовая стоимость на акцию, руб. 377,7 369,5 2,2%</td>
+      <td>Балансовая стоимость на акцию выросла на 2,2% с начала года, что меньше порога значимости в 3%, поэтому оценка нулевая.</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>1</td>
+      <td>digital_metrics</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>количество ежедневных пользователей (DAU) выросло на 6,8% за 2 квартал до 1,5 млн.</td>
+      <td>Рост DAU в СберБизнес Онлайн на 6,8% за квартал является конкретным измеримым фактом умеренного улучшения цифровых метрик.</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>1</td>
+      <td>tech_development</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Во 2 квартале C6ep открыл доступ K тестированию платформы ИИ-агентов GigaCowork</td>
+      <td>Открыт доступ к тестированию платформы ИИ-агентов, что является конкретным фактом внедрения технологии в текущем периоде.</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>2</td>
+      <td>roe</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Рентабельность капитала составила 24,0% за 2 квартал 2026 г. или 23,0% за аналогичный период прошлого года</td>
+      <td>ROE за 2Q выросла на 1,0 п.п. (с 23,0% до 24,0%), что попадает в диапазон умеренного улучшения (от 0,3 до 1,5 п.п.).</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>2</td>
+      <td>cir</td>
+      <td>-1</td>
+      <td>fabricated</td>
+      <td>Отношение операционных расходов к доходам составило 29,1% за 2 квартал 2026 г. и 27,9% за 6M 2026 г.</td>
+      <td>CIR за 2Q вырос на 0,7 п.п. (с 28,4% до 29,1%), что превышает порог в 0,3 п.п., оценка умеренно отрицательная.</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>2</td>
+      <td>provisions</td>
+      <td>2</td>
+      <td>fabricated</td>
+      <td>Совокупные расходы на резервы и переоценка кредитов, оцениваемых по справедливой стоимости, BO 2 квартале 2026 г. снизились на 30,6% r/r no 135,5 млрд руб.</td>
+      <td>Расходы на резервы за 2Q снизились на 30,6% г/г, что превышает порог в 15%, оценка максимальная.</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>2</td>
+      <td>book_value_per_share</td>
+      <td>0</td>
+      <td>fabricated</td>
+      <td>Балансовая стоимость на акцию, руб. 377,7 369,5 2,2%</td>
+      <td>Балансовая стоимость на акцию выросла на 2,2% с начала года, что меньше порога в 3%, оценка нулевая.</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>2</td>
+      <td>digital_metrics</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>количество ежедневных пользователей (DAU) выросло на 6,8% за 2 квартал до 1,5 млн</td>
+      <td>DAU в СберБизнес Онлайн вырос на 6,8% за квартал, что превышает порог в 3%, оценка умеренно положительная.</td>
+    </tr>
+    <tr>
+      <td>qwen3.8-27b-mlx@4bit | v1_baseline | t0</td>
+      <td>2026_q2</td>
+      <td>2</td>
+      <td>tech_development</td>
+      <td>1</td>
+      <td>fabricated</td>
+      <td>Во 2 квартале C6ep открыл доступ K тестированию платформы ИИ-агентов GigaCowork, позволяющей компаниям автоматизировать рутинные этапы бизнес-процессов</td>
+      <td>Открыт доступ к тестированию платформы GigaCowork, что является конкретным фактом запуска новой технологии.</td>
+    </tr>
+  </tbody>
+</table><h2>7. Итоговая таблица: qwen3.8-27b-mlx@4bit | v1_baseline | t0</h2><p class='x'>Мода по прогонам. Сумму и вывод считает Python, не модель.</p><table class="dataframe t">
+  <thead>
+    <tr style="text-align: right;">
+      <th>report</th>
+      <th>показатель</th>
+      <th>2026_q2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th></th>
+      <td>net_profit · Чистая прибыль</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>eps · Прибыль на акцию (EPS)</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>roe · Рентабельность капитала (ROE)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>guidance · Прогноз менеджмента</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nii · Чистые процентные доходы</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>fee_income · Чистые комиссионные доходы</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>nim · Чистая процентная маржа (NIM)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>opex · Операционные расходы</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cir · Отношение расходов к доходам (CIR)</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>cor · Стоимость риска (CoR)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>provisions · Расходы на резервы</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>portfolio_quality · Качество портфеля</td>
+      <td>-1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>corporate_loans · Корпоративный портфель</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>retail_loans · Розничный портфель</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>customer_funds · Средства клиентов</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>market_share · Доля рынка</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>capital_adequacy · Достаточность капитала (Н20.0)</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>dividends · Дивиденды</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>book_value_per_share · Балансовая стоимость акции</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>active_clients · Активные клиенты</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>digital_metrics · Цифровые метрики</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>tech_development · Технологическое развитие</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>external_conditions · Внешние условия</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ceo_tone · Тональность руководителя</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>СУММА</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>ВЫВОД</td>
+      <td>strong</td>
+    </tr>
+  </tbody>
+</table>

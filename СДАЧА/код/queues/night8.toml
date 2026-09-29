@@ -1,0 +1,186 @@
+# День→ночь 20.09 — собрана src/make_queue8.py.
+#
+# ПРЕДСКАЗАНИЕ (записано 20.09 11:00 до прогона):
+#   1. у v8 плавающих числовых клеток не больше 5 из 68 (у v7 на 10 прогонах — 7);
+#   2. клетки, где падение шло на вторую ячейку (cor 2024_q3, provisions 2024_q3, active_clients 2026_q2),
+#      перестают плавать: обе ячейки заполнены;
+#   3. достаточность капитала 2026_q2 перестаёт плавать (правило «самый широкий норматив»);
+#   4. пограничные клетки (corporate_loans, customer_funds 2026_q2) плавают по-прежнему — их порог 3%,
+#      а отчёт даёт +2,9% и +3,0%. Если они исчезнут — значит, дело не в границе, и объяснение было неверным.
+
+# ══════ Блок 1: v8 против v7 (новый текст), 6 кругов вперемешку ══════
+
+# круг 1
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v8_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 1
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 11
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+# круг 2
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v8_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 2
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 12
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+# круг 3
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v8_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 13
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+# круг 4
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v8_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 4
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 14
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+# круг 5
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v8_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 15
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+# круг 6
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v8_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 6
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 16
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+
+# ══════ Блок 2: H15 обезличивание (тот же v7, тексты «Банк А») ══════
+# ПРЕДСКАЗАНИЕ: оценки на обезличенном тексте совпадают с обычными не хуже, чем два прогона
+# обычного текста совпадают между собой. Расхождение означало бы, что модель опирается на память.
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["anon_2022_q4", "anon_2026_q2", "anon_2024_q3", "anon_2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+# ══════ H25: другой банк, те же правила без единой правки (добавлено 20.09 14:00) ══════
+# ВТБ, 1 квартал 2026, пресс-релиз со страницы сайта (текстовый слой, распознавание не нужно).
+# ПРЕДСКАЗАНИЕ: часть показателей будет пустой (пресс-релиз короче сберовского, инфографики нет) — это не ошибка.
+# Смотрим: выставляются ли баллы, подтверждаются ли цитаты, устойчивы ли повторы. Правила НЕ правим.
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["vtb_2026_q1"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768

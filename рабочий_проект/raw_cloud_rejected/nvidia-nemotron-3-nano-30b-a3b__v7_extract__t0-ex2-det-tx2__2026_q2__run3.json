@@ -1,0 +1,83 @@
+{
+ "meta": {
+  "name": "nvidia-nemotron-3-nano-30b-a3b__v7_extract__t0-ex2-det-tx2__2026_q2__run3",
+  "model": "nvidia/nemotron-3-nano-30b-a3b",
+  "cloud": true,
+  "provider": "Nebius",
+  "model_quant": "fp8",
+  "spec_version": "v7_extract",
+  "spec_hash": "46954bb5e58e630022ba2cccb0e43f55db5c5c6512a52996612c0f962bbb25dc",
+  "request_hash": "4422d94a7e826ec42c14aca1f851d401271009a5387ecc7f71da2ef1fb2ea6e1",
+  "report": "2026_q2",
+  "text_version": "v2",
+  "text_hash": "971bd7136b099d6da45a239085fa5dc0c6b4cde5b1743367ba23c340ddc857c3",
+  "run": 3,
+  "variant": "t0-ex2-det-tx2",
+  "temperature": 0,
+  "top_p": 1,
+  "seed": 1,
+  "min_p_dropped": false,
+  "schema": true,
+  "max_tokens": 9000,
+  "ids_order": "spec",
+  "mode": "extract2",
+  "started": "2026-09-22T19:09:36",
+  "finished": "2026-09-22T19:10:15",
+  "sec": 38.5,
+  "cost_usd": 0.00312156,
+  "prompt_tokens": 16026,
+  "completion_tokens": 9000,
+  "reasoning_tokens": 7858,
+  "finish_reason": "length",
+  "truncated": true,
+  "parse_ok": false,
+  "generation_id": "gen-1790093377-zy6nOoq7pjasivACjJFM",
+  "cache_contaminated": false
+ },
+ "content": "",
+ "response": {
+  "id": "gen-1790093377-zy6nOoq7pjasivACjJFM",
+  "object": "chat.completion",
+  "created": 1790093377,
+  "model": "nvidia/nemotron-3-nano-30b-a3b",
+  "provider": "Nebius",
+  "system_fingerprint": "vllm-0.22.0-b08c96cd",
+  "service_tier": null,
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "length",
+    "native_finish_reason": "length",
+    "message": {
+     "role": "assistant",
+     "content": null,
+     "refusal": null
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 16026,
+   "completion_tokens": 9000,
+   "total_tokens": 25026,
+   "cost": 0.00312156,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 12672,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00312156,
+    "upstream_inference_prompt_cost": 0.00096156,
+    "upstream_inference_completions_cost": 0.00216
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 7858,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,396 @@
+# Ночь 6 — собрана src/make_queue6.py после распознавания text_v2.
+#
+# E-OCR: влияет ли чтение отчёта на устойчивость. Три серии вперемешку в одном запуске, по 10 прогонов.
+# ПРЕДСКАЗАНИЕ (записано 19.09 до прогона):
+#   1. На новом тексте (Б) числовых плавающих клеток меньше, чем на старом (А), минимум на треть;
+#   2. у 7 показателей-суждений (тон, внешние условия, технологии, прогноз, дивиденды, доля рынка,
+#      качество портфеля) разница в пределах шума — они от чтения таблиц не зависят (встроенный контроль);
+#   3. доля проверяемых цитат на новом тексте выше.
+#   Если 1 и 2 выполнены — финальная таблица делается на text_v2. Если 1 не выполнено — чтение не главная
+#   причина плавания, и это вывод для записки.
+# Сравнение: альфа, плавающие клетки, смена знака — только по прогонам этой ночи.
+
+# ══════ E-OCR: 10 кругов по три серии ══════
+
+# круг 1
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 6
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 1
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 1
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 2
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 7
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 2
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 2
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 3
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 8
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 4
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 9
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 4
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 4
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 5
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 10
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 6
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 11
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 6
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 6
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 7
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 12
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 7
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 7
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 8
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 13
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 8
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 8
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 9
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 14
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 9
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 9
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+# круг 10
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 15
+temperature = 0.7
+min_p = 0.05
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 10
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 10
+temperature = 0.7
+min_p = 0.05
+mode = "extract"
+text = "v2"
+ctx = 32768
+
+
+# ══════ Боевой режим T=0 на новом тексте — все отчёты с готовым v2 ══════
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2023_q1", "2023_q2", "2023_q3", "2023_q4", "2024_q1", "2024_q2", "2024_q3", "2024_q4", "2025_q1", "2025_q2", "2025_q3", "2025_q4", "2026_q1", "2026_q2"]
+runs = 1
+temperature = 0
+text = "v2"
+ctx = 32768
+
+
+# ══════ H28: нетронутые кварталы на новом тексте, по 3 прогона ══════
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2023_q1", "2023_q3", "2024_q1", "2024_q2", "2025_q1", "2025_q2", "2025_q4", "2026_q1"]
+runs = 3
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768
+
+
+# ══════ Другие семейства на новом тексте — для правильности без эталона (L12) ══════
+# Gemma: контекст 20480 — предел памяти; новый текст на 2–4% длиннее, возможны обрывы (раньше 2 из 12).
+# Если обрывается подряд — раннер сам пропустит. Ответы ~10 мин.
+
+[[job]]
+model = "google/gemma-4-31b-qat"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 20480
+
+[[job]]
+model = "t-pro-it-2.1"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 20480
+
+
+# ══════ H28: добор нетронутых кварталов до 5 прогонов ══════
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2023_q1", "2023_q3", "2024_q1", "2024_q2", "2025_q1", "2025_q2", "2025_q4", "2026_q1"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+text = "v2"
+ctx = 32768

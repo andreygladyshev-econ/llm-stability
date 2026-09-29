@@ -1,0 +1,85 @@
+
+A1. Одна и та же спека и один и тот же текст во всех прогонах итоговой таблицы
+  ✓ спека v7 одна во всех 95 прогонах (хешей: 1)
+  ✓ текст каждого отчёта один и тот же во всех прогонах
+  ✓ текст на диске совпадает с тем, что видели модели (расхождения: нет)
+
+A2. Полнота: у каждого отчёта ровно 5 разобранных прогонов; обрывы, кэш
+  ✓ по 5 прогонов на отчёт: все 19
+  ✓ все ответы разбираются (не разобрано: 0)
+  ✓ обрезанных ответов нет
+  ✓ чужого кэша нет ни в одном прогоне
+  ✓ температура 0 во всех прогонах
+  ✓ контекст один: {42496}
+  ✓ 5 перестановок у каждого отчёта действительно разные запросы
+
+A3. Итог клетки: мода задания = наша медиана; ничьих нет
+  ✓ ничьих при 5 голосах нет (0)
+  ✓ мода совпадает с медианой во всех 456 клетках
+  ✓ суммы — целые, считает код (не модель)
+
+A4. Эталон не менялся после фиксации; холдаут не тронут до финальной ночи
+  ✓ 2023_q2_CLAUDE.csv: хеш совпадает с зафиксированным 22.09
+  ✓ 2024_q4_CLAUDE.csv: хеш совпадает с зафиксированным 22.09
+  ✓ 2025_q3_CLAUDE.csv: хеш совпадает с зафиксированным 22.09
+  ✓ до финальной ночи холдаут прогонялся 6 раз(а): ["(['v2_inplace', 't0-tx2'], '2026-09-20')", "(['v7_extract', 't0-ex2-tx2'], '2026-09-20')"] — один проверочный прогон всех 15 отчётов 20.09; клетки холдаута при настройке не разбирались
+
+A5. Облако: провайдер и параметры — что именно сравниваем
+   anthropic/claude-opus-5            t0-ex2-det-tx2             Claude Platform on AWS unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено; Azure unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено  ← несколько провайдеров/настроек в одной серии
+   anthropic/claude-opus-5            t0-shuf-ex2-or-tx2         Claude Platform on AWS unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено; Azure unknown, отброшено ['temperature', 'top_p', 'json_schema'], размышл. выключено  ← несколько провайдеров/настроек в одной серии
+   anthropic/claude-opus-5.5          t0-ex2-det-tx2             Azure unknown, отброшено ['top_p', 'json_schema'], размышл. встроено, low
+   anthropic/claude-opus-5.5          t0-shuf-ex2-or-tx2         Azure unknown, отброшено ['top_p', 'json_schema'], размышл. встроено, low
+   deepseek/deepseek-v4.1-flash       t0-ex2-det-think-high-tx2  CoreWeave fp8, отброшено —, размышл. включено, high
+   deepseek/deepseek-v4.1-flash       t0-ex2-det-think-tx2       CoreWeave fp8, отброшено —, размышл. включено, low
+   deepseek/deepseek-v4.1-flash       t0-ex2-det-tx2             DeepInfra fp8, отброшено —, размышл. выключено
+   deepseek/deepseek-v4.1-flash       t0-shuf-ex2-or-tx2         DeepInfra fp8, отброшено —, размышл. выключено
+   deepseek/deepseek-v4.1-flash       t0-shuf-ex2-think-tx2      CoreWeave fp8, отброшено —, размышл. включено, low
+   deepseek/deepseek-v4.1-flash       t0.7-ex2-or-tx2            DeepInfra fp8, отброшено —, размышл. выключено
+   google/gemma-4-31b-it              t0-ex2-det-tx2             CoreWeave fp4, отброшено —, размышл. выключено
+   google/gemma-4-31b-it              t0-shuf-ex2-or-tx2         CoreWeave fp4, отброшено —, размышл. выключено
+   google/gemma-4-31b-it              t0.7-ex2-or-tx2            CoreWeave fp4, отброшено —, размышл. выключено
+   nvidia/nemotron-3-nano-30b-a3b     t0-ex2-det-tx2             Crusoe fp8, отброшено —, размышл. выключено
+   nvidia/nemotron-3-nano-30b-a3b     t0-shuf-ex2-or-tx2         Crusoe fp8, отброшено —, размышл. выключено
+   nvidia/nemotron-3-nano-30b-a3b     t0.7-ex2-or-tx2            Crusoe fp8, отброшено —, размышл. выключено
+   nvidia/nemotron-3-super-120b-a12b  t0-ex2-det-tx2             DekaLLM fp8, отброшено —, размышл. выключено
+   nvidia/nemotron-3-super-120b-a12b  t0-shuf-ex2-or-tx2         DekaLLM fp8, отброшено —, размышл. выключено
+   nvidia/nemotron-3-super-120b-a12b  t0.7-ex2-or-tx2            DekaLLM fp8, отброшено —, размышл. выключено
+   openai/gpt-5.6-sol                 t0-ex2-det-tx2             OpenAI unknown, отброшено ['temperature', 'top_p'], размышл. выключено
+   openai/gpt-5.6-sol                 t0-shuf-ex2-or-tx2         OpenAI unknown, отброшено ['temperature', 'top_p'], размышл. выключено
+   openai/gpt-6-luna                  t0-ex2-det-tx2             OpenAI unknown, отброшено ['temperature', 'top_p'], размышл. выключено
+   openai/gpt-6-luna                  t0-shuf-ex2-or-tx2         OpenAI unknown, отброшено ['temperature', 'top_p'], размышл. выключено
+   openai/gpt-6-sol                   t0-ex2-det-tx2             OpenAI unknown, отброшено ['temperature', 'top_p'], размышл. выключено
+   openai/gpt-6-sol                   t0-shuf-ex2-or-tx2         OpenAI unknown, отброшено ['temperature', 'top_p'], размышл. выключено
+   openai/gpt-oss-120b                t0-ex2-det-tx2             Groq unknown, отброшено —, размышл. встроено, low
+   openai/gpt-oss-120b                t0-shuf-ex2-or-tx2         Cerebras fp16, отброшено —, размышл. встроено, low; Groq unknown, отброшено —, размышл. встроено, low  ← несколько провайдеров/настроек в одной серии
+   openai/gpt-oss-120b                t0.7-ex2-or-tx2            Cerebras fp16, отброшено —, размышл. встроено, low; Groq unknown, отброшено —, размышл. встроено, low  ← несколько провайдеров/настроек в одной серии
+   qwen/qwen3-235b-a22b-2507          t0-ex2-det-tx2             Novita fp8, отброшено —, размышл. нет
+   qwen/qwen3-235b-a22b-2507          t0-shuf-ex2-or-tx2         Novita fp8, отброшено —, размышл. нет
+   qwen/qwen3-235b-a22b-2507          t0.7-ex2-or-tx2            Novita fp8, отброшено —, размышл. нет
+   qwen/qwen3.6-35b-a3b               t0-ex2-det-tx2             AkashML fp8, отброшено —, размышл. выключено
+   qwen/qwen3.6-35b-a3b               t0-shuf-ex2-or-tx2         AkashML fp8, отброшено —, размышл. выключено
+   qwen/qwen3.6-35b-a3b               t0.7-ex2-or-tx2            AkashML fp8, отброшено —, размышл. выключено
+   qwen/qwen3.8-27b                   t0-ex2-det-think-tx2       Parasail fp8, отброшено —, размышл. включено, low
+   qwen/qwen3.8-27b                   t0-ex2-det-tx2             Parasail fp8, отброшено —, размышл. выключено
+   qwen/qwen3.8-27b                   t0-shuf-ex2-or-tx2         Parasail fp8, отброшено —, размышл. выключено
+   qwen/qwen3.8-27b                   t0-shuf-ex2-think-tx2      Parasail fp8, отброшено —, размышл. включено, low
+   qwen/qwen3.8-27b                   t0.7-ex2-or-tx2            Parasail fp8, отброшено —, размышл. выключено
+   x-ai/grok-4.7                      t0-ex2-det-tx2             xAI unknown, отброшено —, размышл. встроено, low
+   x-ai/grok-4.7                      t0-shuf-ex2-or-tx2         xAI unknown, отброшено —, размышл. встроено, low
+   xiaomi/mimo-v2.6-flash             t0-ex2-det-tx2             Xiaomi fp8, отброшено —, размышл. выключено
+   xiaomi/mimo-v2.6-flash             t0-shuf-ex2-or-tx2         Xiaomi fp8, отброшено —, размышл. выключено
+   xiaomi/mimo-v2.6-flash             t0.7-ex2-or-tx2            Xiaomi fp8, отброшено —, размышл. выключено
+   z-ai/glm-5.3                       t0-ex2-det-tx2             Io Net fp8, отброшено —, размышл. встроено, low
+   z-ai/glm-5.3                       t0-shuf-ex2-or-tx2         Io Net fp8, отброшено —, размышл. встроено, low
+   z-ai/glm-5.3                       t0.7-ex2-or-tx2            Io Net fp8, отброшено —, размышл. встроено, low
+   z-ai/glm-5.3-flash                 t0-ex2-det-think-tx2       BaseTen fp8, отброшено —, размышл. включено, high
+   z-ai/glm-5.3-flash                 t0-ex2-det-tx2             BaseTen fp8, отброшено —, размышл. встроено, low
+   z-ai/glm-5.3-flash                 t0-shuf-ex2-or-tx2         BaseTen fp8, отброшено —, размышл. встроено, low
+   z-ai/glm-5.3-flash                 t0-shuf-ex2-think-tx2      BaseTen fp8, отброшено —, размышл. включено, high
+   z-ai/glm-5.3-flash                 t0.7-ex2-or-tx2            BaseTen fp8, отброшено —, размышл. встроено, low
+  ! без температуры (провайдер ставит свою по умолчанию, это НЕ T=0): ['anthropic/claude-opus-5', 'openai/gpt-5.6-sol', 'openai/gpt-6-luna', 'openai/gpt-6-sol']
+
+A6. Цитаты итоговой таблицы: дословность
+  ✓ у 239 итоговых оценок цитата — точная подстрока текста (после снятия разметки); у 6 — совпадение ≥92% (распознавание, перенос строки): для сдачи такие цитаты заменяются дословным фрагментом текста
+
+ИТОГ: проблем 0

@@ -1,0 +1,8 @@
+локальных прогонов: 1371; машинных часов: 124; энергия ≈ 11.1 кВт·ч (8,1 Вт·ч на прогон, замер)
+облачных ответов: 976; моделей в облаке: 17; стоимость по счётчику ответов: $13.67
+локальных моделей: ['gigachat3.1-10b-a1.8b', 'google/gemma-4-31b-qat', 'prism-ml/bonsai-27b', 'qwen/qwen3.8-27b@5bit', 'qwen3.8-27b-mlx@4bit', 'qwen3.8-27b-mlx@5bit', 'qwen3.8-4b-distill', 't-pro-it-2.1', 'yandexgpt-5-lite-8b-instruct']
+версий спецификации в прогонах: 1: []
+дней с прогонами: 10: 2026-09-14 … 2026-09-23
+версий спецификации в локальных прогонах: 21: ['v10_extract', 'v1_baseline', 'v2_all', 'v2_compact', 'v2_en', 'v2_inplace', 'v2_market', 'v2_noex', 'v2_period', 'v2_state', 'v2_tbl', 'v2_top', 'v2p1', 'v2p2', 'v3', 'v4', 'v5_extract', 'v6', 'v7_extract', 'v8_extract', 'v9_extract']
+журнал расходов облака: записей 1062, сумма $14.41
+архивы/карантин: [('raw_cloud_rejected', 58), ('raw_qwen_bf16', 21), ('raw_think_high', 3)]

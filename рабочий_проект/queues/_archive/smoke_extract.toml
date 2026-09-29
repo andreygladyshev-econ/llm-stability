@@ -1,0 +1,8 @@
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v5_extract"
+reports = ["2026_q2"]
+runs = 1
+temperature = 0
+mode = "extract"
+ctx = 32768
