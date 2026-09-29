@@ -75,7 +75,7 @@ def raw_matches_text_hash():
     """Прогон, сделанный на другой версии текста, нельзя сравнивать с остальными."""
     hs = {tv: texts.hashes(tv) for tv in texts.DIRS}
     bad = []
-    for f in (ROOT / "raw").glob("*.json"):
+    for f in sorted((ROOT / "raw").glob("*.json")):
         m = json.loads(f.read_text())["meta"]
         cur = hs[m.get("text_version", "v1")].get(m["report"], {}).get("sha256")
         if cur and m.get("text_hash") and m["text_hash"] != cur:

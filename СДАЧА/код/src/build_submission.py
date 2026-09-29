@@ -2,9 +2,14 @@
 замеры устойчивости (CSV, MD).
 
 Источник — боевой режим v7: 5 прогонов на отчёт при T=0 с разным порядком показателей; итог клетки — медиана
-голосов (совпадает с модой задания во всех клетках — `src/audit.py`, A3). Цитата — дословный фрагмент распознанного
-текста отчёта (без служебной разметки распознавания «**», «|»), найденный по цитате модели; подтверждается тем же
-проверщиком, что и в замерах. Запуск: .venv/bin/python src/build_submission.py
+голосов (совпадает с модой задания во всех клетках — `src/audit.py`, A3).
+
+Цитата (29.09): фрагмент распознанного текста, найденный по цитате модели, переписывается буквами текстового слоя
+PDF (src/pdf_quotes.py), поэтому совпадает с отчётом посимвольно; проверку повторяет `src/audit.py`, A6. Если
+оценку посчитала программа, а в цитате модели нет ни базы сравнения, ни названного изменения, в таблицу ставится
+строка отчёта с этими числами (для операционных расходов добавляется строка с ростом операционного дохода).
+Примечания ручной проверки (notes/примечания_проверки.json) и расхождения с эталоном выводятся после обоснования;
+оценок они не меняют. Запуск: .venv/bin/python src/build_submission.py
 """
 import collections
 import csv
@@ -18,6 +23,7 @@ from rapidfuzz import fuzz
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import final_table as ft  # noqa: E402
+import pdf_quotes as pq  # noqa: E402
 import report  # noqa: E402
 import score_rules as sr  # noqa: E402
 import silver_gold as sg  # noqa: E402
@@ -32,6 +38,19 @@ TEMPLATE = list(csv.DictReader(open(sg.GOLD / "2026_q2_CLAUDE.csv")))
 ORDER = [r["id"] for r in TEMPLATE]
 NAME = {r["id"]: (r["блок"], r["показатель"]) for r in TEMPLATE}
 BANK = {"vtb": "ВТБ", "tbank": "Т-Технологии"}
+PDF_TEXT = ROOT / "text_pdf"
+NOTES = {k: v for k, v in json.loads((ROOT / "notes" / "примечания_проверки.json").read_text()).items()
+         if not k.startswith("_")}
+GOLD = {rep: {i: v[0] for i, v in sg.read_gold(rep).items()} for rep in sg.REPORTS}
+# слова, по которым строка отчёта относится к показателю (для подтверждающей строки с базой сравнения)
+KEYWORDS = {"net_profit": ("чистая прибыль",), "eps": ("на обыкновенную акцию", "на акцию"),
+            "roe": ("рентабельность капитала",), "nii": ("процентные доходы",), "fee_income": ("комиссионные доходы",),
+            "nim": ("процентная маржа",), "cir": ("расходов к",), "cor": ("стоимость риска",),
+            "provisions": ("резерв", "кредитного качества"), "corporate_loans": ("корпоративн",), "retail_loans": ("розничн",),
+            "customer_funds": ("средств",), "capital_adequacy": ("достаточност",),
+            "book_value_per_share": ("балансовая стоимость",), "active_clients": ("клиент",),
+            "digital_metrics": ("mau", "пользовател"), "opex": ("операционные расходы",),
+            "opex_income": ("операционн", "доход")}
 
 JUDG = {  # правило спеки v7 для балла модели по суждению
     "guidance": {1: "подтверждение цели на год", 2: "повышение прогноза", -2: "снятие или понижение прогноза",
@@ -109,6 +128,75 @@ def verbatim(quote, raw):
     return frag
 
 
+_pdf_cache = {}
+
+
+def in_pdf(frag, rep):
+    """Фрагмент распознанного текста → тот же фрагмент буквами текстового слоя PDF (без слоя — как есть)."""
+    if not frag:
+        return frag
+    if rep not in _pdf_cache:
+        p = PDF_TEXT / f"{rep}.txt"
+        _pdf_cache[rep] = p.read_text() if p.exists() else None
+    pdf = _pdf_cache[rep]
+    if pdf is None:
+        print(f"  нет текстового слоя PDF для {rep}: цитата оставлена по распознанному тексту")
+        return frag
+    q = pq.to_pdf(frag, pdf)
+    assert q and pq.verified_in_pdf(q, pdf), (rep, frag)
+    return q
+
+
+NUM = re.compile(r"\d{1,3}(?:[ \u00a0\u202f]\d{3})+(?:,\d+)?|\d+(?:[.,]\d+)?")
+
+
+def nums(s):
+    """Числа строки: «1 508,6» — одно число, ячейки таблицы «397,4 | 357,2» — два (report.numbers их склеивает)."""
+    s = re.sub(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]", "", s or "")
+    return {re.sub(r"[ \u00a0\u202f]", "", n).replace(".", ",") for n in NUM.findall(s)}
+
+
+def covers(need, have):
+    """Все нужные числа есть в строке; «555» совпадает с «555,4», если у одного из двух нет дробной части."""
+    same = lambda n, m: n == m or ("," not in n and m.split(",")[0] == n) or ("," not in m and n.split(",")[0] == m)
+    return all(any(same(n, m) for m in have) for n in need)
+
+
+def basis(ind, x):
+    """Числа, на которых стоит оценка программы: (значение, база, названное изменение) — множества строк."""
+    slot, code = sr.pick(ind, x)
+    if code is None:
+        return None
+    f = lambda k: nums(x.get(f"{slot}_{k}", ""))
+    return f("value"), f("base"), f("change")
+
+
+def supported(quote, ind, x):
+    """Видно ли по цитате, откуда взялась оценка: есть база сравнения или названное изменение."""
+    b = basis(ind, x)
+    if b is None or not quote:
+        return True
+    v, base, ch = b
+    qn = nums(quote)
+    if ind == "opex":                       # нужен и рост расходов, и рост дохода
+        return (not v or covers(v, qn)) and (not base or covers(base, qn))
+    return bool(base and covers(base, qn)) or bool(ch and covers(ch, qn))
+
+
+def support_line(key, need, raw):
+    """Самая короткая строка или предложение отчёта со словами показателя и всеми нужными числами."""
+    best = None
+    for line in raw.split("\n"):
+        for part in [line] + re.split(r"(?<=[.!?])\s+", line):
+            low = light(part)
+            words = all if key == "opex_income" else any
+            if need and covers(need, nums(part)) and words(k in low for k in KEYWORDS[key]):
+                clean = re.sub(r"\s+", " ", re.sub(r"\s*\|\s*", " | ", re.sub(r"\*\*|#+|^\s*[-*]\s+", "", part))).strip(" |*")
+                if clean and (best is None or len(clean) < len(best)):
+                    best = clean
+    return best
+
+
 # ─── обоснование ──────────────────────────────────────────────────────────────────────────────────────────────
 def phrase_sentence(ind, raw):
     """Предложение отчёта, где рядом с показателем стоит оценочная фраза (как ищет код правила фраз)."""
@@ -119,7 +207,7 @@ def phrase_sentence(ind, raw):
     return None
 
 
-def justify(ind, x, final, phrase):
+def justify(ind, x, final, phrase, raw_nums=None):
     if ind not in sr.NUMERIC:
         return JUDG.get(ind, {}).get(final, "оценка модели по правилу спеки"), "модель"
     if phrase is not None and phrase == final:
@@ -144,10 +232,27 @@ def justify(ind, x, final, phrase):
     ch = sr.change_of(ind, v, b, c)
     unit = "п.п." if kind in ("ratio", "cor") else "%"
     lo, hi = sr.THRESHOLDS[kind]
-    head = f"{period_word(ind, slot)}: {v}" + (f" против {b}" if b else "")
+    stated = bool(c) and sr.number(c) is not None
+    # 29.09: названное изменение приоритетнее; если база из ответа с ним не сходится (другой период или номинал
+    # вместо «без учёта валютной переоценки»), базу в обосновании не показываем — она в расчёт не вошла
+    by_amounts = sr.change_of(ind, v, b, "") if (stated and b) else None
+    tol = 0.15 if kind in ("ratio", "cor") else max(1.5, 0.25 * abs(ch))
+    in_text = lambda s: raw_nums is None or covers(nums(s), raw_nums)
+    # база, которой нет в тексте отчёта, — пересчёт модели из процента: в обоснование не идёт
+    show_base = b and in_text(b) and (by_amounts is None or abs(by_amounts - ch) <= tol)
+    if not stated and b and not in_text(b):
+        print(f"  ВНИМАНИЕ: оценка {ind} посчитана по базе, которой нет в тексте отчёта: {b}")
+    head = f"{period_word(ind, slot)}: {v}" + (f" против {b}" if show_base else "")
     g = lambda x: f"{x:g}".replace(".", ",")
     rule = f"пороги {g(lo)} и {g(hi)}{'%' if unit == '%' else ' п.п.'}" + ("; рост — минус для акционера" if inv else "")
-    how = "по отчёту" if c and sr.number(c) is not None else "посчитано кодом"
+    how = "посчитано кодом"
+    if stated:
+        how = "по отчёту"
+        if sr.multiple(c) is not None:
+            how += f": «{c.strip().lstrip('+')}»"
+        elif b and in_text(b) and not show_base:
+            how += (", без учёта валютной переоценки" if kind == "money" and ind in sr.BALANCE
+                    else "; база в ответе модели относится к другому периоду и в расчёт не вошла")
     return f"{head}, изменение {ru(ch, unit)} ({how}; {rule})", "код"
 
 
@@ -198,9 +303,17 @@ def build():
                     if q and report.check_quote(q, final, tnorm)[0] == "verified":
                         best, quote = x, q
                         break
-            why, who = justify(ind, best, final, phrase)
+            why, who = justify(ind, best, final, phrase, nums(raw_text[rep]))
             if who == "код (фраза)":
                 quote = phrase_sentence(ind, raw_text[rep]) or quote
+            extra = None
+            if who == "код" and final and ind in sr.NUMERIC and not supported(quote, ind, best):
+                v, b, ch = basis(ind, best)
+                if ind == "opex":                          # строка с ростом операционного дохода — вторая цитата
+                    extra = support_line("opex_income", b, raw_text[rep]) if b else None
+                else:
+                    quote = (support_line(ind, v | b, raw_text[rep]) if b else None) or \
+                            (support_line(ind, v | ch, raw_text[rep]) if ch else None) or quote
             if final == 0 and quote is None:               # ноль по порогу — цитата с цифрой тоже полезна
                 for x in cands:
                     slot, _ = sr.pick(ind, x) if ind in sr.NUMERIC else (None, None)
@@ -209,9 +322,17 @@ def build():
                     if q and report.check_quote(q, 1, tnorm)[0] == "verified":
                         quote = q
                         break
-            rows.append({"id": ind, "блок": NAME[ind][0], "показатель": NAME[ind][1], "оценка": final, "голоса": votes,
-                         "хрупкая": len(set(votes)) > 1, "кто_ставит": who, "обоснование": why,
-                         "цитата": quote or ""})
+            notes = [NOTES[f"{rep}:{ind}"]] if f"{rep}:{ind}" in NOTES else []
+            if rep in GOLD and GOLD[rep][ind] != final:
+                notes.append(f"Эталонная разметка: {sgn(GOLD[rep][ind])}.")
+            row = {"id": ind, "блок": NAME[ind][0], "показатель": NAME[ind][1], "оценка": final, "голоса": votes,
+                   "хрупкая": len(set(votes)) > 1, "кто_ставит": who, "обоснование": why,
+                   "цитата": in_pdf(quote, rep) or ""}
+            if extra:
+                row["цитата_доп"] = in_pdf(extra, rep)
+            if notes:
+                row["примечание"] = " ".join(notes)
+            rows.append(row)
         sums = [sum(p[i]["score"] for i in ORDER) for _, p in rr]
         total = sum(r["оценка"] for r in rows)
         s07 = [t07v[(rep, i)] for i in ORDER if (rep, i) in t07v.index and len(t07v[(rep, i)]) == 5]
@@ -250,7 +371,11 @@ def write(reports):
             "вывод": "strong, если сумма больше 12 (среднее больше 0,5); weak, если сумма меньше −12; иначе mixed",
             "кто_ставит": "код: оценку посчитала программа по выписанным моделью числам; код (фраза): оценку дала "
                           "оценочная фраза отчёта; модель: суждение модели; модель (запасной выход): программа не "
-                          "смогла посчитать оценку, взята оценка модели"}
+                          "смогла посчитать оценку, взята оценка модели",
+            "цитаты": "цитата совпадает с текстовым слоем PDF посимвольно (без учёта пробелов и границ ячеек «|»); "
+                      "если оценку посчитала программа, цитата содержит базу сравнения или названное изменение; "
+                      "цитата_доп — строка с ростом операционного дохода для операционных расходов",
+            "примечание": "примечание ручной проверки или расхождение с эталонной разметкой; оценку не меняет"}
     (OUT / "vectors.json").write_text(json.dumps({"описание": meta, "отчёты": reports}, ensure_ascii=False, indent=1))
     # замеры устойчивости
     with open(OUT / "stability.csv", "w", newline="") as f:
@@ -266,8 +391,13 @@ def write(reports):
     lines = ["# Таблица оценок: 15 пресс-релизов Сбера и 4 отчёта других банков для проверки переноса", "",
              "Для каждого показателя приведены блок, оценка, обоснование и дословная цитата из отчёта, как требует "
              "спецификация. Колонка «Прогоны» содержит оценки пяти прогонов с разным порядком показателей при T=0; "
-             "итоговая оценка равна их медиане. Жирным выделены хрупкие клетки, в которых оценки прогонов разошлись: "
-             "они требуют проверки человеком.", "",
+             "итоговая оценка равна их медиане и во всех клетках совпадает с самым частым значением, как требует "
+             "задание. Жирным выделены хрупкие клетки, в которых оценки прогонов разошлись: их нужно проверить "
+             "человеку.", "",
+             "Каждая цитата сверена программой с текстовым слоем PDF и совпадает с ним посимвольно (без учёта "
+             "пробелов и границ ячеек «|», которыми в таблице разделены столбцы отчёта). Если оценку посчитала "
+             "программа, цитата содержит базу сравнения или изменение, по которым она посчитана. «Примечание» — "
+             "замечание ручной проверки или расхождение с эталонной разметкой; оценок примечания не меняют.", "",
              "Колонка «Кто ставит» показывает источник оценки: «код» означает, что оценку посчитала программа по "
              "выписанным моделью числам; «код (фраза)» означает, что оценку дала оценочная фраза отчёта по правилу "
              "спецификации; «модель» означает суждение модели по правилу спецификации; «модель (запасной выход)» "
@@ -287,8 +417,9 @@ def write(reports):
             sc = f"{x['оценка']:+d}" if x["оценка"] else "0"
             if x["хрупкая"]:
                 sc = f"**{sc}**"
-            lines.append(f"| {x['блок']} | {x['показатель']} | {sc} | {esc(x['обоснование'])} | "
-                         f"{'«' + esc(x['цитата']) + '»' if x['цитата'] else '—'} | {x['кто_ставит']} | "
+            why = esc(x["обоснование"]) + (f". *Примечание:* {esc(x['примечание'])}" if x.get("примечание") else "")
+            quote = "; ".join(f"«{esc(q)}»" for q in (x["цитата"], x.get("цитата_доп")) if q) or "—"
+            lines.append(f"| {x['блок']} | {x['показатель']} | {sc} | {why} | {quote} | {x['кто_ставит']} | "
                          f"{' '.join(f'{v:+d}' if v else '0' for v in x['голоса'])} |")
         lines.append("")
     (OUT / "ТАБЛИЦА_ОЦЕНОК.md").write_text("\n".join(lines))
@@ -351,11 +482,12 @@ def write_stability_md(sber, other):
         f"- Отчёты, у которых итоговый вывод одинаков во всех 5 прогонах: **{vs} из {nr}**.",
         f"- Разброс суммы больше 2 пунктов у {len(wide)} отчётов из {nr}" + (": " + "; ".join(wide) if wide else "") + ".",
         f"- Контрольный прогон при T=0,7: {s07} из {n07} ({pct(s07, n07)}).",
-        "- Для сравнения: исходная спецификация заказчика на 4 отчётах, использованных при настройке, давала 61,5% "
-        "(T=0,7, 5 прогонов); итоговый метод на тех же отчётах даёт 93,8% (записка, рисунок 1).", "",
+        "- Для сравнения на 4 отчётах, использованных при настройке, при одинаковой случайности (T=0,7, 5 прогонов): "
+        "исходная спецификация заказчика даёт 61,5%, итоговая спецификация v7 с расчётами в программе 88,5% "
+        "(записка, рисунок 1).", "",
         table(sber)[0], table(sber)[1], *table(sber)[2:], "",
-        "Хрупкие клетки не скрываются: в таблице оценок они выделены жирным, рядом приведены все пять оценок, и "
-        "такие клетки требуют проверки человеком.", "",
+        "Хрупкие клетки не скрываются: в таблице оценок они выделены жирным, рядом приведены все пять оценок; такие "
+        "клетки нужно проверить человеку. Итоговая оценка в них по правилу задания равна самому частому значению.", "",
         "## Какие показатели расходились (15 отчётов Сбера)", "",
         "| Показатель | В скольких отчётах разошёлся |", "|---|:-:|",
         *[f"| {NAME[i][1]} | {c} |" for i, c in per_ind.most_common()], "",

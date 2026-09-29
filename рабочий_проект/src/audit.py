@@ -30,7 +30,7 @@ def say(ok, msg):
 
 def metas(prefix):
     out = []
-    for p in (ROOT / "raw").glob(f"{prefix}__*.json"):
+    for p in sorted((ROOT / "raw").glob(f"{prefix}__*.json")):
         d = json.loads(p.read_text())
         out.append((d["meta"], d.get("content") or ""))
     return out
@@ -87,7 +87,7 @@ def a4():
             cur = hashlib.sha256((GOLD_DIR / Path(path).name).read_bytes()).hexdigest()
             say(cur == h, f"{Path(path).name}: хеш совпадает с зафиксированным 22.09")
     early = []
-    for p in (ROOT / "raw").glob("*.json"):
+    for p in sorted((ROOT / "raw").glob("*.json")):
         m = json.loads(p.read_text())["meta"]
         if m.get("report") in ("2023_q2", "2024_q4", "2025_q3") and (m.get("started") or "") < "2026-09-22T17:30":
             early.append((m["name"].split("__")[1:3], m["started"][:10]))
@@ -98,7 +98,7 @@ def a4():
 def a5():
     print("\nA5. Облако: провайдер и параметры — что именно сравниваем")
     rows = collections.defaultdict(lambda: collections.defaultdict(set))
-    for p in (ROOT / "raw").glob("*.json"):
+    for p in sorted((ROOT / "raw").glob("*.json")):
         m = json.loads(p.read_text())["meta"]
         if not m.get("cloud"):
             continue
@@ -127,11 +127,39 @@ def a6(items):
             exact += 1
         else:
             fuzzy += 1
-    say(True, f"у {exact} итоговых оценок цитата — точная подстрока текста (после снятия разметки); у {fuzzy} — совпадение ≥92% "
-        "(распознавание, перенос строки): для сдачи такие цитаты заменяются дословным фрагментом текста")
+    say(True, f"у {exact} итоговых оценок цитата модели — точная подстрока распознанного текста (после снятия разметки); "
+        f"у {fuzzy} — совпадение ≥92% (ошибка распознавания, перенос строки). В сдачу идёт фрагмент, переписанный "
+        "буквами PDF (A7)")
+
+
+def a7():
+    """29.09: цитаты сданной таблицы — посимвольно по текстовому слою PDF; у оценок программы видна база расчёта."""
+    import hashlib
+    import build_submission as bs
+    import pdf_quotes as pq
+    print("\nA7. Цитаты сданной таблицы против текстового слоя PDF")
+    hs = json.loads((ROOT / "text_pdf" / "hashes.json").read_text())
+    bad_hash = [r for r, h in hs.items()
+                if hashlib.sha256((ROOT / "text_pdf" / f"{r}.txt").read_text().encode()).hexdigest() != h["sha256"]]
+    say(not bad_hash, f"текстовый слой PDF совпадает с зафиксированным ({len(hs)} отчётов)"
+        + (f"; изменены: {bad_hash}" if bad_hash else ""))
+    sub = next(p for p in (ROOT.parent / "vectors.json", ROOT.parent / "СДАЧА" / "vectors.json") if p.exists())
+    reps = json.loads(sub.read_text())["отчёты"]
+    n = miss = weak = 0
+    for r in reps:
+        pdf = (ROOT / "text_pdf" / f"{r['id']}.txt").read_text()
+        for x in r["показатели"]:
+            for q in (x["цитата"], x.get("цитата_доп")):
+                if q:
+                    n += 1
+                    miss += not pq.verified_in_pdf(q, pdf)
+    say(miss == 0, f"цитат в таблице {n}; не найдено в тексте PDF посимвольно: {miss}")
+    sber = [r for r in reps if r["банк"] == "Сбер"]
+    nz = [x for r in sber for x in r["показатели"] if x["оценка"]]
+    say(all(x["цитата"] for x in nz), f"у всех {len(nz)} ненулевых оценок Сбера есть цитата")
 
 
 if __name__ == "__main__":
     _, items = report.load()
-    a1(); a2(); a3(items); a4(); a5(); a6(items)
+    a1(); a2(); a3(items); a4(); a5(); a6(items); a7()
     print(f"\nИТОГ: проблем {len(problems)}" + (": " + "; ".join(problems) if problems else ""))

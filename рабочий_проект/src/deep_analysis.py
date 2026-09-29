@@ -74,9 +74,9 @@ def gold_all():
 
 def meta(name):
     if name == LOCAL:
-        ms = [json.loads(p.read_text())["meta"] for p in (ROOT / "raw").glob("qwen3.8-27b-mlx-4bit__v7_extract__t0-shuf-ex2-tx2__*.json")]
+        ms = [json.loads(p.read_text())["meta"] for p in sorted((ROOT / "raw").glob("qwen3.8-27b-mlx-4bit__v7_extract__t0-shuf-ex2-tx2__*.json"))]
     else:
-        ms = [json.loads(p.read_text())["meta"] for p in (ROOT / "raw").glob(f"{name.replace('/', '-')}__v7_extract__t0-shuf-ex2-or-tx2__*.json")]
+        ms = [json.loads(p.read_text())["meta"] for p in sorted((ROOT / "raw").glob(f"{name.replace('/', '-')}__v7_extract__t0-shuf-ex2-or-tx2__*.json"))]
     return ms
 
 
@@ -200,10 +200,10 @@ def b4(items):
 def b5(items):
     print("\n5. ПОЧЕМУ ПЛАВАЮТ ЧИСЛОВЫЕ КЛЕТКИ (боевой режим v7, 19 отчётов): разбор по ответам")
     reasons = collections.Counter(); ex = collections.defaultdict(list)
-    for f in (ROOT / "raw").glob("qwen3.8-27b-mlx-4bit__v7_extract__t0-shuf-ex2-tx2__*.json"):
+    for f in sorted((ROOT / "raw").glob("qwen3.8-27b-mlx-4bit__v7_extract__t0-shuf-ex2-tx2__*.json")):
         pass
     by = collections.defaultdict(list)
-    for f in (ROOT / "raw").glob("qwen3.8-27b-mlx-4bit__v7_extract__t0-shuf-ex2-tx2__*.json"):
+    for f in sorted((ROOT / "raw").glob("qwen3.8-27b-mlx-4bit__v7_extract__t0-shuf-ex2-tx2__*.json")):
         d = json.loads(f.read_text()); m = d["meta"]
         if m["run"] > 5 or m["report"].startswith("anon"):
             continue

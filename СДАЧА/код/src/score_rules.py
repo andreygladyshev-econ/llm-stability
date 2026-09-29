@@ -24,18 +24,27 @@ THRESHOLDS = {"money": (3.0, 15.0), "ratio": (0.3, 1.5), "cor": (0.2, 0.5)}
 NEG_WORDS = ("сниж", "паден", "сократ", "уменьш", "минус", "ниже")
 
 
-def number(s):
-    """«511,2 млрд руб.» → 511.2; «-0,3 п.п.» → -0.3; «нет» → None."""
+SUPERSCRIPT = str.maketrans("", "", "⁰¹²³⁴⁵⁶⁷⁸⁹")
+NORM_NAME = re.compile(r"(?<![A-Za-zА-Яа-яЁё])[НнHh]\s?\d{1,2}(?:[.,]\d)?(?![\d,.])")  # «Н20.0», «H1.2» — имя норматива, а не число
+
+
+def number(s, words=True):
+    """«511,2 млрд руб.» → 511.2; «-0,3 п.п.» → -0.3; «нет» → None.
+
+    words=True: слова «снижение», «ниже» и т. п. дают минус — так записывают изменение («снизилась на 1,1 пп»).
+    words=False: для уровня («27,9%, ниже целевого») слова знак не меняют, минус только явный.
+    """
     if not s:
         return None
     # 22.09: GPT-OSS пишет разряды узким неразрывным пробелом (U+202F) — падало на float(). Любые пробельные
     # символы Юникода считаем разделителем разрядов.
-    s = re.sub(r"[\s\u00a0\u202f\u2007\u2009]+", " ", str(s).replace("−", "-").replace("–", "-"))
+    s = re.sub(r"[\s\u00a0\u202f\u2007\u2009]+", " ", str(s).replace("−", "-").replace("–", "-")).translate(SUPERSCRIPT)
+    s = NORM_NAME.sub(" ", s)  # 29.09: «Н20.0: 13,7%» читалось как 20,0
     m = re.search(r"[-+]?\d[\d\s]*(?:[.,]\d+)?", s)
     if not m:
         return None
     v = float(re.sub(r"\s", "", m.group(0)).replace(",", "."))
-    if v > 0 and (s.strip().startswith("-") or any(w in s.lower() for w in NEG_WORDS)):
+    if v > 0 and (s.strip().startswith("-") or (words and any(w in s.lower() for w in NEG_WORDS))):
         v = -v
     return v
 
@@ -45,9 +54,9 @@ def is_bp(s):
     return bool(s) and bool(re.search(r"\bбп\b|б\.\s?п\.|базисн|\bbps?\b", str(s).lower()))
 
 
-def in_pp(s):
+def in_pp(s, words=True):
     """Число в процентных пунктах: «-3 бп» → -0,03; «-0,03 пп» → -0,03."""
-    v = number(s)
+    v = number(s, words)
     return None if v is None else (v / 100 if is_bp(s) else v)
 
 
@@ -87,7 +96,9 @@ def change_of(indicator, value, base, change):
     """
     kind = NUMERIC[indicator][0]
     lo = THRESHOLDS[kind][0]
-    v, b = (in_pp(value), in_pp(base)) if kind in ("ratio", "cor") else (number(value), number(base))
+    # value и base — уровни: слова рядом с числом («ниже целевого») знак уровня не меняют (29.09)
+    v, b = ((in_pp(value, False), in_pp(base, False)) if kind in ("ratio", "cor")
+            else (number(value, False), number(base, False)))
     from_amounts = None
     # темп («29,3%») в одном поле и сумма («16,1 трлн») в другом — несравнимы (ночь 6: знак переворачивался)
     if v is not None and b not in (None, 0) and ("%" in str(value)) == ("%" in str(base)):
@@ -132,11 +143,12 @@ def score(indicator, value="", base="", change=""):
             return None  # модель не выписала рост расходов — считать нечем, берём её балл
         if income_growth is None:
             return 0  # правило спеки: операционного дохода до резервов нет — 0
-        gap = income_growth - opex_growth
+        gap = round(income_growth - opex_growth, 6)
         return 0 if abs(gap) <= 1 else (1 if gap <= 10 else 2) if gap > 0 else (-1 if gap >= -10 else -2)
     c = change_of(indicator, value, base, change)
     if c is None:
         return None  # не молчаливый ноль: показатель найден, но числа не разобрать — остаётся балл модели
+    c = round(c, 6)  # 29.09: 14,6 − 14,3 = 0,29999… без округления давало 0 вместо ±1
     lo, hi = THRESHOLDS[kind]
     mag = 0 if abs(c) < lo else (1 if abs(c) <= hi else 2)
     sign = (1 if c > 0 else -1) * (-1 if inverted else 1)
@@ -212,6 +224,13 @@ def selftest():
     assert pick("corporate_loans", {"q_change": "+2,0%", "y_change": "+13,8%"}) == ("y", 1)  # на дату — с начала года
     assert pick("net_profit", {"y_change": "+6,8%"}) == ("y", 1)  # квартала нет — нарастающий итог
     assert pick("net_profit", {}) == (None, None)
+    # 29.09: скрытые ошибки разбора, найденные при аудите (в итоговых ответах не встречались)
+    assert score("capital_adequacy", "14,6%", "14,3%") == 1          # ровно 0,3 пп — уже ±1
+    assert score("capital_adequacy", "Н20.0: 13,7%", "13,4%") == 1   # «Н20.0» — имя норматива
+    assert score("cir", "27,9% (ниже целевого)", "29,0%") == 1       # слово рядом с уровнем знак не меняет
+    assert score("capital_adequacy", "13,7%²", "13,3%") == 1         # надстрочная сноска не цифра
+    assert score("net_profit", "снижение на 5,0%", "", "") == -1      # темп в поле value: слово знак меняет
+    assert number("СберБанк Онлайн 78,6 млн") == 78.6 and number("трлн 20,3") == 20.3  # «н» в конце слова — не норматив
     assert BALANCE <= set(NUMERIC) and len(NUMERIC) + len(JUDGMENT) == 24
     print("score_rules: самопроверка пройдена, показателей в коде", len(NUMERIC), "у модели", len(JUDGMENT))
 

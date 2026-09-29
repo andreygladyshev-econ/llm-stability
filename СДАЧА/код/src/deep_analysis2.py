@@ -6,6 +6,8 @@
  13. Порог отказа только на отложенных отчётах (без отладочных, которые видела настройка).
  14. Размышление без DeepSeek (у него база и опыт шли через разных провайдеров).
  15. Стресс-замер итогового конвейера: T=0,7, 5 прогонов, все 15 отчётов.
+ 23. Числа, которых нет в тексте отчёта: модель пересчитывает базу из процента (v7 против v8).
+ 24. Хрупкость и ошибки против эталона: данные рисунка 2.
 Все пересчёты — на готовых ответах, без новых прогонов. Вывод помечается как ретроспективный.
 """
 import collections
@@ -286,7 +288,7 @@ def b20(items):
     import json
     print("\n20. ОБЪЁМ РАБОТЫ")
     loc, cloud_models = [], set()
-    for p_ in (ROOT / "raw").glob("*.json"):
+    for p_ in sorted((ROOT / "raw").glob("*.json")):
         m = json.loads(p_.read_text())["meta"]
         (cloud_models.add(m["model"]) if m.get("cloud") else loc.append(m))
     wh = [x["load_w"] * x["sec"] / 3600 for x in loc if x.get("load_w")]
@@ -329,8 +331,48 @@ def b22(items):
         print(f"   {ind:18} {n(base)} → {n(new)}")
 
 
+def b23(items):
+    """29.09: поля value/base с числом, которого нет в распознанном тексте отчёта, — модель посчитала его сама."""
+    import glob
+    import json
+    import re
+    num = re.compile(r"\d{1,3}(?:[ \u00a0]\d{3})+(?:,\d+)?|\d+(?:[.,]\d+)?")
+    nums = lambda t: {re.sub(r"[ \u00a0]", "", n).replace(".", ",") for n in num.findall(re.sub(r"[⁰¹²³⁴⁵⁶⁷⁸⁹]", "", t or ""))}
+    print("\n23. ЧИСЛА, КОТОРЫХ НЕТ В ТЕКСТЕ ОТЧЁТА (поля «значение» и «база» числовых показателей, Qwen 27B, T=0,7)")
+    for spec, name in (("v7_extract", "v7: пустая ячейка разрешена"), ("v8_extract", "v8: обе ячейки обязательны")):
+        texts, n, bad, ex = {}, 0, 0, []
+        for f in sorted(glob.glob(str(ROOT / "raw" / f"qwen3.8-27b-mlx-4bit__{spec}__t0.7-ex2-mp0.05-tx2__*.json"))):
+            d = json.loads(Path(f).read_text()); rep = d["meta"]["report"]
+            if rep not in texts:
+                texts[rep] = nums((ROOT / "text_v2" / f"{rep}.txt").read_text())
+            p = report.parse(d["content"]) or {}
+            for i, x in p.items():
+                for slot in "qy":
+                    for k in ("value", "base"):
+                        ns = nums(x.get(f"{slot}_{k}", "")) if i in sr.NUMERIC else set()
+                        if ns:
+                            n += 1
+                            if any(v not in texts[rep] and len(v.replace(",", "")) > 2 for v in ns):
+                                bad += 1; ex.append((rep, i, x.get(f"{slot}_{k}")))
+        print(f"  {name:32} полей с числом {n:5}; числа нет в тексте: {bad} ({bad / n:.1%})" + (f"; напр. {ex[:2]}" if ex else ""))
+    print("  в итоговой таблице оценки программы по такой базе: 0 (build_submission.py это проверяет и базу не показывает)")
+
+
+def b24(items):
+    gold = {(r, i): v[0] for r in sg.REPORTS for i, v in sg.read_gold(r).items()}
+    print("\n24. ХРУПКОСТЬ И ОШИБКИ ПРОТИВ ЭТАЛОНА (5 размеченных отчётов, 120 клеток) — данные рисунка 2")
+    for name, var, runs in (("10 прогонов при T=0,7", "t0.7-ex2-mp0.05-tx2", range(1, 11)),
+                            ("итоговый режим, 5 перестановок при T=0", "t0-shuf-ex2-tx2", range(1, 6))):
+        v = fc.votes(items, fc.cfg(M, var), sg.REPORTS, runs)
+        fr = [k for k in gold if len(set(v[k])) > 1]
+        st = [k for k in gold if len(set(v[k])) == 1]
+        err = lambda ks: sum(collections.Counter(v[k]).most_common(1)[0][0] != gold[k] for k in ks)
+        print(f"  {name:40} хрупких {len(fr):3}: ошибок {err(fr)} из {len(fr)} ({err(fr) / len(fr):.0%}); "
+              f"устойчивых {len(st)}: ошибок {err(st)} из {len(st)} ({err(st) / len(st):.1%})")
+
+
 if __name__ == "__main__":
-    want = sys.argv[1:] or [str(i) for i in range(10, 23)]
+    want = sys.argv[1:] or [str(i) for i in range(10, 25)]
     _, items = report.load()
     for b in want:
         globals()[f"b{b}"](items)

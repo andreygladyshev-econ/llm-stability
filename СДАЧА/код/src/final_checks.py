@@ -95,8 +95,8 @@ def block_a(items):
         if v.empty:
             continue
         n = min(len(s) for s in v)
-        raw = [json.loads(p.read_text())["content"] for p in (ROOT / "raw").glob(
-            f"{m.replace('/', '-')}__v7_extract__t0-ex2-det-tx2__2026_q2__run*.json")]
+        raw = [json.loads(p.read_text())["content"] for p in sorted((ROOT / "raw").glob(
+            f"{m.replace('/', '-')}__v7_extract__t0-ex2-det-tx2__2026_q2__run*.json"))]
         diff = sum(len(set(s)) > 1 for s in v)
         print(f"{m:36}{n:>8}{len(set(raw)):>16}{diff:>18} из 24")
     v = votes(items, cfg(M, "t0-shuf-ex2-tx2"), ["2026_q2"])
@@ -177,7 +177,7 @@ def block_d(items):
 
 def block_e(items):
     print("\nE. ТА ЖЕ QWEN 27B: ноутбук 4 бита / облако fp8 / облако bf16 (частично: 21 ответ)")
-    bf = [json.loads(p.read_text()) for p in (ROOT / "raw_qwen_bf16").glob("*.json")]
+    bf = [json.loads(p.read_text()) for p in sorted((ROOT / "raw_qwen_bf16").glob("*.json"))]
     det = [report.parse(d["content"]) for d in bf if "-det-" in d["meta"]["variant"]]
     det = [d for d in det if d]
     if det:
@@ -188,7 +188,7 @@ def block_e(items):
         if "-det-" in d["meta"]["variant"]:
             by["det"].append(d["content"])
     print(f"  bf16, повтор одного запроса ×{len(by['det'])}: разных текстов {len(set(by['det']))}")
-    fp8 = [json.loads(p.read_text())["content"] for p in (ROOT / "raw").glob("qwen-qwen3.8-27b__v7_extract__t0-ex2-det-tx2__*.json")]
+    fp8 = [json.loads(p.read_text())["content"] for p in sorted((ROOT / "raw").glob("qwen-qwen3.8-27b__v7_extract__t0-ex2-det-tx2__*.json"))]
     print(f"  fp8,  повтор одного запроса ×{len(fp8)}: разных текстов {len(set(fp8))}")
     print("  ноутбук 4 бита: повтор байт в байт (21.09 → 22.09)")
 

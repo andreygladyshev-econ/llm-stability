@@ -34,7 +34,7 @@ def suspicious(it):
 
 def main():
     hits, tot, ex = collections.Counter(), collections.Counter(), []
-    for f in (ROOT / "raw").glob("*.json"):
+    for f in sorted((ROOT / "raw").glob("*.json")):
         d = json.loads(f.read_text()); m = d["meta"]
         if m.get("mode") != "extract2" or not d.get("content"):
             continue

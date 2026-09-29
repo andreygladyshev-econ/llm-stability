@@ -20,7 +20,7 @@ def row(items, model, battle, det):
     gold = {(r, i): g[0] for r in fc.GOLD4 for i, g in sg.read_gold(r).items()}
     x = sum(med.get(k) == g for k, g in gold.items())
     d = fc.votes(items, fc.cfg(model, det), ["2026_q2"])
-    metas = [json.loads(p.read_text())["meta"] for p in (ROOT / "raw").glob(f"{model.replace('/', '-')}__v7_extract__{battle}__*.json")]
+    metas = [json.loads(p.read_text())["meta"] for p in sorted((ROOT / "raw").glob(f"{model.replace('/', '-')}__v7_extract__{battle}__*.json"))]
     ok = [m for m in metas if m.get("parse_ok")]
     return {"хрупких/отчёт": round(statistics.mean(per), 2), "эталон": f"{x}/{len(gold)}",
             "повтор: клеток с разным баллом": sum(len(set(s)) > 1 for s in d) if not d.empty else "—",

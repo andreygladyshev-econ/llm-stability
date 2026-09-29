@@ -19,7 +19,9 @@ import report  # noqa: E402
 import texts  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-GOLD = next(p for p in (ROOT.parent / "эталон", ROOT.parent / "_АНДРЕЙ" / "4_разметка") if p.is_dir())
+# эталон: рядом с кодом сдачи (СДАЧА/эталон), в репозитории для рабочего проекта, у автора — в личной папке
+GOLD = next(p for p in (ROOT.parent / "эталон", ROOT.parent / "СДАЧА" / "эталон", ROOT.parent / "_АНДРЕЙ" / "4_разметка")
+            if p.is_dir())
 REPORTS = ["2026_q2", "2022_q4", "2023_q2", "2024_q4", "2025_q3"]  # + холдаут, размечен вслепую 22.09
 M = "qwen3.8-27b-mlx@4bit"
 CONFIGS = {

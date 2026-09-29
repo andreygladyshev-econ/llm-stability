@@ -3,3 +3,6 @@ __pycache__/
 .DS_Store
 *.pyc
 рабочий_проект/metrics/
+
+# пересборка сдачи из папки кода (build_submission.py, figures.py)
+СДАЧА/код/пересборка/
