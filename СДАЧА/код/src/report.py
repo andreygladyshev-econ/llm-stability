@@ -26,13 +26,15 @@ import texts  # noqa: E402
 from indicators import IDS, INDICATORS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
-# папка Андрея лежит рядом с проектом; если код запущен из папки сдачи, отчёт пишется в код/пересборка
-ANDREY = ROOT.parent / "_АНДРЕЙ" if (ROOT.parent / "_АНДРЕЙ").is_dir() else texts.SUBMIT
+# журнал результатов и копия отчёта — в рабочую папку автора (_АНДРЕЙ рядом с проектом, в репозиторий не входит);
+# без неё — в reports/
+ANDREY = ROOT.parent / "_АНДРЕЙ" if (ROOT.parent / "_АНДРЕЙ").is_dir() else ROOT / "reports"
 RAW, TEXT, METRICS, REPORTS, LOGS = (ROOT / d for d in ("raw", "text", "metrics", "reports", "logs"))
 NAMES = {i[0]: i[2] for i in INDICATORS}
 
 VERDICT_THRESHOLD = 0.5      # из спецификации: среднее > 0.5 strong, < −0.5 weak
-QUOTE_THRESHOLD = 92         # ponytail: порог на глаз из CLAUDE.md, откалибровать на выборке (_АНДРЕЙ/2_план_и_гипотезы/ИСХОДНЫЙ_ПЛАН_14.09.md, раздел 5)
+QUOTE_THRESHOLD = 92         # сходство цитаты с текстом, %: допуск на ошибки распознавания и переносы строк;
+                             # цитаты сданной таблицы сверены с текстом PDF посимвольно (audit.py, A7)
 POSITION_BUCKET = 300        # символов: цитаты ближе этого считаются «одним местом» текста
 
 
@@ -444,7 +446,7 @@ def build_html(runs, items, by_report, by_ind, final, summary, checks, spec_cmp=
 
 
 def results_journal(runs, items):
-    """Накопительный журнал: строка на конфигурацию, все ночи сразу. → _АНДРЕЙ/ЖУРНАЛ_РЕЗУЛЬТАТОВ.md"""
+    """Накопительный журнал: строка на конфигурацию, все ночи сразу. → ЖУРНАЛ_РЕЗУЛЬТАТОВ.md (папка ANDREY)"""
     rows = []
     for cfg, g in items.groupby("config"):
         r = runs[runs.config == cfg]
@@ -523,10 +525,11 @@ def main():
                      ("spec_comparison", spec_cmp), ("spec_comparison_by_indicator", spec_cmp_ind)]:
         df.to_csv(METRICS / f"{name}.csv", index=False)
     if not items.empty:
-        results_journal(runs, items)  # накопительный журнал всех конфигураций → _АНДРЕЙ/ЖУРНАЛ_РЕЗУЛЬТАТОВ.md
+        results_journal(runs, items)  # накопительный журнал всех конфигураций → ЖУРНАЛ_РЕЗУЛЬТАТОВ.md
     page = build_html(runs, items, by_report, by_ind, final, summary, checks, spec_cmp, spec_cmp_ind)
     (REPORTS / "latest.html").write_text(page)
-    (ANDREY / "ОТЧЁТ.html").write_text(page)
+    if ANDREY != REPORTS:
+        (ANDREY / "ОТЧЁТ.html").write_text(page)
     (REPORTS / f"report_{dt.datetime.now():%Y-%m-%d_%H%M}.html").write_text(page)
     print(f"прогонов {len(runs)}, разобрано {len(ok_runs)} → reports/latest.html, metrics/*.csv")
 

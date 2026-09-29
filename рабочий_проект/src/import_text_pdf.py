@@ -4,7 +4,7 @@
 текст, поэтому читать её моделью со зрением незачем: цифры и так исходные. В hashes.json это помечается
 отдельным engine, чтобы в записке не перепутать способ чтения.
 
-Запуск: .venv/bin/python src/import_text_pdf.py "pdf_other/Новости ВТБ.pdf" vtb_2026_q1
+Запуск: .venv/bin/python src/import_text_pdf.py pdf_other/vtb_2026_q1.pdf vtb_2026_q1
 """
 import datetime as dt
 import hashlib

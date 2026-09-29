@@ -1,11 +1,11 @@
 """Сборка файлов сдачи (23.09): векторы (CSV, JSON), таблица оценок с обоснованием и дословной цитатой (MD),
-замеры устойчивости (CSV, MD).
+замеры устойчивости (CSV, MD, Excel — src/stability_xlsx.py), оценки всех прогонов (runs.csv).
 
 Источник — боевой режим v7: 5 прогонов на отчёт при T=0 с разным порядком показателей; итог клетки — медиана
 голосов (совпадает с модой задания во всех клетках — `src/audit.py`, A3).
 
 Цитата (29.09): фрагмент распознанного текста, найденный по цитате модели, переписывается буквами текстового слоя
-PDF (src/pdf_quotes.py), поэтому совпадает с отчётом посимвольно; проверку повторяет `src/audit.py`, A6. Если
+PDF (src/pdf_quotes.py), поэтому совпадает с отчётом посимвольно; проверку повторяет `src/audit.py`, A7. Если
 оценку посчитала программа, а в цитате модели нет ни базы сравнения, ни названного изменения, в таблицу ставится
 строка отчёта с этими числами (для операционных расходов добавляется строка с ростом операционного дохода).
 Примечания ручной проверки (notes/примечания_проверки.json) и расхождения с эталоном выводятся после обоснования;
@@ -27,13 +27,16 @@ import pdf_quotes as pq  # noqa: E402
 import report  # noqa: E402
 import score_rules as sr  # noqa: E402
 import silver_gold as sg  # noqa: E402
+import stability_xlsx  # noqa: E402
 import texts  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = texts.SUBMIT
 PREFIX = "qwen3.8-27b-mlx-4bit__v7_extract__t0-shuf-ex2-tx2"
 PDF = json.loads((ROOT / "notes" / "pdf_mapping.json").read_text())
-PDF.update({r: f"pdf_other/{r}.pdf (текстовый PDF с сайта банка)" for r in ("vtb_2026_q1", "tbank_2024_q4", "tbank_2026_q1", "tbank_2026_q2")})
+SBER_PDF = set(PDF)  # сканы заказчика: задание/SBER/{файл}
+# отчёты других банков — текстовые PDF с сайтов банков, лежат в рабочем проекте
+PDF.update({r: f"рабочий_проект/pdf_other/{r}.pdf" for r in ("vtb_2026_q1", "tbank_2024_q4", "tbank_2026_q1", "tbank_2026_q2")})
 TEMPLATE = list(csv.DictReader(open(sg.GOLD / "2026_q2_CLAUDE.csv")))
 ORDER = [r["id"] for r in TEMPLATE]
 NAME = {r["id"]: (r["блок"], r["показатель"]) for r in TEMPLATE}
@@ -72,6 +75,13 @@ JUDG = {  # правило спеки v7 для балла модели по с�
                  1: "факты роста без оговорок", 0: "в речи есть и плюсы, и оговорки",
                  -1: "оговорки, признание проблем", -2: "антикризисная риторика"},
 }
+
+
+def source_link(r):
+    """Ссылка на исходный PDF из папки сдачи."""
+    if r["id"] in SBER_PDF:
+        return f"[{r['файл']}](../задание/SBER/{r['файл']})"
+    return f"[{Path(r['файл']).name}](../{r['файл']}), текстовый PDF с сайта банка"
 
 
 def sgn(x):
@@ -411,7 +421,7 @@ def write(reports):
     for r in reports:
         s = r["устойчивость"]
         lines += [f"## {r['период']}: сумма {sgn(r['сумма'])}, {r['вывод']}", "",
-                  f"Исходный файл: {r['файл']}. Во всех 5 прогонах совпали **{s['совпало_во_всех_5']} из 24** показателей; "
+                  f"Исходный файл: {source_link(r)}. Во всех 5 прогонах совпали **{s['совпало_во_всех_5']} из 24** показателей; "
                   f"вывод {'одинаков во всех 5 прогонах' if s['вывод_совпал_во_всех_5'] else '**различался**'}; сумма по "
                   f"прогонам от {sgn(s['сумма_min'])} до {sgn(s['сумма_max'])}." + (" Разошлись: " + "; ".join(
                       f"{x['показатель']} ({' '.join(f'{v:+d}' if v else '0' for v in x['голоса'])})"
@@ -429,7 +439,7 @@ def write(reports):
         lines.append("")
     (OUT / "ТАБЛИЦА_ОЦЕНОК.md").write_text("\n".join(lines))
     # все голоса: строки — показатели, столбцы — 5 прогонов (как просит задание для Excel)
-    with open(OUT / "прогоны.csv", "w", newline="") as f:
+    with open(OUT / "runs.csv", "w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["report", "period", "block", "indicator", "name", "run1", "run2", "run3", "run4", "run5", "final",
                     "fragile", "scored_by"])
@@ -438,6 +448,7 @@ def write(reports):
                 w.writerow([r["id"], r["период"], x["блок"], x["id"], x["показатель"], *x["голоса"], x["оценка"],
                             x["хрупкая"], x["кто_ставит"]])
     write_stability_md(sber, other)
+    stability_xlsx.write(OUT / "ЗАМЕРЫ_УСТОЙЧИВОСТИ.xlsx", sber, other, {i: NAME[i][1] for i in ORDER})
     # сводка
     miss = [(r["id"], x["id"]) for r in reports for x in r["показатели"] if x["оценка"] and not x["цитата"]]
     st = sum(r["устойчивость"]["совпало_во_всех_5"] for r in sber)
@@ -501,9 +512,11 @@ def write_stability_md(sber, other):
     st2, n2, vs2, nr2, wide2, s072, n072 = total(other)
     lines += [f"Во всех 5 прогонах совпали {st2} из {n2} ({pct(st2, n2)}); вывод одинаков в {vs2} отчётах из {nr2}; "
               f"контрольный прогон при T=0,7: {s072} из {n072} ({pct(s072, n072)}).", "", *table(other), "",
-              "Оценки всех пяти прогонов по каждой клетке приведены в [прогоны.csv](прогоны.csv), итоговые векторы в "
-              "[vectors.csv](vectors.csv) и [vectors.json](vectors.json), эти же замеры в машинном виде в "
-              "[stability.csv](stability.csv). Файл собирается скриптом "
+              "Эти же замеры в виде таблицы Excel, которую просит задание (на каждый отчёт лист: 24 показателя × 5 "
+              "прогонов, совпадения, суммы и выводы посчитаны формулами), — [ЗАМЕРЫ_УСТОЙЧИВОСТИ.xlsx]"
+              "(ЗАМЕРЫ_УСТОЙЧИВОСТИ.xlsx). Оценки всех пяти прогонов по каждой клетке в одном файле — [runs.csv](runs.csv), "
+              "итоговые векторы — [vectors.csv](vectors.csv) и [vectors.json](vectors.json), замеры в машинном виде — "
+              "[stability.csv](stability.csv). Файлы собирает скрипт "
               "[код/src/build_submission.py](код/src/build_submission.py).", ""]
     (OUT / "ЗАМЕРЫ_УСТОЙЧИВОСТИ.md").write_text("\n".join(lines))
 

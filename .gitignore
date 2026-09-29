@@ -4,5 +4,7 @@ __pycache__/
 *.pyc
 рабочий_проект/metrics/
 
-# пересборка сдачи из папки кода (build_submission.py, figures.py)
+# пересборка сдачи из папки кода (build_submission.py, figures.py) и рабочие файлы report.py, final_table.py
 СДАЧА/код/пересборка/
+СДАЧА/код/metrics/
+СДАЧА/код/reports/
