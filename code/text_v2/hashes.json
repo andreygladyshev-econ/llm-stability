@@ -1,0 +1,253 @@
+{
+ "2026_q2": {
+  "sha256": "971bd7136b099d6da45a239085fa5dc0c6b4cde5b1743367ba23c340ddc857c3",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 9,
+  "chars": 28511,
+  "mean_page_recall": 0.984,
+  "pages_not_full": [
+   3,
+   5,
+   6,
+   7
+  ],
+  "created": "2026-09-19T14:53:53"
+ },
+ "2022_q4": {
+  "sha256": "db76aa9182d16fee53b2b06b1524760da5c2c4bf63521f398f8f99c4c84bf6fc",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 9,
+  "chars": 26050,
+  "mean_page_recall": 0.982,
+  "pages_not_full": [
+   2,
+   3,
+   4
+  ],
+  "created": "2026-09-19T15:06:50"
+ },
+ "2024_q3": {
+  "sha256": "9644e6687d8218b4678535712d8366d1b4c2831a8389bbf914509a33075d0452",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 9,
+  "chars": 27547,
+  "mean_page_recall": 0.983,
+  "pages_not_full": [
+   2,
+   3,
+   5
+  ],
+  "created": "2026-09-19T15:19:25"
+ },
+ "2023_q4": {
+  "sha256": "c2e15cbc2c21afcfec72343b2fe080964fcfda14ba47c8556eab603a1befbcb9",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 10,
+  "chars": 30605,
+  "mean_page_recall": 0.975,
+  "pages_not_full": [
+   3,
+   4,
+   6
+  ],
+  "created": "2026-09-19T15:32:34"
+ },
+ "2023_q1": {
+  "sha256": "d4cc6b21a4c997669192ddc5e93f117e3c63a2e65fbde6e6bb86fec1a7b57561",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 9,
+  "chars": 24577,
+  "mean_page_recall": 0.933,
+  "pages_not_full": [
+   1,
+   2,
+   3,
+   6
+  ],
+  "created": "2026-09-19T15:44:00"
+ },
+ "2023_q2": {
+  "sha256": "9136cdacafbd538abbe052146b07e0f70b094b4dcee05690cc385197a384b87f",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 10,
+  "chars": 28109,
+  "mean_page_recall": 0.931,
+  "pages_not_full": [
+   1,
+   3,
+   6
+  ],
+  "created": "2026-09-19T15:56:25"
+ },
+ "2023_q3": {
+  "sha256": "9f4d74a0deba211359fb64b13b79343117d9b8a7f7868efa427c2ad83503635d",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 10,
+  "chars": 26008,
+  "mean_page_recall": 0.998,
+  "pages_not_full": [
+   6
+  ],
+  "created": "2026-09-19T16:08:17"
+ },
+ "2024_q1": {
+  "sha256": "d869164512c867107963aab615e5fd61425dccf28e442322a909c730ebe914ce",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 10,
+  "chars": 26014,
+  "mean_page_recall": 0.996,
+  "pages_not_full": [
+   2
+  ],
+  "created": "2026-09-19T16:20:19"
+ },
+ "2024_q2": {
+  "sha256": "4ff49ceb9483259dde42befea8679f9e3d8c1e5bb4c223b681c8c092fea7b118",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 10,
+  "chars": 30508,
+  "mean_page_recall": 0.99,
+  "pages_not_full": [
+   2
+  ],
+  "created": "2026-09-19T16:33:45"
+ },
+ "2024_q4": {
+  "sha256": "7245f4827cf9bcc8770b128113dfa598774a9f2ca41e6d9855ce6f747cbce2ab",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 9,
+  "chars": 27856,
+  "mean_page_recall": 0.987,
+  "pages_not_full": [
+   3,
+   4,
+   5
+  ],
+  "created": "2026-09-19T16:46:12"
+ },
+ "2025_q1": {
+  "sha256": "c7f5ca9acfd67af6170ca7dd6ed7f7f094dd72e76f67dfe1b2615d5890633ac4",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 9,
+  "chars": 25151,
+  "mean_page_recall": 0.984,
+  "pages_not_full": [
+   3,
+   4,
+   5
+  ],
+  "created": "2026-09-19T16:57:44"
+ },
+ "2025_q2": {
+  "sha256": "cb318945aac4438966194521df7f68f806336563136ce9ce0d98711f64c3e604",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 9,
+  "chars": 29623,
+  "mean_page_recall": 0.992,
+  "pages_not_full": [
+   3,
+   5
+  ],
+  "created": "2026-09-19T17:11:02"
+ },
+ "2025_q3": {
+  "sha256": "6866d43b86eeb3097f9f934322ccc71f362d6c97bb75ae773fabee589bd2c649",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 9,
+  "chars": 28846,
+  "mean_page_recall": 0.982,
+  "pages_not_full": [
+   4,
+   5,
+   6
+  ],
+  "created": "2026-09-19T17:24:06"
+ },
+ "2025_q4": {
+  "sha256": "ea32895f1daf24d3ee34c165a36d09ebda217917f1f8a3f3a1d09035bb3a361c",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 9,
+  "chars": 31942,
+  "mean_page_recall": 0.985,
+  "pages_not_full": [
+   4,
+   5,
+   6
+  ],
+  "created": "2026-09-19T17:37:41"
+ },
+ "2026_q1": {
+  "sha256": "4dd0e3ffe187a7410a9f92423a8d7a2e25af7aab696f520461643ebcf5207554",
+  "engine": "qwen/qwen3.8-27b vision, T=0, 150 dpi",
+  "pages": 9,
+  "chars": 24182,
+  "mean_page_recall": 0.966,
+  "pages_not_full": [
+   3,
+   4,
+   5,
+   7
+  ],
+  "created": "2026-09-19T17:48:45"
+ },
+ "anon_2022_q4": {
+  "sha256": "37cb256f665090823b999f91460e8c536a6da407ea41347cdb1cce532fc23e3d",
+  "engine": "производный от 2022_q4",
+  "note": "обезличен: банк и первое лицо заменены (H15), текст v2",
+  "chars": 26078,
+  "created": "2026-09-20T13:18:15"
+ },
+ "anon_2026_q2": {
+  "sha256": "bb88e4957388718423a1159a694ab7d1eccca747463ebf525484c4761331f225",
+  "engine": "производный от 2026_q2",
+  "note": "обезличен: банк и первое лицо заменены (H15), текст v2",
+  "chars": 28558,
+  "created": "2026-09-20T13:18:15"
+ },
+ "anon_2024_q3": {
+  "sha256": "351fae6d43d9c1860536b723900eaf18ee9cb925120e3af9e701888298bc784b",
+  "engine": "производный от 2024_q3",
+  "note": "обезличен: банк и первое лицо заменены (H15), текст v2",
+  "chars": 27579,
+  "created": "2026-09-20T13:18:15"
+ },
+ "anon_2023_q4": {
+  "sha256": "f0ff44e0ca72f76d4f82dec67f17cd83064e93efb2812eee7e533a84fbd5f129",
+  "engine": "производный от 2023_q4",
+  "note": "обезличен: банк и первое лицо заменены (H15), текст v2",
+  "chars": 30642,
+  "created": "2026-09-20T13:18:15"
+ },
+ "vtb_2026_q1": {
+  "sha256": "3d43645c8b77d34691a99281d0552cd526208c8eaed83509afc0568aa3cb967a",
+  "engine": "текстовый слой PDF (печать веб-страницы), распознавание не требуется",
+  "pages": 3,
+  "chars": 8780,
+  "source": "pdf_other/Новости ВТБ.pdf",
+  "created": "2026-09-20T13:57:08"
+ },
+ "tbank_2026_q2": {
+  "sha256": "7818251fdc4d835145efb1aaa23ab684c03dd895d229519a7647cb35d3d12c34",
+  "engine": "текстовый слой PDF (печать веб-страницы), распознавание не требуется",
+  "pages": 9,
+  "chars": 21991,
+  "source": "pdf_other/tbank_2026_q2.pdf",
+  "created": "2026-09-20T21:36:36"
+ },
+ "tbank_2026_q1": {
+  "sha256": "445c5dc1a91b70820858fa97300ac331a459982dbcf35b59794d9c1f003fb73d",
+  "engine": "текстовый слой PDF (печать веб-страницы), распознавание не требуется",
+  "pages": 9,
+  "chars": 22700,
+  "source": "pdf_other/tbank_2026_q1.pdf",
+  "created": "2026-09-20T21:36:36"
+ },
+ "tbank_2024_q4": {
+  "sha256": "9ac1ae34c1ab2645fe594b128cb158f941da7844a1666390be83fa8ac8ecdb3d",
+  "engine": "текстовый слой PDF (печать веб-страницы), распознавание не требуется",
+  "pages": 7,
+  "chars": 17403,
+  "source": "pdf_other/tbank_2024_q4.pdf",
+  "created": "2026-09-20T21:36:36"
+ }
+}

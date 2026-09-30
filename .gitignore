@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+.DS_Store
+*.pyc
+
+# пересборка сдачи из папки кода (build_submission.py, figures.py) и рабочие файлы report.py, final_table.py
+code/rebuild/
+code/metrics/
+code/reports/

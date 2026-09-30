@@ -1,0 +1,54 @@
+[[job]]
+model = "qwen3.8-27b-gguf@q4km"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-gguf@q6k"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 24576
+
+[[job]]
+model = "qwen3.8-27b-mlx@5bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0
+ids_order = "shuffled"
+mode = "extract2"
+text = "v2"
+ctx = 32768
+
+[[job]]
+model = "google/gemma-4-31b-qat"
+spec = "v7_extract"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+min_p = 0.05
+mode = "extract2"
+text = "v2"
+ctx = 28672

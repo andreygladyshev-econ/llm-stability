@@ -1,0 +1,8 @@
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["smoke_mini"]
+runs = 1
+temperature = 0
+two_turn = true
+ctx = 32768

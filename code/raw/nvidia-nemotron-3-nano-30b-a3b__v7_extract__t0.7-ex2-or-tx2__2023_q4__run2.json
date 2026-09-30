@@ -1,0 +1,87 @@
+{
+ "meta": {
+  "name": "nvidia-nemotron-3-nano-30b-a3b__v7_extract__t0.7-ex2-or-tx2__2023_q4__run2",
+  "model": "nvidia/nemotron-3-nano-30b-a3b",
+  "cloud": true,
+  "provider": "Crusoe",
+  "model_quant": "fp8",
+  "spec_version": "v7_extract",
+  "spec_hash": "46954bb5e58e630022ba2cccb0e43f55db5c5c6512a52996612c0f962bbb25dc",
+  "request_hash": "37c7c6e3c81dbba6681a4ab3e953b4204e971df38ebbee47a49377cdb4c66cfe",
+  "report": "2023_q4",
+  "text_version": "v2",
+  "text_hash": "c2e15cbc2c21afcfec72343b2fe080964fcfda14ba47c8556eab603a1befbcb9",
+  "run": 2,
+  "variant": "t0.7-ex2-or-tx2",
+  "temperature": 0.7,
+  "top_p": 1,
+  "seed": null,
+  "min_p_dropped": false,
+  "schema": true,
+  "dropped_params": [],
+  "max_tokens": 9000,
+  "reasoning_mode": "выключено",
+  "or_cache": null,
+  "ids_order": "spec",
+  "mode": "extract2",
+  "started": "2026-09-22T19:25:29",
+  "finished": "2026-09-22T19:25:37",
+  "sec": 8.7,
+  "cost_usd": 0.00125425,
+  "prompt_tokens": 16029,
+  "completion_tokens": 2264,
+  "reasoning_tokens": 0,
+  "finish_reason": "stop",
+  "truncated": false,
+  "parse_ok": true,
+  "generation_id": "gen-1790094329-cohRlqhm1pAvigKssIKc",
+  "cache_contaminated": false
+ },
+ "content": "{\n  \"net_profit\": {\n    \"q_quote\": \"Чистая прибыль Сбера за 2023 год составила 1 508,6 млрд руб.\",\n    \"q_value\": \"1 508,6 млрд руб.\",\n    \"q_base\": \"287,8 млрд руб.\",\n    \"q_change\": \"+h5,2\"\n  ,\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 2\n  },\n  \"eps\": {\n    \"q_quote\": \"Прибыль на обыкновенную акцию¹ 69,1 руб\",\n    \"q_value\": \"69,10 руб\",\n    \"q_base\": \"13,20 руб\",\n    \"q_change\": \"х5,2\"\n  ,\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 2\n  },\n  \"roe\": {\n    \"q_quote\": \"Рентабельность капитала⁴ 25,3%\",\n    \"q_value\": \"25,3%\",\n    \"q_base\": \"5,2%\",\n    \"q_change\": \"+20,1 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 2\n  },\n  \"guidance\": {\n    \"quote\": \"Цель по прибыли и рентабельности на год подтверждена\",\n    \"score\": 1\n  },\n  \"nii\": {\n    \"q_quote\": \"Чистые процентные доходы 736,3 млрд руб. в 4 квартале 2023 года\",\n    \"q_value\": \"36,8%\",\n    \"q_base\": \"36,8%\",\n    \"q_change\": \"+36,8%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"fee_income\": {\n    \"q_quote\": \"Чистые комиссионные доходы 210,4 млрд руб. в 4 квартале 2023 года\",\n    \"q_value\": \"9,4%\",\n    \"q_base\": \"9,4%\",\n    \"q_change\": \"+9,4%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"nim\": {\n    \"q_quote\": \"Чистая процентная маржа 6,26% в 4 квартале 2023 года\",\n    \"q_value\": \"6,26%\",\n    \"q_base\": \"6,26%\",\n    \"q_change\": \"0,66 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"opex\": {\n    \"q_quote\": \"Операционные расходы 292,0 млрд руб. в 4 квартале 2023 года\",\n    \"q_value\": \"27,2%\",\n    \"q_base\": \"27,2%\",\n    \"q_change\": \"+27,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"cir\": {\n    \"q_quote\": \"Отношение операционных расходов к операционным доходам 36,2% в 4 квартале 2023 года\",\n    \"q_value\": \"36,2%\",\n    \"q_base\": \"38,2%\",\n    \"q_change\": \"-9,0 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 2\n  },\n  \"cor\": {\n    \"q_quote\": \"Стоимость риска 0,3% в 4 квартале 2023 года\",\n    \"q_value\": \"0,3%\",\n    \"q_base\": \"0,8%\",\n    \"q_change\": \"-0,5 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 2\n  },\n  \"provisions\": {\n    \"q_quote\": \"Чистые расходы вследствие изменения кредитного качества -30,1 млрд руб.\",\n    \"q_value\": \"-52,3%\",\n    \"q_base\": \"-52,3%\",\n    \"q_change\": \"-52,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"portfolio_quality\": {\n    \"quote\": \"Доля кредитов 3 стадии, включая изначально обесцененные, снизилась до 3,4%\",\n    \"score\": 1\n  },\n  \"corporate_loans\": {\n    \"q_quote\": \"Кредиты юридическим лицам 23 306 млрд руб. (рост 25,2% с начала года)\",\n    \"q_value\": \"25,2%\",\n    \"q_base\": \"25,2%\",\n    \"q_change\": \"+25,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"retail_loans\": {\n    \"q_quote\": \"Кредиты физическим лицам 16 075 млрд руб. (рост 29,3% с начала года)\",\n    \"q_value\": \"29,3%\",\n    \"q_base\": \"29,3%\",\n    \"q_change\": \"+29,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"customer_funds\": {\n    \"q_quote\": \"Средства клиентов 36 694 млрд руб. (рост 22,8% с начала года)\",\n    \"q_value\": \"22,8%\",\n    \"q_base\": \"22,8%\",\n    \"q_change\": \"+22,8%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"market_share\": {\n    \"quote\": \"Доля Сбера на рынке розничного кредитования выросла на 2,4 пп до 47,7%\",\n    \"score\": 1\n  },\n  \"capital_adequacy\": {\n    \"q_quote\": \"Коэффициент достаточности капитала банковской группы H20.0² 13,7%\",\n    \"q_value\": \"13,7%\",\n    \"q_base\": \"13,7%\",\n    \"q_change\": \"0,4 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"dividends\": {\n    \"quote\": \"Долгосрочная стратегия 2026 — приоритет — повышение эффективности, инвестирование в ИИ\",\n    \"score\": 0\n  },\n  \"book_value_per_share\": {\n    \"q_quote\": \"Балансовая стоимость на акцию¹⁰ 291,5 руб\",\n    \"q_value\": \"291,5 руб\",\n    \"q_base\": \"274,5 руб\",\n    \"q_change\": \"6,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"active_clients\": {\n    \"q_quote\": \"Число активных клиентов-физических лиц 108,5 млн (рост 2,1 млн)\",\n    \"q_value\": \"2,1 млн\",\n    \"q_base\": \"2,1 млн\",\n    \"q_change\": \"+2,1 млн\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"digital_metrics\": {\n    \"q_quote\": \"MAU СберБанк Онлайн 81,9 млн (рост 3,3%)\",\n    \"q_value\": \"3,3%\",\n    \"q_base\": \"3,3%\",\n    \"q_change\": \"+3,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"tech_development\": {\n    \"quote\": \"Запуск GigaChat, Kandinsky 3.0, GigaCode, Platform V SberLinux OS Server\",\n    \"score\": 1\n  },\n  \"external_conditions\": {\n    \"quote\": \"Повышенный спрос на ипотеку из-за ужесточения условий льготной программы\",\n    \"score\": 1\n  },\n  \"ceo_tone\": {\n    \"quote\": \"«Сегодня мы подводим итоги работы Группы Сбер за 2023 год, который стал для нас рекордным по многим параметрам: Сбер заработал рекордную за всю историю Группы чистую прибыль в 1 508,6 млрд руб., обеспечив рентабельность капитала на уровне 25,3%»\",\n    \"score\": 1\n  }\n}",
+ "response": {
+  "id": "gen-1790094329-cohRlqhm1pAvigKssIKc",
+  "object": "chat.completion",
+  "created": 1790094329,
+  "model": "nvidia/nemotron-3-nano-30b-a3b",
+  "provider": "Crusoe",
+  "system_fingerprint": "vllm-0.24.0-tp4-2eac015f",
+  "service_tier": null,
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "stop",
+    "message": {
+     "role": "assistant",
+     "content": "{\n  \"net_profit\": {\n    \"q_quote\": \"Чистая прибыль Сбера за 2023 год составила 1 508,6 млрд руб.\",\n    \"q_value\": \"1 508,6 млрд руб.\",\n    \"q_base\": \"287,8 млрд руб.\",\n    \"q_change\": \"+h5,2\"\n  ,\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 2\n  },\n  \"eps\": {\n    \"q_quote\": \"Прибыль на обыкновенную акцию¹ 69,1 руб\",\n    \"q_value\": \"69,10 руб\",\n    \"q_base\": \"13,20 руб\",\n    \"q_change\": \"х5,2\"\n  ,\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 2\n  },\n  \"roe\": {\n    \"q_quote\": \"Рентабельность капитала⁴ 25,3%\",\n    \"q_value\": \"25,3%\",\n    \"q_base\": \"5,2%\",\n    \"q_change\": \"+20,1 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 2\n  },\n  \"guidance\": {\n    \"quote\": \"Цель по прибыли и рентабельности на год подтверждена\",\n    \"score\": 1\n  },\n  \"nii\": {\n    \"q_quote\": \"Чистые процентные доходы 736,3 млрд руб. в 4 квартале 2023 года\",\n    \"q_value\": \"36,8%\",\n    \"q_base\": \"36,8%\",\n    \"q_change\": \"+36,8%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"fee_income\": {\n    \"q_quote\": \"Чистые комиссионные доходы 210,4 млрд руб. в 4 квартале 2023 года\",\n    \"q_value\": \"9,4%\",\n    \"q_base\": \"9,4%\",\n    \"q_change\": \"+9,4%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"nim\": {\n    \"q_quote\": \"Чистая процентная маржа 6,26% в 4 квартале 2023 года\",\n    \"q_value\": \"6,26%\",\n    \"q_base\": \"6,26%\",\n    \"q_change\": \"0,66 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"opex\": {\n    \"q_quote\": \"Операционные расходы 292,0 млрд руб. в 4 квартале 2023 года\",\n    \"q_value\": \"27,2%\",\n    \"q_base\": \"27,2%\",\n    \"q_change\": \"+27,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"cir\": {\n    \"q_quote\": \"Отношение операционных расходов к операционным доходам 36,2% в 4 квартале 2023 года\",\n    \"q_value\": \"36,2%\",\n    \"q_base\": \"38,2%\",\n    \"q_change\": \"-9,0 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 2\n  },\n  \"cor\": {\n    \"q_quote\": \"Стоимость риска 0,3% в 4 квартале 2023 года\",\n    \"q_value\": \"0,3%\",\n    \"q_base\": \"0,8%\",\n    \"q_change\": \"-0,5 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 2\n  },\n  \"provisions\": {\n    \"q_quote\": \"Чистые расходы вследствие изменения кредитного качества -30,1 млрд руб.\",\n    \"q_value\": \"-52,3%\",\n    \"q_base\": \"-52,3%\",\n    \"q_change\": \"-52,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"portfolio_quality\": {\n    \"quote\": \"Доля кредитов 3 стадии, включая изначально обесцененные, снизилась до 3,4%\",\n    \"score\": 1\n  },\n  \"corporate_loans\": {\n    \"q_quote\": \"Кредиты юридическим лицам 23 306 млрд руб. (рост 25,2% с начала года)\",\n    \"q_value\": \"25,2%\",\n    \"q_base\": \"25,2%\",\n    \"q_change\": \"+25,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"retail_loans\": {\n    \"q_quote\": \"Кредиты физическим лицам 16 075 млрд руб. (рост 29,3% с начала года)\",\n    \"q_value\": \"29,3%\",\n    \"q_base\": \"29,3%\",\n    \"q_change\": \"+29,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"customer_funds\": {\n    \"q_quote\": \"Средства клиентов 36 694 млрд руб. (рост 22,8% с начала года)\",\n    \"q_value\": \"22,8%\",\n    \"q_base\": \"22,8%\",\n    \"q_change\": \"+22,8%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"market_share\": {\n    \"quote\": \"Доля Сбера на рынке розничного кредитования выросла на 2,4 пп до 47,7%\",\n    \"score\": 1\n  },\n  \"capital_adequacy\": {\n    \"q_quote\": \"Коэффициент достаточности капитала банковской группы H20.0² 13,7%\",\n    \"q_value\": \"13,7%\",\n    \"q_base\": \"13,7%\",\n    \"q_change\": \"0,4 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"dividends\": {\n    \"quote\": \"Долгосрочная стратегия 2026 — приоритет — повышение эффективности, инвестирование в ИИ\",\n    \"score\": 0\n  },\n  \"book_value_per_share\": {\n    \"q_quote\": \"Балансовая стоимость на акцию¹⁰ 291,5 руб\",\n    \"q_value\": \"291,5 руб\",\n    \"q_base\": \"274,5 руб\",\n    \"q_change\": \"6,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"active_clients\": {\n    \"q_quote\": \"Число активных клиентов-физических лиц 108,5 млн (рост 2,1 млн)\",\n    \"q_value\": \"2,1 млн\",\n    \"q_base\": \"2,1 млн\",\n    \"q_change\": \"+2,1 млн\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"digital_metrics\": {\n    \"q_quote\": \"MAU СберБанк Онлайн 81,9 млн (рост 3,3%)\",\n    \"q_value\": \"3,3%\",\n    \"q_base\": \"3,3%\",\n    \"q_change\": \"+3,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\"\n  ,\n    \"score\": 1\n  },\n  \"tech_development\": {\n    \"quote\": \"Запуск GigaChat, Kandinsky 3.0, GigaCode, Platform V SberLinux OS Server\",\n    \"score\": 1\n  },\n  \"external_conditions\": {\n    \"quote\": \"Повышенный спрос на ипотеку из-за ужесточения условий льготной программы\",\n    \"score\": 1\n  },\n  \"ceo_tone\": {\n    \"quote\": \"«Сегодня мы подводим итоги работы Группы Сбер за 2023 год, который стал для нас рекордным по многим параметрам: Сбер заработал рекордную за всю историю Группы чистую прибыль в 1 508,6 млрд руб., обеспечив рентабельность капитала на уровне 25,3%»\",\n    \"score\": 1\n  }\n}",
+     "refusal": null,
+     "reasoning": null
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 16029,
+   "completion_tokens": 2264,
+   "total_tokens": 18293,
+   "cost": 0.00125425,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 0,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.00125425,
+    "upstream_inference_prompt_cost": 0.00080145,
+    "upstream_inference_completions_cost": 0.0004528
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

@@ -1,0 +1,29 @@
+[[job]]
+model = "deepseek/deepseek-v4.1-flash"
+spec = "v7_extract"
+reports = ["2026_q2"]
+runs = 5
+temperature = 0
+tag = "det-think-high"
+mode = "extract2"
+text = "v2"
+ctx = 32768
+budget = 1.5
+seed = 1
+reasoning_effort = "high"
+max_tokens = 48000
+
+[[job]]
+model = "deepseek/deepseek-v4.1-flash"
+spec = "v7_extract"
+reports = ["2026_q2", "2022_q4", "2024_q4", "2025_q3", "vtb_2026_q1", "tbank_2026_q2"]
+runs = 5
+temperature = 0
+tag = "think-high"
+mode = "extract2"
+text = "v2"
+ctx = 32768
+budget = 1.5
+ids_order = "shuffled"
+reasoning_effort = "high"
+max_tokens = 48000

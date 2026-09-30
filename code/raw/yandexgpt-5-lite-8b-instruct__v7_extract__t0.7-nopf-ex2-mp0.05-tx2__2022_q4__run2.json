@@ -1,0 +1,104 @@
+{
+ "meta": {
+  "name": "yandexgpt-5-lite-8b-instruct__v7_extract__t0.7-nopf-ex2-mp0.05-tx2__2022_q4__run2",
+  "model": "yandexgpt-5-lite-8b-instruct",
+  "model_format": "gguf",
+  "model_arch": "llama",
+  "model_path": "yandex/YandexGPT-5-Lite-8B-instruct-GGUF/YandexGPT-5-Lite-8B-instruct-Q4_K_M.gguf",
+  "model_size_bytes": 4920741184,
+  "model_quant": "Q4_K_M",
+  "ctx_requested": 32768,
+  "ctx_loaded": 32768,
+  "cache_cached_tokens": null,
+  "cache_uncached_tokens": null,
+  "ctx_effective": 42496,
+  "cache_contaminated": false,
+  "spec_version": "v7_extract",
+  "spec_hash": "46954bb5e58e630022ba2cccb0e43f55db5c5c6512a52996612c0f962bbb25dc",
+  "request_hash": "6b44ef5fbe4a82b03d6d77644ae5ac476dad177745f9a2291ee65a4ebe936ae8",
+  "report": "2022_q4",
+  "text_version": "v2",
+  "text_hash": "db76aa9182d16fee53b2b06b1524760da5c2c4bf63521f398f8f99c4c84bf6fc",
+  "run": 2,
+  "variant": "t0.7-nopf-ex2-mp0.05-tx2",
+  "temperature": 0.7,
+  "top_k": 40,
+  "top_p": 1,
+  "repeat_penalty": 1.0,
+  "think": false,
+  "schema": true,
+  "max_tokens": 8000,
+  "prefill": false,
+  "ids_order": "spec",
+  "mode": "extract2",
+  "started": "2026-09-21T18:20:00",
+  "finished": "2026-09-21T18:21:39",
+  "sec": 97.3,
+  "load_sec": 2.7,
+  "prompt_tokens": 11023,
+  "completion_tokens": 2443,
+  "reasoning_tokens": 0,
+  "tok_per_sec": 25.1,
+  "finish_reason": "stop",
+  "truncated": false,
+  "two_turn": false,
+  "draft_tokens": null,
+  "swap_before_mb": 756.56,
+  "swap_after_mb": 756.56,
+  "mem_free_pct_after": 70,
+  "battery_pct_before": 100,
+  "ssd_written_gb": 46.4,
+  "battery_pct": 100,
+  "adapter_w": 94,
+  "power_in_w": 88,
+  "load_w": 110,
+  "thermal_warning": false,
+  "parse_ok": true,
+  "env": {
+   "backends": {
+    "gguf": "llama.cpp-mac-arm64-apple-metal-advsimd 2.41.0",
+    "safetensors": "mlx-llm-mac-arm64-apple-metal-advsimd 1.11.0",
+    "pte": "executorch-asr-mac-arm64-apple-metal-advsimd 0.0.8"
+   },
+   "lms_cli_commit": "69d945a",
+   "macos": "27.0",
+   "python": "3.12.13",
+   "code_sha": "1630fa192c21fe36",
+   "git_commit": null,
+   "queue_sha": "2f35b53cbae334c6"
+  }
+ },
+ "content": "{\n  \"net_profit\": {\n    \"q_quote\": \"Чистая прибыль Группы составила 270,5 млрд руб.\",\n    \"q_value\": \"270,5 млрд руб.\",\n    \"q_base\": \"1 245,9 млрд руб.\",\n    \"q_change\": \"-78,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n  \"score\": 0\n  },\n  \"eps\": {\n    \"q_quote\": \"Прибыль на обыкновенную акцию составила 12,39 руб.\",\n    \"q_value\": \"12,39 руб.\",\n    \"q_base\": \"56,98 руб.\",\n    \"q_change\": \"-78,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"roe\": {\n    \"q_quote\": \"Рентабельность капитала составила 5,2%\",\n    \"q_value\": \"5,2%\",\n    \"q_base\": \"24,2%\",\n    \"q_change\": \"-19,0 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"guidance\": {\n    \"quote\": \"2022 год стал сложнейшим годом для нашей страны и банковского сектора... Мы реализовали антикризисный план: радикально пересмотрели приоритеты, ввели меры строжайшей экономии, закрыли и продали международные бизнесы, а также создали все необходимые резервы по кредитному портфелю и заблокированным активам.\",\n    \"score\": -2\n  },\n  \"nii\": {\n    \"q_quote\": \"Чистые процентные доходы увеличились на 6,6% г/г и составили 1 875 млрд руб. за счет роста объема работающих активов.\",\n    \"q_value\": \"1 874,8 млрд руб.\",\n    \"q_base\": \"1 759,4 млрд руб.\",\n    \"q_change\": \"6,6%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"fee_income\": {\n    \"q_quote\": \"Чистые комиссионные доходы выросли на 15,4% г/г до 697 млрд руб.\",\n    \"q_value\": \"697,1 млрд руб.\",\n    \"q_base\": \"604,2 млрд руб.\",\n    \"q_change\": \"15,4%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"nim\": {\n    \"q_quote\": \"Чистая процентная маржа составила 5,31%\",\n    \"q_value\": \"5,31%\",\n    \"q_base\": \"5,38%\",\n    \"q_change\": \"-0,07 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"opex\": {\n    \"q_quote\": \"Операционные расходы Группы сократились на 1,5% г/г и составили 822 млрд руб.\",\n    \"q_value\": \"822 млрд руб.\",\n    \"q_base\": \"834,4 млрд руб.\",\n    \"q_change\": \"-1,5%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"cir\": {\n    \"q_quote\": \"Отношение операционных расходов к доходам составило 41,6%\",\n    \"q_value\": \"41,6%\",\n    \"q_base\": \"34,0%\",\n    \"q_change\": \"7,6 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"cor\": {\n    \"q_quote\": \"Кредиты юридическим лицам составили 18 608 млрд руб.\",\n    \"q_value\": \"18 608 млрд руб.\",\n    \"q_base\": \"16 711 млрд руб.\",\n    \"q_change\": \"11,4%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"provisions\": {\n    \"q_quote\": \"Чистые расходы на создание резервов на кредитный риск составили 555 млрд руб.\",\n    \"q_value\": \"555,4 млрд руб.\",\n    \"q_base\": \"141,5 млрд руб.\",\n    \"q_change\": \"х4\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"portfolio_quality\": {\n    \"quote\": \"Доля кредитов 3 стадии составила 3,9%, что меньше на 100 бп по сравнению с началом года.\",\n    \"score\": 1\n  },\n  \"corporate_loans\": {\n    \"q_quote\": \"Кредиты юридическим лицам составили 18 608 млрд руб.\",\n    \"q_value\": \"18 608 млрд руб.\",\n    \"q_base\": \"16 711 млрд руб.\",\n    \"q_change\": \"11,4%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"retail_loans\": {\n    \"q_quote\": \"Розничный кредитный портфель составил 12,4 трлн руб., показал рост на 12,2% с начала года.\",\n    \"q_value\": \"12 430 млрд руб.\",\n    \"q_base\": \"11 078 млрд руб.\",\n    \"q_change\": \"12,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"customer_funds\": {\n    \"q_quote\": \"Средства клиентов составили 29 876 млрд руб.\",\n    \"q_value\": \"29 876 млрд руб.\",\n    \"q_base\": \"27 392 млрд руб.\",\n    \"q_change\": \"9,1%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"market_share\": {\n    \"quote\": \"Доля Сбера на рынке потребительского кредитования достигла 37,7% на 1 января 2023 года, увеличившись на 0,6 пп за год.\",\n    \"score\": 1\n  },\n  \"capital_adequacy\": {\n    \"q_quote\": \"Базовый капитал 1-го уровня вырос на 2,3% с начала 2022 года до 5,4 трлн руб.\",\n    \"q_value\": \"5 380,9 млрд руб.\",\n    \"q_base\": \"5 262,1 млрд руб.\",\n    \"q_change\": \"2,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"dividends\": {\n    \"quote\": \"Достигнутый запас прочности позволяют нам вернуться к рассмотрению вопроса о выплате дивидендов по итогам 2022 года.\",\n    \"score\": 1\n  },\n  \"book_value_per_share\": {\n    \"q_quote\": \"Балансовая стоимость на акцию составила 257,4 руб.\",\n    \"q_value\": \"257,4 руб.\",\n    \"q_base\": \"249,6 руб.\",\n    \"q_change\": \"3,1%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"active_clients\": {\n    \"q_quote\": \"Количество активных клиентов-физических лиц составило 106,7 млн человек на конец года.\",\n    \"q_value\": \"106,7 млн человек\",\n    \"q_base\": \"103,8 млн человек\",\n    \"q_change\": \"2,9%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"digital_metrics\": {\n    \"q_quote\": \"Число активных ежемесячных пользователей (MAU) СберБанк Онлайн превысило 78,6 млн человек (+2,5 млн за год).\",\n    \"q_value\": \"78,6 млн человек\",\n    \"q_base\": \"76,1 млн человек\",\n    \"q_change\": \"2,5%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"tech_development\": {\n    \"quote\": \"На основе инструментов Platform V были разработаны технологические решения для замещения иностранных вендоров не только в Банке, но и в крупнейших российских компаниях.\",\n    \"score\": 1\n  },\n  \"external_conditions\": {\n    \"quote\": \"2022 год стал сложнейшим годом для нашей страны и банковского сектора.\",\n    \"score\": -2\n  },\n  \"ceo_tone\": {\n    \"quote\": \"2022 год стал сложнейшим годом для нашей страны и банковского сектора...\",\n    \"score\": -2\n  }\n}",
+ "reasoning": "",
+ "response": {
+  "id": "chatcmpl-od7mkw8xhqj7nvho7l87jd",
+  "object": "chat.completion",
+  "created": 1790004000,
+  "model": "yandexgpt-5-lite-8b-instruct",
+  "choices": [
+   {
+    "index": 0,
+    "message": {
+     "role": "assistant",
+     "content": "{\n  \"net_profit\": {\n    \"q_quote\": \"Чистая прибыль Группы составила 270,5 млрд руб.\",\n    \"q_value\": \"270,5 млрд руб.\",\n    \"q_base\": \"1 245,9 млрд руб.\",\n    \"q_change\": \"-78,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n  \"score\": 0\n  },\n  \"eps\": {\n    \"q_quote\": \"Прибыль на обыкновенную акцию составила 12,39 руб.\",\n    \"q_value\": \"12,39 руб.\",\n    \"q_base\": \"56,98 руб.\",\n    \"q_change\": \"-78,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"roe\": {\n    \"q_quote\": \"Рентабельность капитала составила 5,2%\",\n    \"q_value\": \"5,2%\",\n    \"q_base\": \"24,2%\",\n    \"q_change\": \"-19,0 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"guidance\": {\n    \"quote\": \"2022 год стал сложнейшим годом для нашей страны и банковского сектора... Мы реализовали антикризисный план: радикально пересмотрели приоритеты, ввели меры строжайшей экономии, закрыли и продали международные бизнесы, а также создали все необходимые резервы по кредитному портфелю и заблокированным активам.\",\n    \"score\": -2\n  },\n  \"nii\": {\n    \"q_quote\": \"Чистые процентные доходы увеличились на 6,6% г/г и составили 1 875 млрд руб. за счет роста объема работающих активов.\",\n    \"q_value\": \"1 874,8 млрд руб.\",\n    \"q_base\": \"1 759,4 млрд руб.\",\n    \"q_change\": \"6,6%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"fee_income\": {\n    \"q_quote\": \"Чистые комиссионные доходы выросли на 15,4% г/г до 697 млрд руб.\",\n    \"q_value\": \"697,1 млрд руб.\",\n    \"q_base\": \"604,2 млрд руб.\",\n    \"q_change\": \"15,4%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"nim\": {\n    \"q_quote\": \"Чистая процентная маржа составила 5,31%\",\n    \"q_value\": \"5,31%\",\n    \"q_base\": \"5,38%\",\n    \"q_change\": \"-0,07 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"opex\": {\n    \"q_quote\": \"Операционные расходы Группы сократились на 1,5% г/г и составили 822 млрд руб.\",\n    \"q_value\": \"822 млрд руб.\",\n    \"q_base\": \"834,4 млрд руб.\",\n    \"q_change\": \"-1,5%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"cir\": {\n    \"q_quote\": \"Отношение операционных расходов к доходам составило 41,6%\",\n    \"q_value\": \"41,6%\",\n    \"q_base\": \"34,0%\",\n    \"q_change\": \"7,6 пп\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"cor\": {\n    \"q_quote\": \"Кредиты юридическим лицам составили 18 608 млрд руб.\",\n    \"q_value\": \"18 608 млрд руб.\",\n    \"q_base\": \"16 711 млрд руб.\",\n    \"q_change\": \"11,4%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"provisions\": {\n    \"q_quote\": \"Чистые расходы на создание резервов на кредитный риск составили 555 млрд руб.\",\n    \"q_value\": \"555,4 млрд руб.\",\n    \"q_base\": \"141,5 млрд руб.\",\n    \"q_change\": \"х4\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"portfolio_quality\": {\n    \"quote\": \"Доля кредитов 3 стадии составила 3,9%, что меньше на 100 бп по сравнению с началом года.\",\n    \"score\": 1\n  },\n  \"corporate_loans\": {\n    \"q_quote\": \"Кредиты юридическим лицам составили 18 608 млрд руб.\",\n    \"q_value\": \"18 608 млрд руб.\",\n    \"q_base\": \"16 711 млрд руб.\",\n    \"q_change\": \"11,4%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"retail_loans\": {\n    \"q_quote\": \"Розничный кредитный портфель составил 12,4 трлн руб., показал рост на 12,2% с начала года.\",\n    \"q_value\": \"12 430 млрд руб.\",\n    \"q_base\": \"11 078 млрд руб.\",\n    \"q_change\": \"12,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"customer_funds\": {\n    \"q_quote\": \"Средства клиентов составили 29 876 млрд руб.\",\n    \"q_value\": \"29 876 млрд руб.\",\n    \"q_base\": \"27 392 млрд руб.\",\n    \"q_change\": \"9,1%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"market_share\": {\n    \"quote\": \"Доля Сбера на рынке потребительского кредитования достигла 37,7% на 1 января 2023 года, увеличившись на 0,6 пп за год.\",\n    \"score\": 1\n  },\n  \"capital_adequacy\": {\n    \"q_quote\": \"Базовый капитал 1-го уровня вырос на 2,3% с начала 2022 года до 5,4 трлн руб.\",\n    \"q_value\": \"5 380,9 млрд руб.\",\n    \"q_base\": \"5 262,1 млрд руб.\",\n    \"q_change\": \"2,3%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"dividends\": {\n    \"quote\": \"Достигнутый запас прочности позволяют нам вернуться к рассмотрению вопроса о выплате дивидендов по итогам 2022 года.\",\n    \"score\": 1\n  },\n  \"book_value_per_share\": {\n    \"q_quote\": \"Балансовая стоимость на акцию составила 257,4 руб.\",\n    \"q_value\": \"257,4 руб.\",\n    \"q_base\": \"249,6 руб.\",\n    \"q_change\": \"3,1%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"active_clients\": {\n    \"q_quote\": \"Количество активных клиентов-физических лиц составило 106,7 млн человек на конец года.\",\n    \"q_value\": \"106,7 млн человек\",\n    \"q_base\": \"103,8 млн человек\",\n    \"q_change\": \"2,9%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"digital_metrics\": {\n    \"q_quote\": \"Число активных ежемесячных пользователей (MAU) СберБанк Онлайн превысило 78,6 млн человек (+2,5 млн за год).\",\n    \"q_value\": \"78,6 млн человек\",\n    \"q_base\": \"76,1 млн человек\",\n    \"q_change\": \"2,5%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"tech_development\": {\n    \"quote\": \"На основе инструментов Platform V были разработаны технологические решения для замещения иностранных вендоров не только в Банке, но и в крупнейших российских компаниях.\",\n    \"score\": 1\n  },\n  \"external_conditions\": {\n    \"quote\": \"2022 год стал сложнейшим годом для нашей страны и банковского сектора.\",\n    \"score\": -2\n  },\n  \"ceo_tone\": {\n    \"quote\": \"2022 год стал сложнейшим годом для нашей страны и банковского сектора...\",\n    \"score\": -2\n  }\n}",
+     "reasoning_content": "",
+     "tool_calls": []
+    },
+    "logprobs": null,
+    "finish_reason": "stop"
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 11023,
+   "completion_tokens": 2443,
+   "total_tokens": 13466,
+   "completion_tokens_details": {
+    "reasoning_tokens": 0
+   }
+  },
+  "stats": {},
+  "system_fingerprint": "yandexgpt-5-lite-8b-instruct"
+ },
+ "draft": null,
+ "draft_response": null
+}

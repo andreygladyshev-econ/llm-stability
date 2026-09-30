@@ -1,0 +1,123 @@
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v3"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 5
+temperature = 0.7
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+order = "report_first"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v3"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 1
+temperature = 0
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 1
+temperature = 0
+order = "report_first"
+ctx = 32768
+
+[[job]]
+model = "google/gemma-4-31b-qat"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+ctx = 20480
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.3
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 1.0
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+ids_order = "shuffled"
+ctx = 32768
+
+[[job]]
+model = "gigachat3.1-10b-a1.8b"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-4b-distill"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+ctx = 32768
+
+[[job]]
+model = "t-pro-it-2.1"
+spec = "v2_inplace"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+ctx = 20480
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_noex"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_all"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+fields = "score_first"
+ctx = 32768
+
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v2_en"
+reports = ["2022_q4", "2026_q2", "2024_q3", "2023_q4"]
+runs = 3
+temperature = 0.7
+ctx = 32768

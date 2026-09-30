@@ -1,0 +1,87 @@
+{
+ "meta": {
+  "name": "qwen-qwen3.6-35b-a3b__v7_extract__t0-shuf-ex2-or-tx2__vtb_2026_q1__run1",
+  "model": "qwen/qwen3.6-35b-a3b",
+  "cloud": true,
+  "provider": "AkashML",
+  "model_quant": "fp8",
+  "spec_version": "v7_extract",
+  "spec_hash": "46954bb5e58e630022ba2cccb0e43f55db5c5c6512a52996612c0f962bbb25dc",
+  "request_hash": "2656b29c08aed23a23e65b9d84c8e064b532a9834fd0079ce1e3942fd14ca1b1",
+  "report": "vtb_2026_q1",
+  "text_version": "v2",
+  "text_hash": "3d43645c8b77d34691a99281d0552cd526208c8eaed83509afc0568aa3cb967a",
+  "run": 1,
+  "variant": "t0-shuf-ex2-or-tx2",
+  "temperature": 0,
+  "top_p": 1,
+  "seed": null,
+  "min_p_dropped": false,
+  "schema": true,
+  "dropped_params": [],
+  "max_tokens": 9000,
+  "reasoning_mode": "выключено",
+  "or_cache": null,
+  "ids_order": "shuffled",
+  "mode": "extract2",
+  "started": "2026-09-22T23:02:06",
+  "finished": "2026-09-22T23:02:22",
+  "sec": 15.8,
+  "cost_usd": 0.0026362,
+  "prompt_tokens": 8322,
+  "completion_tokens": 2264,
+  "reasoning_tokens": 0,
+  "finish_reason": "stop",
+  "truncated": false,
+  "parse_ok": true,
+  "generation_id": "gen-1790107326-0L6CtFVb5Y89WwAw4b9d",
+  "cache_contaminated": false
+ },
+ "content": "{\n  \"ceo_tone\": {\n    \"quote\": \"В целом результаты квартала находятся в пределах наших ожиданий и прогнозов и позволяют нам подтвердить цель по чистой прибыли 2026 года на уровне не менее 600 млрд рублей\",\n    \"score\": 1\n  },\n  \"capital_adequacy\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"В результате норматив общей достаточности капитала Группы вырос с начала года на 0,9 п. п., до 10,7%\",\n    \"y_value\": \"10,7%\",\n    \"y_base\": \"9,8%\",\n    \"y_change\": \"+0,9 п. п.\",\n    \"score\": 1\n  },\n  \"portfolio_quality\": {\n    \"quote\": \"Доля неработающих кредитов (NPL) в совокупном кредитном портфеле по состоянию на 31 марта 2026 года оставалась на низком уровне и составила 3,6%, увеличившись с 3,5% в начале года\",\n    \"score\": 0\n  },\n  \"cor\": {\n    \"q_quote\": \"Стоимость риска (CoR) 0,9% 0,8% 10 б. п.\",\n    \"q_value\": \"0,9%\",\n    \"q_base\": \"0,8%\",\n    \"q_change\": \"+10 б. п.\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -1\n  },\n  \"tech_development\": {\n    \"quote\": \"Расходы на персонал и административные расходы составили 142,3 млрд рублей за первый квартал 2026 года, увеличившись год к году на 20,3% на фоне планового увеличения инвестиций в технологии и трансформацию\",\n    \"score\": 0\n  },\n  \"book_value_per_share\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"market_share\": {\n    \"quote\": \"\",\n    \"score\": 0\n  },\n  \"cir\": {\n    \"q_quote\": \"Соотношение расходов и чистых операционных доходов до создания резервов составило 38,6% за первый квартал 2026 года (33,0% за первый квартал 2025 года)\",\n    \"q_value\": \"38,6%\",\n    \"q_base\": \"33,0%\",\n    \"q_change\": \"+5,6 п. п.\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"customer_funds\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"По состоянию на 31 марта 2026 года совокупные средства клиентов Группы сократились на 0,3% до 27,8 трлн рублей\",\n    \"y_value\": \"-0,3%\",\n    \"y_base\": \"27 895,7 млрд руб.\",\n    \"y_change\": \"-0,3%\",\n    \"score\": -1\n  },\n  \"fee_income\": {\n    \"q_quote\": \"Чистые комиссионные доходы составили 80,1 млрд рублей по итогам первого квартала 2026 года, увеличившись на 10,2% год к году\",\n    \"q_value\": \"80,1 млрд руб.\",\n    \"q_base\": \"72,7 млрд руб.\",\n    \"q_change\": \"+10,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"opex\": {\n    \"q_quote\": \"Расходы на содержание персонала и административные расходы -142,3 -118,3 20,3%\",\n    \"q_value\": \"20,3%\",\n    \"q_base\": \"2,8%\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"digital_metrics\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"guidance\": {\n    \"quote\": \"позволяют нам подтвердить цель по чистой прибыли 2026 года на уровне не менее 600 млрд рублей\",\n    \"score\": 1\n  },\n  \"retail_loans\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"Кредиты физическим лицам 7 130,3 7 292,4 -2,2%\",\n    \"y_value\": \"-2,2%\",\n    \"y_base\": \"7 292,4 млрд руб.\",\n    \"y_change\": \"-2,2%\",\n    \"score\": -1\n  },\n  \"nim\": {\n    \"q_quote\": \"Чистая процентная маржа (NIM) 2,5% 0,7% 180 б. п.\",\n    \"q_value\": \"2,5%\",\n    \"q_base\": \"0,7%\",\n    \"q_change\": \"+180 б. п.\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 2\n  },\n  \"provisions\": {\n    \"q_quote\": \"Создание резервов под ожидаемые кредитные убытки и прочие резервы (2) -56,8 -57,8 -1,7%\",\n    \"q_value\": \"56,8 млрд руб.\",\n    \"q_base\": \"57,8 млрд руб.\",\n    \"q_change\": \"-1,7%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"dividends\": {\n    \"quote\": \"\",\n    \"score\": 0\n  },\n  \"external_conditions\": {\n    \"quote\": \"на фоне низкой базы первого квартала 2025 года ввиду жесткой денежно-кредитной политики\",\n    \"score\": -1\n  },\n  \"eps\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"corporate_loans\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"Кредиты юридическим лицам 17 987,7 17 201,2 4,6%\",\n    \"y_value\": \"4,6%\",\n    \"y_base\": \"17 201,2 млрд руб.\",\n    \"y_change\": \"+4,6%\",\n    \"score\": 1\n  },\n  \"nii\": {\n    \"q_quote\": \"Чистые процентные доходы 196,8 52,6 274,1%\",\n    \"q_value\": \"196,8 млрд руб.\",\n    \"q_base\": \"52,6 млрд руб.\",\n    \"q_change\": \"+274,1%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 2\n  },\n  \"net_profit\": {\n    \"q_quote\": \"Чистая прибыль 132,6 141,4 -6,2%\",\n    \"q_value\": \"132,6 млрд руб.\",\n    \"q_base\": \"141,4 млрд руб.\",\n    \"q_change\": \"-6,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -1\n  },\n  \"roe\": {\n    \"q_quote\": \"Возврат на капитал (RoE) 19,2% 20,9% -170 б. п.\",\n    \"q_value\": \"19,2%\",\n    \"q_base\": \"20,9%\",\n    \"q_change\": \"-170 б. п.\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"active_clients\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  }\n}",
+ "response": {
+  "id": "gen-1790107326-0L6CtFVb5Y89WwAw4b9d",
+  "object": "chat.completion",
+  "created": 1790107326,
+  "model": "qwen/qwen3.6-35b-a3b",
+  "provider": "AkashML",
+  "system_fingerprint": null,
+  "service_tier": null,
+  "choices": [
+   {
+    "index": 0,
+    "logprobs": null,
+    "finish_reason": "stop",
+    "native_finish_reason": "stop",
+    "message": {
+     "role": "assistant",
+     "content": "{\n  \"ceo_tone\": {\n    \"quote\": \"В целом результаты квартала находятся в пределах наших ожиданий и прогнозов и позволяют нам подтвердить цель по чистой прибыли 2026 года на уровне не менее 600 млрд рублей\",\n    \"score\": 1\n  },\n  \"capital_adequacy\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"В результате норматив общей достаточности капитала Группы вырос с начала года на 0,9 п. п., до 10,7%\",\n    \"y_value\": \"10,7%\",\n    \"y_base\": \"9,8%\",\n    \"y_change\": \"+0,9 п. п.\",\n    \"score\": 1\n  },\n  \"portfolio_quality\": {\n    \"quote\": \"Доля неработающих кредитов (NPL) в совокупном кредитном портфеле по состоянию на 31 марта 2026 года оставалась на низком уровне и составила 3,6%, увеличившись с 3,5% в начале года\",\n    \"score\": 0\n  },\n  \"cor\": {\n    \"q_quote\": \"Стоимость риска (CoR) 0,9% 0,8% 10 б. п.\",\n    \"q_value\": \"0,9%\",\n    \"q_base\": \"0,8%\",\n    \"q_change\": \"+10 б. п.\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -1\n  },\n  \"tech_development\": {\n    \"quote\": \"Расходы на персонал и административные расходы составили 142,3 млрд рублей за первый квартал 2026 года, увеличившись год к году на 20,3% на фоне планового увеличения инвестиций в технологии и трансформацию\",\n    \"score\": 0\n  },\n  \"book_value_per_share\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"market_share\": {\n    \"quote\": \"\",\n    \"score\": 0\n  },\n  \"cir\": {\n    \"q_quote\": \"Соотношение расходов и чистых операционных доходов до создания резервов составило 38,6% за первый квартал 2026 года (33,0% за первый квартал 2025 года)\",\n    \"q_value\": \"38,6%\",\n    \"q_base\": \"33,0%\",\n    \"q_change\": \"+5,6 п. п.\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"customer_funds\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"По состоянию на 31 марта 2026 года совокупные средства клиентов Группы сократились на 0,3% до 27,8 трлн рублей\",\n    \"y_value\": \"-0,3%\",\n    \"y_base\": \"27 895,7 млрд руб.\",\n    \"y_change\": \"-0,3%\",\n    \"score\": -1\n  },\n  \"fee_income\": {\n    \"q_quote\": \"Чистые комиссионные доходы составили 80,1 млрд рублей по итогам первого квартала 2026 года, увеличившись на 10,2% год к году\",\n    \"q_value\": \"80,1 млрд руб.\",\n    \"q_base\": \"72,7 млрд руб.\",\n    \"q_change\": \"+10,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"opex\": {\n    \"q_quote\": \"Расходы на содержание персонала и административные расходы -142,3 -118,3 20,3%\",\n    \"q_value\": \"20,3%\",\n    \"q_base\": \"2,8%\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"digital_metrics\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"guidance\": {\n    \"quote\": \"позволяют нам подтвердить цель по чистой прибыли 2026 года на уровне не менее 600 млрд рублей\",\n    \"score\": 1\n  },\n  \"retail_loans\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"Кредиты физическим лицам 7 130,3 7 292,4 -2,2%\",\n    \"y_value\": \"-2,2%\",\n    \"y_base\": \"7 292,4 млрд руб.\",\n    \"y_change\": \"-2,2%\",\n    \"score\": -1\n  },\n  \"nim\": {\n    \"q_quote\": \"Чистая процентная маржа (NIM) 2,5% 0,7% 180 б. п.\",\n    \"q_value\": \"2,5%\",\n    \"q_base\": \"0,7%\",\n    \"q_change\": \"+180 б. п.\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 2\n  },\n  \"provisions\": {\n    \"q_quote\": \"Создание резервов под ожидаемые кредитные убытки и прочие резервы (2) -56,8 -57,8 -1,7%\",\n    \"q_value\": \"56,8 млрд руб.\",\n    \"q_base\": \"57,8 млрд руб.\",\n    \"q_change\": \"-1,7%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 1\n  },\n  \"dividends\": {\n    \"quote\": \"\",\n    \"score\": 0\n  },\n  \"external_conditions\": {\n    \"quote\": \"на фоне низкой базы первого квартала 2025 года ввиду жесткой денежно-кредитной политики\",\n    \"score\": -1\n  },\n  \"eps\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  },\n  \"corporate_loans\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"Кредиты юридическим лицам 17 987,7 17 201,2 4,6%\",\n    \"y_value\": \"4,6%\",\n    \"y_base\": \"17 201,2 млрд руб.\",\n    \"y_change\": \"+4,6%\",\n    \"score\": 1\n  },\n  \"nii\": {\n    \"q_quote\": \"Чистые процентные доходы 196,8 52,6 274,1%\",\n    \"q_value\": \"196,8 млрд руб.\",\n    \"q_base\": \"52,6 млрд руб.\",\n    \"q_change\": \"+274,1%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 2\n  },\n  \"net_profit\": {\n    \"q_quote\": \"Чистая прибыль 132,6 141,4 -6,2%\",\n    \"q_value\": \"132,6 млрд руб.\",\n    \"q_base\": \"141,4 млрд руб.\",\n    \"q_change\": \"-6,2%\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -1\n  },\n  \"roe\": {\n    \"q_quote\": \"Возврат на капитал (RoE) 19,2% 20,9% -170 б. п.\",\n    \"q_value\": \"19,2%\",\n    \"q_base\": \"20,9%\",\n    \"q_change\": \"-170 б. п.\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": -2\n  },\n  \"active_clients\": {\n    \"q_quote\": \"\",\n    \"q_value\": \"\",\n    \"q_base\": \"\",\n    \"q_change\": \"\",\n    \"y_quote\": \"\",\n    \"y_value\": \"\",\n    \"y_base\": \"\",\n    \"y_change\": \"\",\n    \"score\": 0\n  }\n}",
+     "refusal": null,
+     "reasoning": null
+    }
+   }
+  ],
+  "usage": {
+   "prompt_tokens": 8322,
+   "completion_tokens": 2264,
+   "total_tokens": 10586,
+   "cost": 0.0026362,
+   "is_byok": false,
+   "prompt_tokens_details": {
+    "cached_tokens": 4672,
+    "cache_write_tokens": 0,
+    "audio_tokens": 0,
+    "video_tokens": 0
+   },
+   "cost_details": {
+    "upstream_inference_cost": 0.0026362,
+    "upstream_inference_prompt_cost": 0.0005986,
+    "upstream_inference_completions_cost": 0.0020376
+   },
+   "completion_tokens_details": {
+    "reasoning_tokens": 0,
+    "image_tokens": 0,
+    "audio_tokens": 0
+   }
+  }
+ }
+}

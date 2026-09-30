@@ -1,0 +1,7 @@
+[[job]]
+model = "qwen3.8-27b-mlx@4bit"
+spec = "v1_baseline"
+reports = ["2026_q2"]
+runs = 2
+temperature = 0
+ctx = 24576
