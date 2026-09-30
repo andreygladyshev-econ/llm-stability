@@ -15,7 +15,7 @@ import pymupdf
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "text_pdf"
 MAPPING = json.loads((ROOT / "notes" / "pdf_mapping.json").read_text())
-PDF_DIR = ROOT.parent.parent / "assignment" / "SBER"   # PDF заказчика в корне репозитория
+PDF_DIR = ROOT / "pdf_sber"   # сканы отчётов Сбера
 
 
 def main():

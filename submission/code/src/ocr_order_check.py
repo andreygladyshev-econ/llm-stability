@@ -6,7 +6,7 @@
 (как подпоследовательность). Нарушение порядка — кандидат на переставленные столбцы, смотрится глазами.
 Заодно печатается доля чисел скрытого слоя, найденных в распознанном тексте (та же мера, что `ocr_v2.verify`):
 по каждому отчёту и в целом (29.09: чтобы число в записке воспроизводилось без повторного распознавания).
-PDF берутся из папки assignment/SBER в корне репозитория по notes/pdf_mapping.json.
+PDF берутся из папки pdf_sber по notes/pdf_mapping.json.
 Запуск: .venv/bin/python src/ocr_order_check.py
 """
 import json
@@ -25,7 +25,7 @@ MAPPING = json.loads((ROOT / "notes" / "pdf_mapping.json").read_text())
 
 
 def pdf_path(rep):
-    return ROOT.parent.parent / "assignment" / "SBER" / MAPPING[rep]
+    return ROOT / "pdf_sber" / MAPPING[rep]
 NUM = re.compile(r"-?\d[\d ]*,\d+")                 # числа с десятичной запятой: так же, как первая проверка
 
 

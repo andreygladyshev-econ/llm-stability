@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = texts.SUBMIT
 PREFIX = "qwen3.8-27b-mlx-4bit__v7_extract__t0-shuf-ex2-tx2"
 PDF = json.loads((ROOT / "notes" / "pdf_mapping.json").read_text())
-SBER_PDF = set(PDF)  # сканы заказчика: assignment/SBER/{файл}
+SBER_PDF = set(PDF)  # сканы отчётов Сбера: code/pdf_sber/{файл}
 # отчёты других банков — текстовые PDF с сайтов банков (code/pdf_other/)
 PDF.update({r: f"{r}.pdf" for r in ("vtb_2026_q1", "tbank_2024_q4", "tbank_2026_q1", "tbank_2026_q2")})
 TEMPLATE = list(csv.DictReader(open(sg.GOLD / "2026_q2_CLAUDE.csv")))
@@ -80,7 +80,7 @@ JUDG = {  # правило спеки v7 для балла модели по с�
 def source_link(r):
     """Ссылка на исходный PDF из папки сдачи."""
     if r["id"] in SBER_PDF:
-        return f"[{r['файл']}](../assignment/SBER/{r['файл']})"
+        return f"[{r['файл']}](code/pdf_sber/{r['файл']})"
     return f"[{r['файл']}](code/pdf_other/{r['файл']}), текстовый PDF с сайта банка"
 
 
